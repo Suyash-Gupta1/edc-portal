@@ -10,12 +10,54 @@ import Preloader from '../components/Preloader';
 import ScrollProgress from '../components/ScrollProgress';
 import AuthModal from '../components/AuthModal';
 import AdminDashboard from '../components/AdminDashboard';
+import HackerModal from '../components/HackerModal'; // 1. Import HackerModal
+
+// --- 2. INTERNAL KONAMI HOOK ---
+const KONAMI_CODE = [
+  'ArrowUp', 'ArrowUp', 
+  'ArrowDown', 'ArrowDown', 
+  'ArrowLeft', 'ArrowRight', 
+  'ArrowLeft', 'ArrowRight', 
+  'b', 'a'
+];
+
+const useKonamiCode = (action: () => void) => {
+  const [input, setInput] = useState<string[]>([]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const newInput = [...input, e.key];
+      // Keep only the last 10 keys
+      if (newInput.length > KONAMI_CODE.length) {
+        newInput.shift();
+      }
+      setInput(newInput);
+      
+      // Check sequence
+      if (newInput.join('') === KONAMI_CODE.join('')) {
+        action();
+        setInput([]); 
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [input, action]);
+};
+// ---------------------------------------------------
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  
+  // 3. State for Hacker Modal
+  const [isHackerModalOpen, setIsHackerModalOpen] = useState(false);
+
+  // 4. Activate the Konami Code Hook
+  useKonamiCode(() => {
+    setIsHackerModalOpen(true);
+  });
 
   // Check for logged in user on mount and refresh status
   useEffect(() => {
@@ -70,6 +112,12 @@ const App: React.FC = () => {
       <AdminDashboard 
         isOpen={isAdminModalOpen}
         onClose={() => setIsAdminModalOpen(false)}
+      />
+
+      {/* 5. The Secret Hacker Modal */}
+      <HackerModal 
+        isOpen={isHackerModalOpen}
+        onClose={() => setIsHackerModalOpen(false)}
       />
 
       <div 

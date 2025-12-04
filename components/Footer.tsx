@@ -1,10 +1,23 @@
 import React from 'react';
 import { Instagram, Linkedin, Twitter, Youtube, Send } from 'lucide-react';
-import TextHover from './TextHover';
 
-const Footer: React.FC = () => {
+// TextHover component for the links
+const TextHover = ({ text }) => {
   return (
-    <footer className="relative bg-[#050505] text-white overflow-hidden pt-20 md:pt-32 pb-10">
+    <span className="relative block overflow-hidden">
+      <span className="block transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">
+        {text}
+      </span>
+      <span className="absolute top-0 left-0 block translate-y-full transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0 text-[#ccff00]">
+        {text}
+      </span>
+    </span>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="relative bg-[#050505] text-white overflow-hidden pt-20 md:pt-32 pb-10 font-sans min-h-screen">
         {/* Background ambient glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
              <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-[#ccff00]/5 rounded-full blur-[120px]"></div>
@@ -25,8 +38,19 @@ const Footer: React.FC = () => {
                 <a href="#" className="group relative px-10 py-5 rounded-full bg-white text-black overflow-hidden transition-transform hover:scale-105 duration-300">
                     <div className="absolute inset-0 bg-[#ccff00] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"></div>
                     <span className="relative z-10 font-bold text-lg flex items-center gap-3">
-                        <span className="group-hover:hidden transition-opacity duration-300">Get in Touch</span>
-                        <span className="hidden group-hover:inline-block transition-opacity duration-300">Let's Talk</span>
+                        {/* BUTTON LOGIC FIX:
+                            Using CSS Grid to stack the text elements on top of each other in the same cell.
+                            This ensures the container width is determined by the widest element ("Get in Touch"),
+                            preventing the layout shift/jumping when switching to the shorter "Let's Talk".
+                        */}
+                        <span className="grid place-items-center">
+                            <span className="col-start-1 row-start-1 transition-all duration-300 group-hover:-translate-y-2 group-hover:opacity-0">
+                                Get in Touch
+                            </span>
+                            <span className="col-start-1 row-start-1 transition-all duration-300 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                                Let's Talk
+                            </span>
+                        </span>
                         <Send className="w-4 h-4" />
                     </span>
                 </a>
@@ -35,7 +59,7 @@ const Footer: React.FC = () => {
             {/* Grid Content */}
             <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8 mb-24">
                 
-                {/* Brand */}
+                {/* Brand - Reverted to original 'E' logo */}
                 <div className="col-span-2 md:col-span-5 flex flex-col h-full space-y-6">
                     <div>
                         <div className="flex items-center gap-2 mb-6">
@@ -86,16 +110,16 @@ const Footer: React.FC = () => {
 
                 {/* Credits */}
                 <div className="col-span-2 md:col-span-3 flex flex-col items-start md:items-end justify-end">
-                     <div className="text-left md:text-right space-y-1">
+                      <div className="text-left md:text-right space-y-1">
                         <p className="text-gray-500 text-xs uppercase tracking-wider">Designed & Developed by</p>
                         <p className="text-white font-medium">WebTeam EDC</p>
-                     </div>
+                      </div>
                 </div>
             </div>
 
             {/* Bottom Large Text */}
             <div className="border-t border-white/10 pt-16 pb-8">
-                 <h1 className="font-display font-bold text-[13vw] leading-[0.8] text-center text-transparent bg-clip-text bg-gradient-to-b from-white/10 to-white/0 select-none tracking-tighter opacity-50">
+                 <h1 className="font-display font-bold text-[13vw] leading-[0.8] text-center text-transparent bg-clip-text bg-gradient-to-b from-white/25 to-white/0 select-none tracking-tighter opacity-50">
                     EDC NIT DGP
                 </h1>
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8 text-gray-600 text-sm gap-4">

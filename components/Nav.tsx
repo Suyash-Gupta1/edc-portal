@@ -1,9 +1,9 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
-// 1. Added Egg and Bird to imports
-import { Sparkles, Instagram, Linkedin, Twitter, LogOut, Shield, Trophy, Egg, Bird } from 'lucide-react';
+import { Sparkles, Instagram, Linkedin, Twitter, LogOut, Shield, Trophy } from 'lucide-react';
 import TextHover from './TextHover';
 
+// 1. Define the User shape properly
 interface User {
   username: string;
   hasSelection: boolean;
@@ -20,25 +20,11 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  
-  // 2. New state for the Easter Egg
-  const [isEggBroken, setIsEggBroken] = useState(false);
-  
   const lastScrollY = useRef(0);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // 3. Logic to handle the egg click
-  const handleEggClick = () => {
-    if (!isEggBroken) {
-      setIsEggBroken(true);
-      // Reset after 3 seconds so they can play again
-      setTimeout(() => {
-        setIsEggBroken(false);
-      }, 3000);
-    }
-  };
-
+  // 2. Smart Scroll Logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -76,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
         ${isVisible ? 'top-6 opacity-100' : '-top-32 opacity-0'}
         ${isOpen 
           ? 'w-[95vw] md:w-[90vw] h-[90vh] rounded-[32px] bg-[#0d0d0d]/90 backdrop-blur-xl' 
-          : 'w-[90vw] md:w-[32rem] h-[56px] rounded-[32px] delay-100 bg-[#0d0d0d]' 
+          : 'w-[90vw] md:w-[32rem] h-[56px] rounded-[32px] delay-100 bg-[#0d0d0d]' // Constant radius for smoother morph
         }
       `}
     >
@@ -179,7 +165,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
       <div className="w-full h-[calc(100%-56px)] flex flex-col pt-4 md:pt-4 px-6 md:px-12 overflow-y-auto no-scrollbar pb-6 md:pb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 h-auto md:h-full pb-10 md:pb-0">
           
-          {/* Column 1: Navigation */}
+          {/* Column 1: Navigation (Delay 100ms) */}
           <div 
             className={`md:col-span-4 flex flex-col gap-6 md:border-r border-gray-800/50 md:pr-6 transition-all duration-500 ease-out ${
               isOpen ? 'opacity-100 translate-y-0 delay-100' : 'opacity-0 translate-y-8 invisible'
@@ -203,7 +189,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
             </ul>
           </div>
 
-          {/* Column 2: Explore & Socials */}
+          {/* Column 2: Explore (Delay 200ms) */}
           <div 
             className={`md:col-span-3 flex flex-col justify-between md:pl-2 transition-all duration-500 ease-out ${
               isOpen ? 'opacity-100 translate-y-0 delay-200' : 'opacity-0 translate-y-8 invisible'
@@ -224,36 +210,14 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
               </ul>
             </div>
             
-            <div className="flex gap-6 md:gap-4 mt-8 md:mt-0 items-center">
+            <div className="flex gap-6 md:gap-4 mt-8 md:mt-0">
               <a href="#" className="text-gray-500 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
               <a href="#" className="text-gray-500 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
               <a href="#" className="text-gray-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-
-              {/* --- 4. THE EASTER EGG --- */}
-              <button 
-                onClick={handleEggClick}
-                className="relative group ml-2"
-                title="What's this?"
-              >
-                {isEggBroken ? (
-                  // State 2: Broken / Hen
-                  <div className="relative animate-bounce">
-                    <Bird className="w-8 h-8 text-red-500" />
-                    {/* The Popup Message */}
-                    <div className="absolute -top-12 -left-12 w-32 bg-white text-black text-[10px] font-bold p-2 rounded-lg shadow-xl animate-in fade-in zoom-in duration-300 pointer-events-none">
-                       Type the KONAMI code we are listening !
-                       <div className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45"></div>
-                    </div>
-                  </div>
-                ) : (
-                  // State 1: Whole Egg
-                  <Egg className="w-5 h-5 text-gray-600 hover:text-[#eab308] transition-colors duration-500 cursor-pointer hover:rotate-12" />
-                )}
-              </button>
             </div>
           </div>
           
-          {/* Column 3: Decoration & Admin */}
+          {/* Column 3: Decoration & Admin (Delay 300ms) */}
           <div 
              className={`md:col-span-5 md:pl-2 mt-6 md:mt-0 flex flex-col items-center justify-between pb-6 transition-all duration-500 ease-out ${
               isOpen ? 'opacity-100 translate-y-0 delay-300' : 'opacity-0 translate-y-8 invisible'
