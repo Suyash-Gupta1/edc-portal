@@ -1,17 +1,18 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { Toaster } from 'sonner'; 
+import SmoothScroll from '@/components/SmoothScroll';
+import NoiseOverlay from '@/components/NoiseOverlay';
+import CustomCursor from '@/components/CustomCursor';
 
 export const metadata: Metadata = {
-  // 1. HARDCODED PRODUCTION DOMAIN
   metadataBase: new URL('https://edc-portal-six.vercel.app'),
   verification: {
     google: 'yQw3nCySjNEQZhHr56v5gTwuTvh5JjQxC8sriM7VQYA',
   },
-
-  icons:{
-    icon: '/favicon.ico?',
+  icons: {
+    icon: '/favicon.ico?v=2', 
   },
-  
   title: {
     default: 'EDC NIT Durgapur | Entrepreneurship Development Cell',
     template: '%s | EDC NIT Durgapur',
@@ -24,7 +25,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    // 2. UPDATED URL
     url: 'https://edc-portal-six.vercel.app',
     siteName: 'EDC NIT Durgapur',
     title: 'EDC NIT Durgapur - Where Innovation Meets Execution',
@@ -67,9 +67,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'EDC NIT Durgapur',
-    // 3. UPDATED URL IN JSON-LD
     url: 'https://edc-portal-six.vercel.app',
-    logo: 'https://edc-portal-six.vercel.app/logo.png', // Ensure you have a logo.png in public folder
+    logo: 'https://edc-portal-six.vercel.app/logo.png',
     sameAs: [
       'https://www.instagram.com/edc.nitd',
       'https://www.linkedin.com/company/edcnitd',
@@ -84,13 +83,13 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <script src="https://cdn.tailwindcss.com"></script>
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
         <style dangerouslySetInnerHTML={{ __html: `
-            body { font-family: 'Inter', sans-serif; background-color: #050505; color: #ffffff; overflow-x: hidden; }
+            body { font-family: 'Inter', sans-serif; background-color: #050505; color: #ffffff; overflow-x: hidden; cursor: none; }
             h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
             ::-webkit-scrollbar { width: 6px; }
             ::-webkit-scrollbar-track { background: #050505; }
@@ -127,7 +126,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        
+        <CustomCursor />
+        <NoiseOverlay />
+        <Toaster position="top-center" theme="dark" richColors />
+
+        <SmoothScroll>
+            {children}
+        </SmoothScroll>
       </body>
     </html>
   );
