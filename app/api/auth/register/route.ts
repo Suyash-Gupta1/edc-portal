@@ -1,6 +1,7 @@
 import dbConnect from '@/lib/db';
 import User from '@/models/User';
 import { NextResponse } from 'next/server';
+import bcrypt from 'bcryptjs';
 
 export async function POST(req: Request) {
   try {
@@ -9,6 +10,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { username, email, password, domain, reason } = body;
 
+    // Validation
     if (!username || !email || !password || !domain || !reason) {
       return NextResponse.json(
         { error: 'Please provide all fields, including your reason for joining.' },
@@ -25,15 +27,20 @@ export async function POST(req: Request) {
       );
     }
 
-    // Create user
-    // Note: In a production app, you must hash the password (e.g., using bcrypt) here.
+    // --- BCRYPT HASHING LOGIC ---
+    // 1. Generate a salt
+    const salt = await bcrypt.genSalt(10);
+    // 2. Hash the password with the salt
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create user with HASHED password
     const user = await User.create({
       username,
       email,
-      password, // Storing plain text for demo purposes only per request
+      password: hashedPassword, // Store the hash, not the plain text
       domain,
       reason,
-      hasSelection: false // explicitly set default
+      hasSelection: false
     });
 
     return NextResponse.json({

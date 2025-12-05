@@ -162,6 +162,12 @@ const mod = __turbopack_context__.x("next/dist/server/app-render/after-task-asyn
 
 module.exports = mod;
 }),
+"[externals]/crypto [external] (crypto, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("crypto", () => require("crypto"));
+
+module.exports = mod;
+}),
 "[project]/app/api/auth/login/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -172,6 +178,8 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/db.ts [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/models/User.ts [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/bcryptjs/index.js [app-route] (ecmascript)"); // Import bcrypt
+;
 ;
 ;
 ;
@@ -187,23 +195,37 @@ async function POST(req) {
                 status: 400
             });
         }
+        // 1. Find user
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
             username
         });
-        if (!user || user.password !== password) {
+        // 2. Check if user exists
+        if (!user) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: 'Invalid credentials'
             }, {
                 status: 401
             });
         }
+        // 3. Compare provided password with stored HASHED password
+        const isMatch = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].compare(password, user.password);
+        if (!isMatch) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: 'Invalid credentials'
+            }, {
+                status: 401
+            });
+        }
+        // 4. Success
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,
             user: {
                 username: user.username,
                 email: user.email,
                 domain: user.domain,
-                hasSelection: user.hasSelection
+                reason: user.reason,
+                hasSelection: user.hasSelection,
+                round: user.round
             }
         });
     } catch (error) {
@@ -217,4 +239,4 @@ async function POST(req) {
 }),
 ];
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__1d6370bb._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__9e661c65._.js.map

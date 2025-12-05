@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'yQw3nCySjNEQZhHr56v5gTwuTvh5JjQxC8sriM7VQYA',
   },
+
+  icons:{
+    icon: '/favicon.ico?',
+  },
   
   title: {
     default: 'EDC NIT Durgapur | Entrepreneurship Development Cell',
