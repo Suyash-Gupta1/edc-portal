@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -10,9 +10,9 @@ import Preloader from '../components/Preloader';
 import ScrollProgress from '../components/ScrollProgress';
 import AuthModal from '../components/AuthModal';
 import AdminDashboard from '../components/AdminDashboard';
-import HackerModal from '../components/HackerModal'; // 1. Import HackerModal
+import HackerModal from '../components/HackerModal';
 
-// --- 2. INTERNAL KONAMI HOOK ---
+// --- KONAMI CODE LOGIC ---
 const KONAMI_CODE = [
   'ArrowUp', 'ArrowUp', 
   'ArrowDown', 'ArrowDown', 
@@ -43,49 +43,80 @@ const useKonamiCode = (action: () => void) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [input, action]);
 };
-// ---------------------------------------------------
 
-const App: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+export default function App() {
+  // showPreloader: Controls if the Preloader component is mounted
+  const [showPreloader, setShowPreloader] = useState(true);
+  
+  // isContentVisible: Controls the opacity fade-in of the main website
+  const [isContentVisible, setIsContentVisible] = useState(false);
+  
+  // isSessionChecked: Prevents rendering until we know if we need the preloader
+  const [isSessionChecked, setIsSessionChecked] = useState(false);
+  
   const [user, setUser] = useState<any>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
-  
-  // 3. State for Hacker Modal
   const [isHackerModalOpen, setIsHackerModalOpen] = useState(false);
 
-  // 4. Activate the Konami Code Hook
+  // Initialize Konami Code Listener
   useKonamiCode(() => {
     setIsHackerModalOpen(true);
   });
 
-  // Check for logged in user on mount and refresh status
   useEffect(() => {
+    // 1. Check User Persistence & Refresh Status
     const storedUserStr = localStorage.getItem('edc_user');
     if (storedUserStr) {
-      const storedUser = JSON.parse(storedUserStr);
-      setUser(storedUser);
+      try {
+        const storedUser = JSON.parse(storedUserStr);
+        setUser(storedUser);
 
-      // Fetch fresh status from backend
-      fetch('/api/auth/status', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: storedUser.username })
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          const updatedUser = { ...storedUser, ...data.status };
-          setUser(updatedUser);
-          localStorage.setItem('edc_user', JSON.stringify(updatedUser));
-        }
-      })
-      .catch(err => console.error("Failed to refresh status", err));
+        // Fetch latest status
+        fetch('/api/auth/status', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: storedUser.username })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                const updatedUser = { ...storedUser, ...data.status };
+                setUser(updatedUser);
+                localStorage.setItem('edc_user', JSON.stringify(updatedUser));
+            }
+        })
+        .catch(err => console.error("Failed to refresh status", err));
+
+      } catch (e) {
+        console.error("Failed to parse user", e);
+      }
     }
+
+    // 2. Check Preloader Session
+    const hasPreloaded = sessionStorage.getItem('edc_preloaded');
+    if (hasPreloaded === 'true') {
+      // VISITED BEFORE:
+      // 1. Disable preloader immediately
+      setShowPreloader(false);
+      // 2. Trigger fade-in animation after a tiny delay to ensure DOM paint
+      setTimeout(() => {
+          setIsContentVisible(true);
+      }, 100);
+    } else {
+      // FIRST VISIT:
+      // Keep preloader active (default state)
+      setShowPreloader(true);
+    }
+    
+    // Mark the session check as complete so we can render
+    setIsSessionChecked(true);
   }, []);
 
   const handlePreloaderComplete = () => {
-    setIsLoading(false);
+    setShowPreloader(false);
+    setIsContentVisible(true);
+    sessionStorage.setItem('edc_preloaded', 'true');
   };
 
   const handleLoginSuccess = (userData: any) => {
@@ -98,10 +129,16 @@ const App: React.FC = () => {
     localStorage.removeItem('edc_user');
   };
 
+  // Prevent hydration mismatch or flash by waiting for session check
+  if (!isSessionChecked) {
+    return <div className="min-h-screen w-full bg-[#050505]" />;
+  }
+
   return (
     <>
       <ScrollProgress />
-      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
+      
+      {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}
       
       <AuthModal 
         isOpen={isAuthModalOpen} 
@@ -114,15 +151,14 @@ const App: React.FC = () => {
         onClose={() => setIsAdminModalOpen(false)}
       />
 
-      {/* 5. The Secret Hacker Modal */}
       <HackerModal 
         isOpen={isHackerModalOpen}
         onClose={() => setIsHackerModalOpen(false)}
       />
 
       <div 
-        className={`flex flex-col w-full min-h-screen transition-opacity duration-1000 ${
-          isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'
+        className={`flex flex-col w-full min-h-screen transition-opacity duration-1000 ease-out ${
+          isContentVisible ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden'
         }`}
       >
         <Navbar 
@@ -141,6 +177,4 @@ const App: React.FC = () => {
       </div>
     </>
   );
-};
-
-export default App;
+}

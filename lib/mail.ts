@@ -1,8 +1,6 @@
 import nodemailer from 'nodemailer';
 
-// Configure these in your .env.local file
-// EMAIL_USER=your-email@gmail.com
-// EMAIL_PASS=your-app-specific-password
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -17,7 +15,7 @@ export const sendStatusEmail = async (
   round: number,
   domain: string
 ) => {
-  // If credentials aren't set, log to console (for development/demo)
+  
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     console.log(`[Mock Email] To: ${email} | Subject: Round ${round} Update | User: ${username}`);
     return;
@@ -96,7 +94,7 @@ export const sendStatusEmail = async (
       `;
       break;
     default:
-      return; // Do not send email for demotions or round 0
+      return; 
   }
 
   try {
@@ -109,6 +107,6 @@ export const sendStatusEmail = async (
     console.log(`Email sent to ${email} for Round ${round}`);
   } catch (error) {
     console.error('Error sending email:', error);
-    // Don't throw error here to prevent blocking the API response
+    
   }
 };

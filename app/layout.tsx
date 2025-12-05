@@ -2,8 +2,50 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Entrepreneurship Development Cell',
-  description: 'EDC NIT Durgapur Landing Page',
+  metadataBase: new URL('https://www.edcnitd.co.in'),
+  title: {
+    default: 'EDC NIT Durgapur | Entrepreneurship Development Cell',
+    template: '%s | EDC NIT Durgapur',
+  },
+  description: 'The official Entrepreneurship Development Cell of NIT Durgapur. We foster innovation, leadership, and startup culture among students in Eastern India. Join us for Auditions 2026.',
+  keywords: ['EDC', 'NIT Durgapur', 'Entrepreneurship', 'Startups', 'Innovation', 'Business Club', 'College Society', 'Auditions 2026'],
+  authors: [{ name: 'WebTeam EDC' }],
+  creator: 'EDC NIT Durgapur',
+  publisher: 'EDC NIT Durgapur',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.edcnitd.co.in',
+    siteName: 'EDC NIT Durgapur',
+    title: 'EDC NIT Durgapur - Where Innovation Meets Execution',
+    description: 'Join the premier entrepreneurship cell of NIT Durgapur. Explore our domains, events, and initiatives.',
+    images: [
+      {
+        url: '/og-image.jpg', // Ensure you have an image at public/og-image.jpg
+        width: 1200,
+        height: 630,
+        alt: 'EDC NIT Durgapur Banner',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EDC NIT Durgapur',
+    description: 'Fostering the spirit of entrepreneurship.',
+    images: ['/og-image.jpg'],
+    creator: '@edcnitd',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -11,19 +53,35 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Structured Data for Google (Organization Schema)
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'EDC NIT Durgapur',
+    url: 'https://www.edcnitd.co.in',
+    logo: 'https://www.edcnitd.co.in/logo.png',
+    sameAs: [
+      'https://www.instagram.com/edc.nitd',
+      'https://www.linkedin.com/company/edcnitd',
+      'https://twitter.com/edcnitd',
+      'https://www.facebook.com/edc.nitd',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'edc@nitdgp.ac.in',
+      contactType: 'customer support',
+    },
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Fonts */}
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         
-        {/* Tailwind CSS (CDN for simplicity as per original setup) */}
         <script src="https://cdn.tailwindcss.com"></script>
         
-        {/* Model Viewer */}
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
-        {/* Global Styles */}
         <style dangerouslySetInnerHTML={{ __html: `
             body {
                 font-family: 'Inter', sans-serif;
@@ -140,7 +198,7 @@ export default function RootLayout({
             
             .visit-us-btn i {
                 background-color: white; 
-                color: black;
+                color: black; 
                 border-radius: 50%;
                 padding: 0.25rem;
                 transition: transform 0.3s ease;
@@ -170,7 +228,7 @@ export default function RootLayout({
             }
             
             .visit-us-btn span {
-                z-index: 2;
+                z-index: 2; 
             }
             
             .perspective-1000 {
@@ -179,6 +237,10 @@ export default function RootLayout({
         `}} />
       </head>
       <body className="antialiased selection:bg-lime-400 selection:text-black flex flex-col min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

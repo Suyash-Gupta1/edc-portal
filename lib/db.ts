@@ -1,11 +1,10 @@
 import mongoose from 'mongoose';
 
-// User provided URI as fallback.
-// IMPORTANT: You must replace <db_password> with your actual MongoDB password.
+
 const FALLBACK_URI = "mongodb+srv://SuyashGupta:<db_password>@cluster0.dgobo2d.mongodb.net/?appName=Cluster0";
 const MONGODB_URI = process.env.MONGODB_URI || FALLBACK_URI;
 
-// Global interface to prevent TS errors on global.mongoose
+
 declare global {
   var mongoose: any;
 }
@@ -21,7 +20,7 @@ async function dbConnect() {
     throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
   }
 
-  // Check if the placeholder is still present
+  
   if (MONGODB_URI.includes('<db_password>')) {
     throw new Error('Invalid MongoDB URI: Please replace <db_password> with your actual database password in lib/db.ts');
   }

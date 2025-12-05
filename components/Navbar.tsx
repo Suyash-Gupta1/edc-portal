@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
-// 1. Added Egg and Bird to imports
 import { Sparkles, Instagram, Linkedin, Twitter, LogOut, Shield, Trophy, Egg, Bird } from 'lucide-react';
 import TextHover from './TextHover';
 
@@ -20,19 +19,32 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  
-  // 2. New state for the Easter Egg
   const [isEggBroken, setIsEggBroken] = useState(false);
   
   const lastScrollY = useRef(0);
 
+ 
+  const navLinks = [
+    { name: 'Home', target: '/' }, 
+    { name: 'About', target: '/#about-section' }, 
+    { name: 'Domains', target: '/#domains' },
+   
+  ];
+
+ 
+  const exploreLinks = [
+    { name: 'edc', url: 'https://www.edcnitd.co.in/' },
+    { name: 'Events', url: 'https://www.edcnitd.co.in/event/' },
+    { name: 'Team', url: 'https://www.edcnitd.co.in/team/' },
+  ];
+
+  
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // 3. Logic to handle the egg click
   const handleEggClick = () => {
     if (!isEggBroken) {
       setIsEggBroken(true);
-      // Reset after 3 seconds so they can play again
       setTimeout(() => {
         setIsEggBroken(false);
       }, 3000);
@@ -80,10 +92,10 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
         }
       `}
     >
-      {/* --- Top Bar (Always Visible) --- */}
+      
       <div className="w-full h-[56px] flex items-center justify-between px-5 relative z-20 shrink-0">
         
-        {/* Menu Toggle Button */}
+        
         <button
           onClick={toggleMenu}
           className="flex items-center gap-3 text-sm font-medium text-gray-300 hover:text-white transition-colors group z-50 focus:outline-none"
@@ -109,7 +121,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
           </span>
         </button>
 
-        {/* Center Logo */}
+        
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
           <Sparkles
             className={`w-5 h-5 text-[#a855f7] fill-[#a855f7] animate-pulse transition-all duration-500 ${
@@ -125,7 +137,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
           </span>
         </div>
 
-        {/* User / Join Button */}
+       
         <div className="flex items-center gap-2">
           {user ? (
             <div className="flex items-center gap-3">
@@ -175,11 +187,11 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
         </div>
       </div>
 
-      {/* --- Expanded Content --- */}
+      
       <div className="w-full h-[calc(100%-56px)] flex flex-col pt-4 md:pt-4 px-6 md:px-12 overflow-y-auto no-scrollbar pb-6 md:pb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 h-auto md:h-full pb-10 md:pb-0">
           
-          {/* Column 1: Navigation */}
+         
           <div 
             className={`md:col-span-4 flex flex-col gap-6 md:border-r border-gray-800/50 md:pr-6 transition-all duration-500 ease-out ${
               isOpen ? 'opacity-100 translate-y-0 delay-100' : 'opacity-0 translate-y-8 invisible'
@@ -189,21 +201,21 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
               Navigation
             </h3>
             <ul className="space-y-3">
-              {['Home', 'About', 'Domains', 'Events'].map((item) => (
-                <li key={item}>
+              {navLinks.map((item) => (
+                <li key={item.name}>
                   <a
-                    href={`#${item.toLowerCase() === 'home' ? '' : item.toLowerCase().replace(' ', '-')}`}
+                    href={item.target}
                     onClick={toggleMenu}
                     className="text-3xl md:text-2xl text-white font-normal hover:text-gray-200 relative group inline-block font-display"
                   >
-                    <TextHover text={item} />
+                    <TextHover text={item.name} />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 2: Explore & Socials */}
+          
           <div 
             className={`md:col-span-3 flex flex-col justify-between md:pl-2 transition-all duration-500 ease-out ${
               isOpen ? 'opacity-100 translate-y-0 delay-200' : 'opacity-0 translate-y-8 invisible'
@@ -214,57 +226,59 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
                 Explore
               </h3>
               <ul className="space-y-4">
-                {['Showcase', 'Updates', 'Team'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-xl md:text-lg text-white font-normal relative group inline-block font-display">
-                      <TextHover text={item} />
+                {exploreLinks.map((item) => (
+                  <li key={item.name}>
+                    <a 
+                      href={item.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-xl md:text-lg text-white font-normal relative group inline-block font-display"
+                    >
+                      <TextHover text={item.name} />
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
             
+            
             <div className="flex gap-6 md:gap-4 mt-8 md:mt-0 items-center">
-              <a href="#" className="text-gray-500 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
+              <a href="https://www.instagram.com/edc.nitd" className="text-gray-500 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+              <a href="https://www.linkedin.com/company/edcnitd" className="text-gray-500 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
+              <a href="https://x.com/edcnitd" className="text-gray-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
 
-              {/* --- 4. THE EASTER EGG --- */}
               <button 
                 onClick={handleEggClick}
                 className="relative group ml-2"
                 title="What's this?"
               >
                 {isEggBroken ? (
-                  // State 2: Broken / Hen
                   <div className="relative animate-bounce">
                     <Bird className="w-8 h-8 text-red-500" />
-                    {/* The Popup Message */}
                     <div className="absolute -top-12 -left-12 w-32 bg-white text-black text-[10px] font-bold p-2 rounded-lg shadow-xl animate-in fade-in zoom-in duration-300 pointer-events-none">
-                       Type the KONAMI code we are listening !
-                       <div className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45"></div>
+                        Type the KONAMI code we are listening !
+                        <div className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45"></div>
                     </div>
                   </div>
                 ) : (
-                  // State 1: Whole Egg
                   <Egg className="w-5 h-5 text-gray-600 hover:text-[#eab308] transition-colors duration-500 cursor-pointer hover:rotate-12" />
                 )}
               </button>
             </div>
           </div>
           
-          {/* Column 3: Decoration & Admin */}
+          
           <div 
              className={`md:col-span-5 md:pl-2 mt-6 md:mt-0 flex flex-col items-center justify-between pb-6 transition-all duration-500 ease-out ${
               isOpen ? 'opacity-100 translate-y-0 delay-300' : 'opacity-0 translate-y-8 invisible'
             }`}
           >
-             <div className="text-center opacity-30 mt-8">
+              <div className="text-center opacity-30 mt-8">
                 <Sparkles className="w-20 h-20 text-white mx-auto mb-4" />
                 <h3 className="text-2xl font-display font-bold text-white">Innovation Starts Here</h3>
-             </div>
+              </div>
 
-             <div className="w-full flex justify-end">
+              <div className="w-full flex justify-end">
                 <button 
                   onClick={() => { toggleMenu(); onOpenAdmin(); }}
                   className="flex items-center gap-2 text-xs text-gray-600 hover:text-white transition-colors uppercase tracking-widest font-bold px-4 py-2 rounded-full hover:bg-white/5 border border-transparent hover:border-white/10"
@@ -272,7 +286,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
                   <Shield className="w-3 h-3" />
                   Admin Portal
                 </button>
-             </div>
+              </div>
           </div>
         </div>
       </div>

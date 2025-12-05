@@ -50,8 +50,6 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs)");
 ;
-// User provided URI as fallback.
-// IMPORTANT: You must replace <db_password> with your actual MongoDB password.
 const FALLBACK_URI = "mongodb+srv://SuyashGupta:<db_password>@cluster0.dgobo2d.mongodb.net/?appName=Cluster0";
 const MONGODB_URI = process.env.MONGODB_URI || FALLBACK_URI;
 let cached = globalThis.mongoose;
@@ -64,7 +62,6 @@ if (!cached) {
 async function dbConnect() {
     if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
     ;
-    // Check if the placeholder is still present
     if (MONGODB_URI.includes('<db_password>')) {
         throw new Error('Invalid MongoDB URI: Please replace <db_password> with your actual database password in lib/db.ts');
     }
@@ -129,6 +126,14 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
             'Please select a domain'
         ]
     },
+    reason: {
+        type: String,
+        required: [
+            true,
+            'Please provide a reason for joining'
+        ],
+        default: "No reason provided."
+    },
     // Tracks the selection round: 0 (Applied), 1-3 (Interview Rounds), 4 (Selected)
     round: {
         type: Number,
@@ -143,8 +148,12 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         default: Date.now
     }
 });
+// IMPORTANT: Delete the model if it exists to prevent caching issues with schema updates in development
+if (__TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User) {
+    delete __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User;
+}
 // Explicitly type the model to avoid Union type errors in Next.js API routes
-const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User || __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model('User', UserSchema);
+const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model('User', UserSchema);
 const __TURBOPACK__default__export__ = User;
 }),
 "[externals]/next/dist/server/app-render/after-task-async-storage.external.js [external] (next/dist/server/app-render/after-task-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {

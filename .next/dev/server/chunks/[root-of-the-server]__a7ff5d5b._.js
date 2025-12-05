@@ -50,8 +50,6 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs)");
 ;
-// User provided URI as fallback.
-// IMPORTANT: You must replace <db_password> with your actual MongoDB password.
 const FALLBACK_URI = "mongodb+srv://SuyashGupta:<db_password>@cluster0.dgobo2d.mongodb.net/?appName=Cluster0";
 const MONGODB_URI = process.env.MONGODB_URI || FALLBACK_URI;
 let cached = globalThis.mongoose;
@@ -64,7 +62,6 @@ if (!cached) {
 async function dbConnect() {
     if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
     ;
-    // Check if the placeholder is still present
     if (MONGODB_URI.includes('<db_password>')) {
         throw new Error('Invalid MongoDB URI: Please replace <db_password> with your actual database password in lib/db.ts');
     }
@@ -129,6 +126,14 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
             'Please select a domain'
         ]
     },
+    reason: {
+        type: String,
+        required: [
+            true,
+            'Please provide a reason for joining'
+        ],
+        default: "No reason provided."
+    },
     // Tracks the selection round: 0 (Applied), 1-3 (Interview Rounds), 4 (Selected)
     round: {
         type: Number,
@@ -143,8 +148,12 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         default: Date.now
     }
 });
+// IMPORTANT: Delete the model if it exists to prevent caching issues with schema updates in development
+if (__TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User) {
+    delete __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User;
+}
 // Explicitly type the model to avoid Union type errors in Next.js API routes
-const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User || __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model('User', UserSchema);
+const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model('User', UserSchema);
 const __TURBOPACK__default__export__ = User;
 }),
 "[externals]/next/dist/server/app-render/after-task-async-storage.external.js [external] (next/dist/server/app-render/after-task-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
@@ -252,9 +261,6 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nodemailer$2f$lib$2f$nodemailer$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/nodemailer/lib/nodemailer.js [app-route] (ecmascript)");
 ;
-// Configure these in your .env.local file
-// EMAIL_USER=your-email@gmail.com
-// EMAIL_PASS=your-app-specific-password
 const transporter = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nodemailer$2f$lib$2f$nodemailer$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].createTransport({
     service: 'gmail',
     auth: {
@@ -263,7 +269,6 @@ const transporter = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
     }
 });
 const sendStatusEmail = async (email, username, round, domain)=>{
-    // If credentials aren't set, log to console (for development/demo)
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
         console.log(`[Mock Email] To: ${email} | Subject: Round ${round} Update | User: ${username}`);
         return;
@@ -338,7 +343,7 @@ const sendStatusEmail = async (email, username, round, domain)=>{
       `;
             break;
         default:
-            return; // Do not send email for demotions or round 0
+            return;
     }
     try {
         await transporter.sendMail({
@@ -350,7 +355,6 @@ const sendStatusEmail = async (email, username, round, domain)=>{
         console.log(`Email sent to ${email} for Round ${round}`);
     } catch (error) {
         console.error('Error sending email:', error);
-    // Don't throw error here to prevent blocking the API response
     }
 };
 }),
@@ -390,7 +394,6 @@ async function POST(req) {
                 status: 400
             });
         }
-        // 1. Fetch current user state BEFORE update to check if this is a promotion
         const currentUser = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findById(userId);
         if (!currentUser) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
@@ -399,17 +402,13 @@ async function POST(req) {
                 status: 404
             });
         }
-        // Determine hasSelection based on round (Round 4 = Selected)
         const hasSelection = round >= 4;
-        // 2. Update the user
         const updatedUser = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findByIdAndUpdate(userId, {
             round: round,
             hasSelection: hasSelection
         }, {
             new: true
         });
-        // 3. Send Email ONLY if the round has increased (Promotion)
-        // We await this to ensure the serverless function doesn't terminate before sending
         if (round > currentUser.round) {
             console.log(`[Email Trigger] Promoting ${updatedUser.username} to Round ${round}`);
             try {
@@ -417,7 +416,6 @@ async function POST(req) {
                 console.log(`[Email Success] Sent to ${updatedUser.email}`);
             } catch (emailError) {
                 console.error("[Email Failure]", emailError);
-            // Non-blocking error for the API response, but logged.
             }
         }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({

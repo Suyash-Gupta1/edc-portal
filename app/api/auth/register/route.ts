@@ -7,11 +7,11 @@ export async function POST(req: Request) {
     await dbConnect();
 
     const body = await req.json();
-    const { username, email, password, domain } = body;
+    const { username, email, password, domain, reason } = body;
 
-    if (!username || !email || !password || !domain) {
+    if (!username || !email || !password || !domain || !reason) {
       return NextResponse.json(
-        { error: 'Please provide all fields' },
+        { error: 'Please provide all fields, including your reason for joining.' },
         { status: 400 }
       );
     }
@@ -32,6 +32,7 @@ export async function POST(req: Request) {
       email,
       password, // Storing plain text for demo purposes only per request
       domain,
+      reason,
       hasSelection: false // explicitly set default
     });
 
@@ -41,6 +42,7 @@ export async function POST(req: Request) {
         username: user.username,
         email: user.email,
         domain: user.domain,
+        reason: user.reason,
         hasSelection: user.hasSelection
       }
     });

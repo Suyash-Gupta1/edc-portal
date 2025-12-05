@@ -13,34 +13,34 @@ const Hero: React.FC = () => {
 
       if (!modelViewer || !container) return;
 
-     
+      // Calculate scroll progress (0 to 1) based on first 600px of scroll
       const maxScrollDistance = 600;
       const scrollY = window.scrollY;
       const progress = Math.min(scrollY / maxScrollDistance, 1);
 
-      
+      // Rotate model: 0 to 120 degrees
       const theta = progress * 120;
 
-      
+      // Zoom in: Radius changes from 14m to 5m
       const baseRadius = 14;
       const targetRadius = 5;
       const radius = baseRadius - progress * (baseRadius - targetRadius);
 
-      
+      // Shift container to the left: 0vw to -20vw
       const maxShiftVW = -20;
       const currentShiftVW = progress * maxShiftVW;
 
-      
+      // Update model camera orbit
       modelViewer.setAttribute('camera-orbit', `${theta}deg 90deg ${radius}m`);
 
-      
+      // Update container position (only on larger screens to avoid mobile layout breaking)
       if (window.innerWidth >= 768) {
         container.style.transform = `translateX(${currentShiftVW}vw)`;
       } else {
         container.style.transform = `translateX(0px)`;
       }
 
-      
+      // Update Field of View: 30deg to 20deg for dramatic effect
       const baseFov = 30;
       const targetFov = 20;
       const fov = baseFov - progress * (baseFov - targetFov);
@@ -49,6 +49,7 @@ const Hero: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
+    // Initial call to set state
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
@@ -59,7 +60,7 @@ const Hero: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(204,255,0,0.03),transparent_60%)]"></div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full relative z-10">
-       
+        {/* Left Content */}
         <div className="space-y-8 order-1 z-10">
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[0.9] tracking-tighter">
             ENTREPRENEURSHIP
@@ -72,16 +73,20 @@ const Hero: React.FC = () => {
             Turning ideas into reality. Where innovation meets execution.
           </p>
           
-          <button className="group relative flex items-center gap-4 bg-transparent border border-white/20 pl-8 pr-2 py-2 rounded-full transition-all duration-300 hover:border-transparent w-fit overflow-hidden">
-         
+          {/* Button with External Link Logic */}
+          <button 
+            onClick={() => window.open('https://www.edcnitd.co.in/', '_blank')}
+            className="group relative flex items-center gap-4 bg-transparent border border-white/20 pl-8 pr-2 py-2 rounded-full transition-all duration-300 hover:border-transparent w-fit overflow-hidden"
+          >
+            {/* Hover Fill Effect */}
             <div className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-[25] z-0 origin-center will-change-transform"></div>
             
-            
+            {/* Button Text */}
             <span className="relative z-10 text-white font-medium group-hover:text-black transition-colors duration-300">
                 <TextHover text="Visit Us" />
             </span>
             
-            
+            {/* Arrow Icon Circle */}
             <div className="relative z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full text-black">
                 <div className="relative overflow-hidden w-4 h-4">
                     <ArrowDown className="w-4 h-4 absolute inset-0 transition-transform duration-300 group-hover:translate-y-full" />
@@ -91,7 +96,7 @@ const Hero: React.FC = () => {
           </button>
         </div>
 
-        
+        {/* Right 3D Model */}
         <div
           ref={containerRef}
           id="model-wrapper"

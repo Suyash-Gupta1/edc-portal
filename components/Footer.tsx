@@ -1,8 +1,8 @@
 import React from 'react';
 import { Instagram, Linkedin, Twitter, Youtube, Send } from 'lucide-react';
 
-// TextHover component for the links
-const TextHover = ({ text }) => {
+// Local definition as per your code
+const TextHover = ({ text }: { text: string }) => {
   return (
     <span className="relative block overflow-hidden">
       <span className="block transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">
@@ -16,9 +16,25 @@ const TextHover = ({ text }) => {
 };
 
 const Footer = () => {
+  // Defined exactly like Navbar to ensure navigation works from sub-pages
+  const sitemapLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/#about-section' },
+    { name: 'Domains', href: '/#domains' },
+    { name: 'Events', href: 'https://www.edcnitd.co.in/event/' },
+    { name: 'Team', href: 'https://www.edcnitd.co.in/team/' },
+  ];
+
+  const socialLinks = [
+    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/edc.nitd' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/company/edcnitd' },
+    { name: 'Twitter', icon: Twitter, url: 'https://x.com/edcnitd' },
+    { name: 'YouTube', icon: Youtube, url: '#' },
+  ];
+
   return (
     <footer className="relative bg-[#050505] text-white overflow-hidden pt-20 md:pt-32 pb-10 font-sans min-h-screen">
-        {/* Background ambient glow */}
+        
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
              <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-[#ccff00]/5 rounded-full blur-[120px]"></div>
              <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px]"></div>
@@ -35,14 +51,9 @@ const Footer = () => {
                     <p className="text-gray-400 text-lg md:text-xl font-light">Let's build something incredible together.</p>
                 </div>
                 
-                <a href="#" className="group relative px-10 py-5 rounded-full bg-white text-black overflow-hidden transition-transform hover:scale-105 duration-300">
+                <a href="mailto:edc@nitdgp.ac.in" className="group relative px-10 py-5 rounded-full bg-white text-black overflow-hidden transition-transform hover:scale-105 duration-300">
                     <div className="absolute inset-0 bg-[#ccff00] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"></div>
                     <span className="relative z-10 font-bold text-lg flex items-center gap-3">
-                        {/* BUTTON LOGIC FIX:
-                            Using CSS Grid to stack the text elements on top of each other in the same cell.
-                            This ensures the container width is determined by the widest element ("Get in Touch"),
-                            preventing the layout shift/jumping when switching to the shorter "Let's Talk".
-                        */}
                         <span className="grid place-items-center">
                             <span className="col-start-1 row-start-1 transition-all duration-300 group-hover:-translate-y-2 group-hover:opacity-0">
                                 Get in Touch
@@ -56,10 +67,9 @@ const Footer = () => {
                 </a>
             </div>
 
-            {/* Grid Content */}
             <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8 mb-24">
                 
-                {/* Brand - Reverted to original 'E' logo */}
+                {/* Brand Column */}
                 <div className="col-span-2 md:col-span-5 flex flex-col h-full space-y-6">
                     <div>
                         <div className="flex items-center gap-2 mb-6">
@@ -72,32 +82,37 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Sitemap */}
+                {/* Sitemap Column - FIXED LINKS */}
                 <div className="col-span-1 md:col-span-2 md:col-start-7">
                     <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Sitemap</h4>
                     <ul className="space-y-4">
-                        {['Home', 'About', 'Domains', 'Events', 'Team'].map(item => (
-                            <li key={item}>
-                                <a href="#" className="block text-xl font-display font-normal text-white hover:text-[#ccff00] transition-colors w-fit group">
-                                     <TextHover text={item} />
+                        {sitemapLinks.map(item => (
+                            <li key={item.name}>
+                                <a 
+                                  href={item.href} 
+                                  className="block text-xl font-display font-normal text-white hover:text-[#ccff00] transition-colors w-fit group"
+                                  target={item.href.startsWith('http') ? "_blank" : "_self"}
+                                  rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                                >
+                                     <TextHover text={item.name} />
                                 </a>
                             </li>
                         ))}
                     </ul>
                 </div>
 
-                {/* Socials */}
+                {/* Socials Column */}
                 <div className="col-span-1 md:col-span-2">
                     <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Socials</h4>
                     <ul className="space-y-4">
-                        {[
-                            { name: 'Instagram', icon: Instagram },
-                            { name: 'LinkedIn', icon: Linkedin },
-                            { name: 'Twitter', icon: Twitter },
-                            { name: 'YouTube', icon: Youtube }
-                        ].map((social) => (
+                        {socialLinks.map((social) => (
                             <li key={social.name}>
-                                <a href="#" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
+                                <a 
+                                  href={social.url} 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
+                                >
                                     <span className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#ccff00] group-hover:bg-[#ccff00] group-hover:text-black transition-all duration-300">
                                         <social.icon className="w-4 h-4" />
                                     </span>
@@ -108,7 +123,6 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Credits */}
                 <div className="col-span-2 md:col-span-3 flex flex-col items-start md:items-end justify-end">
                       <div className="text-left md:text-right space-y-1">
                         <p className="text-gray-500 text-xs uppercase tracking-wider">Designed & Developed by</p>
@@ -117,13 +131,12 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Bottom Large Text */}
             <div className="border-t border-white/10 pt-16 pb-8">
                  <h1 className="font-display font-bold text-[13vw] leading-[0.8] text-center text-transparent bg-clip-text bg-gradient-to-b from-white/25 to-white/0 select-none tracking-tighter opacity-50">
                     EDC NIT DGP
                 </h1>
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8 text-gray-600 text-sm gap-4">
-                    <p>© 2024 Entrepreneurship Development Cell. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Entrepreneurship Development Cell. All rights reserved.</p>
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                         <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

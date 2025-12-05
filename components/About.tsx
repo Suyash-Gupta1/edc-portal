@@ -6,7 +6,7 @@ const About: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   
-  // Refs for the SVG paths to animate
+ 
   const path1Ref = useRef<SVGPathElement>(null);
   const path2Ref = useRef<SVGPathElement>(null);
   const path3Ref = useRef<SVGPathElement>(null);
@@ -19,33 +19,31 @@ const About: React.FC = () => {
       const sectionHeight = sectionRef.current.offsetHeight;
       const windowHeight = window.innerHeight;
       
-      // Calculate scroll progress within the sticky area
-      // The content sticks for (sectionHeight - windowHeight) pixels
+      
       const scrollDistance = -sectionRect.top;
       const maxScroll = sectionHeight - windowHeight;
       
-      // Clamp progress between 0 and 1
+      
       let progress = Math.max(0, Math.min(scrollDistance / maxScroll, 1));
       
-      // --- Scale Animation (occurs during the first 60% of the section scroll) ---
+      
       const scaleDuration = 0.6; 
       const scaleProgress = Math.min(progress / scaleDuration, 1);
       
-      // Easing function (easeOutCubic)
+      
       const easedScale = 1 - Math.pow(1 - scaleProgress, 3);
       
-      // Scale from 0.6 to 1.0
+      
       const currentScale = 0.6 + (easedScale * 0.4); 
       
       cardRef.current.style.transform = `scale(${currentScale})`;
       cardRef.current.style.opacity = `${0.2 + (easedScale * 0.8)}`; // Fade in from 0.2 to 1.0
 
-      // --- Path Animation (occurs during the middle to end of scroll) ---
-      // Helper function to animate path based on progress
+      
       const animatePath = (path: SVGPathElement | null, startP: number, endP: number) => {
         if (!path) return;
         const length = 300;
-        // Normalize progress for this specific path's duration
+        
         let p = (progress - startP) / (endP - startP);
         p = Math.max(0, Math.min(p, 1));
 
@@ -67,14 +65,14 @@ const About: React.FC = () => {
     <section ref={sectionRef} id="about-section" className="relative h-[250vh]">
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6">
         
-        {/* Content Wrapper that scales */}
+        
         <div ref={cardRef} className="w-full max-w-5xl origin-center will-change-transform flex flex-col items-center">
-            {/* Title */}
+            
             <h2 className="text-6xl md:text-8xl font-black font-display text-white text-center mb-12 relative z-0 tracking-tighter uppercase leading-none select-none">
                 ABOUT US
             </h2>
 
-            {/* Card */}
+           
             <div 
                 className="bg-[#C4C4C4] rounded-[2.5rem] w-full p-8 md:p-16 flex flex-col relative z-10 shadow-2xl mx-auto"
             >
@@ -127,13 +125,7 @@ const About: React.FC = () => {
                 throughout the year
                 </p>
 
-                <div className="mt-auto">
-                    <h3 className="text-black/60 text-xl font-medium mb-4 font-display">Our Approach</h3>
-                    <button className="group bg-[#ccff00] hover:bg-[#bceb00] text-black font-bold text-sm px-6 py-3 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-105 active:scale-95 overflow-hidden">
-                        <Send className="w-4 h-4 -rotate-45 translate-y-[1px]" fill="currentColor" />
-                        <TextHover text="LEARN MORE" />
-                    </button>
-                </div>
+               
             </div>
         </div>
       </div>

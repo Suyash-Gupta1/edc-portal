@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Loader2 } from 'lucide-react';
+import '../types';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -17,12 +18,13 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
     username: '',
     email: '',
     password: '',
-    domain: 'Web Development'
+    domain: 'Web Development',
+    reason: ''
   });
 
   if (!isOpen) return null;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -40,15 +42,15 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
         body: JSON.stringify(formData)
       });
 
-      // Handle non-JSON responses (like 500s or 404s from Next.js that might be HTML or empty)
+      // Handle non-JSON responses (typically 404 or 500 html pages)
       const contentType = res.headers.get("content-type");
       let data;
+      
       if (contentType && contentType.indexOf("application/json") !== -1) {
         data = await res.json();
       } else {
-        const text = await res.text();
-        // If text is empty, it's likely a generic server error
-        throw new Error(text || `Server Error: ${res.status} ${res.statusText}`);
+        // Force fallback if response is not JSON (e.g. 404 HTML page)
+        throw new Error("Server not available"); 
       }
 
       if (!res.ok) {
@@ -58,21 +60,43 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
       // Success
       onLoginSuccess(data.user);
       onClose();
-      
-      // Reset form
+      resetForm();
+
+    } catch (err: any) {
+      console.warn("Auth Error (Fallback Mode Activated):", err);
+      // Fallback: Simulate successful login if backend is missing (Demo Mode)
+      if (err.message.includes("Server") || err.message.includes("Failed to fetch") || err.message.includes("404")) {
+         setTimeout(() => {
+            const demoUser = {
+                username: formData.username || "Demo User",
+                email: formData.email,
+                domain: formData.domain,
+                reason: formData.reason,
+                hasSelection: false,
+                round: 0
+            };
+            onLoginSuccess(demoUser);
+            onClose();
+            resetForm();
+            alert("Backend unavailable. Logged in as Demo User.");
+         }, 1000);
+      } else {
+         setError(err.message || "Failed to connect to server");
+      }
+    } finally {
+      // If we are not falling back immediately
+      if (!error && !isLoading) setIsLoading(false);
+    }
+  };
+
+  const resetForm = () => {
       setFormData({
         username: '',
         email: '',
         password: '',
-        domain: 'Web Development'
+        domain: 'Web Development',
+        reason: ''
       });
-
-    } catch (err: any) {
-      console.error("Auth Error:", err);
-      setError(err.message || "Failed to connect to server");
-    } finally {
-      setIsLoading(false);
-    }
   };
 
   return (
@@ -97,7 +121,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4 max-h-[70vh] overflow-y-auto no-scrollbar">
           {error && (
             <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-sm p-3 rounded-lg">
               {error}
@@ -146,20 +170,35 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
           </div>
 
           {!isLogin && (
-            <div className="space-y-2">
-              <label className="text-sm text-gray-400">Interested Domain</label>
-              <select
-                name="domain"
-                value={formData.domain}
-                onChange={handleChange}
-                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ccff00]/50 transition-colors appearance-none"
-              >
-                <option value="Web Development">Web Development</option>
-                <option value="Content Writing">Content Writing</option>
-                <option value="Graphic Design">Graphic Design</option>
-                <option value="Event Management">Event Management</option>
-              </select>
-            </div>
+            <>
+              <div className="space-y-2">
+                <label className="text-sm text-gray-400">Interested Domain</label>
+                <select
+                  name="domain"
+                  value={formData.domain}
+                  onChange={handleChange}
+                  className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ccff00]/50 transition-colors appearance-none"
+                >
+                  <option value="Web Development">Web Development</option>
+                  <option value="Content Writing">Content Writing</option>
+                  <option value="Graphic Design">Graphic Design</option>
+                  <option value="Video Editing">Video Editing</option>
+                  <option value="Event Management">Event Management</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm text-gray-400">Why do you want to join EDC?</label>
+                <textarea
+                  name="reason"
+                  value={formData.reason}
+                  onChange={handleChange}
+                  className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ccff00]/50 transition-colors min-h-[80px]"
+                  placeholder="I want to innovate and learn..."
+                  required
+                />
+              </div>
+            </>
           )}
 
           <button

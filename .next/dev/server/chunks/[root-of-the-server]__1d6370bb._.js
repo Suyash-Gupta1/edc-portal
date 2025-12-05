@@ -50,8 +50,6 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs)");
 ;
-// User provided URI as fallback.
-// IMPORTANT: You must replace <db_password> with your actual MongoDB password.
 const FALLBACK_URI = "mongodb+srv://SuyashGupta:<db_password>@cluster0.dgobo2d.mongodb.net/?appName=Cluster0";
 const MONGODB_URI = process.env.MONGODB_URI || FALLBACK_URI;
 let cached = globalThis.mongoose;
@@ -64,7 +62,6 @@ if (!cached) {
 async function dbConnect() {
     if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
     ;
-    // Check if the placeholder is still present
     if (MONGODB_URI.includes('<db_password>')) {
         throw new Error('Invalid MongoDB URI: Please replace <db_password> with your actual database password in lib/db.ts');
     }
@@ -129,7 +126,6 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
             'Please select a domain'
         ]
     },
-    // Tracks the selection round: 0 (Applied), 1-3 (Interview Rounds), 4 (Selected)
     round: {
         type: Number,
         default: 0
@@ -143,7 +139,6 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         default: Date.now
     }
 });
-// Explicitly type the model to avoid Union type errors in Next.js API routes
 const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User || __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model('User', UserSchema);
 const __TURBOPACK__default__export__ = User;
 }),
@@ -178,11 +173,9 @@ async function POST(req) {
                 status: 400
             });
         }
-        // Find user
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
             username
         });
-        // Check user and password (plain text comparison for this demo)
         if (!user || user.password !== password) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: 'Invalid credentials'

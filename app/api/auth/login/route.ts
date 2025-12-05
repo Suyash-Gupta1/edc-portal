@@ -16,10 +16,10 @@ export async function POST(req: Request) {
       );
     }
 
-    // Find user
+    
     const user = await User.findOne({ username });
 
-    // Check user and password (plain text comparison for this demo)
+    
     if (!user || user.password !== password) {
       return NextResponse.json(
         { error: 'Invalid credentials' },

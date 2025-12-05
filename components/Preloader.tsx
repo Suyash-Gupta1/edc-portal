@@ -9,8 +9,8 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    const duration = 3000; // Total duration in ms
-    const interval = 30; // Update interval in ms
+    const duration = 3000; 
+    const interval = 30; 
     const steps = duration / interval;
     const increment = 100 / steps;
 

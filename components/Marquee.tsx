@@ -2,7 +2,7 @@ import React from 'react';
 
 const Marquee: React.FC = () => {
   const words = ["IDEATE", "INNOVATE", "INCUBATE"];
-  // Duplicate items to ensure smooth infinite scroll
+  
   const allItems = [...words, ...words, ...words, ...words];
 
   return (

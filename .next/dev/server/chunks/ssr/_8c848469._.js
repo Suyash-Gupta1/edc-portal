@@ -11,10 +11,86 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 ;
 const metadata = {
-    title: 'Entrepreneurship Development Cell',
-    description: 'EDC NIT Durgapur Landing Page'
+    metadataBase: new URL('https://www.edcnitd.co.in'),
+    title: {
+        default: 'EDC NIT Durgapur | Entrepreneurship Development Cell',
+        template: '%s | EDC NIT Durgapur'
+    },
+    description: 'The official Entrepreneurship Development Cell of NIT Durgapur. We foster innovation, leadership, and startup culture among students in Eastern India. Join us for Auditions 2026.',
+    keywords: [
+        'EDC',
+        'NIT Durgapur',
+        'Entrepreneurship',
+        'Startups',
+        'Innovation',
+        'Business Club',
+        'College Society',
+        'Auditions 2026'
+    ],
+    authors: [
+        {
+            name: 'WebTeam EDC'
+        }
+    ],
+    creator: 'EDC NIT Durgapur',
+    publisher: 'EDC NIT Durgapur',
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://www.edcnitd.co.in',
+        siteName: 'EDC NIT Durgapur',
+        title: 'EDC NIT Durgapur - Where Innovation Meets Execution',
+        description: 'Join the premier entrepreneurship cell of NIT Durgapur. Explore our domains, events, and initiatives.',
+        images: [
+            {
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'EDC NIT Durgapur Banner'
+            }
+        ]
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'EDC NIT Durgapur',
+        description: 'Fostering the spirit of entrepreneurship.',
+        images: [
+            '/og-image.jpg'
+        ],
+        creator: '@edcnitd'
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1
+        }
+    }
 };
 function RootLayout({ children }) {
+    // Structured Data for Google (Organization Schema)
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'EDC NIT Durgapur',
+        url: 'https://www.edcnitd.co.in',
+        logo: 'https://www.edcnitd.co.in/logo.png',
+        sameAs: [
+            'https://www.instagram.com/edc.nitd',
+            'https://www.linkedin.com/company/edcnitd',
+            'https://twitter.com/edcnitd',
+            'https://www.facebook.com/edc.nitd'
+        ],
+        contactPoint: {
+            '@type': 'ContactPoint',
+            email: 'edc@nitdgp.ac.in',
+            contactType: 'customer support'
+        }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
         lang: "en",
         className: "scroll-smooth",
@@ -26,14 +102,14 @@ function RootLayout({ children }) {
                         rel: "stylesheet"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.tsx",
-                        lineNumber: 18,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         src: "https://cdn.tailwindcss.com"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.tsx",
-                        lineNumber: 21,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -41,7 +117,7 @@ function RootLayout({ children }) {
                         src: "https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.tsx",
-                        lineNumber: 24,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -162,7 +238,7 @@ function RootLayout({ children }) {
             
             .visit-us-btn i {
                 background-color: white; 
-                color: black;
+                color: black; 
                 border-radius: 50%;
                 padding: 0.25rem;
                 transition: transform 0.3s ease;
@@ -192,7 +268,7 @@ function RootLayout({ children }) {
             }
             
             .visit-us-btn span {
-                z-index: 2;
+                z-index: 2; 
             }
             
             .perspective-1000 {
@@ -202,27 +278,39 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.tsx",
-                        lineNumber: 27,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.tsx",
-                lineNumber: 16,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
                 className: "antialiased selection:bg-lime-400 selection:text-black flex flex-col min-h-screen",
-                children: children
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
+                        type: "application/ld+json",
+                        dangerouslySetInnerHTML: {
+                            __html: JSON.stringify(jsonLd)
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.tsx",
+                        lineNumber: 240,
+                        columnNumber: 9
+                    }, this),
+                    children
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/layout.tsx",
-                lineNumber: 181,
+                lineNumber: 239,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 15,
+        lineNumber: 77,
         columnNumber: 5
     }, this);
 }

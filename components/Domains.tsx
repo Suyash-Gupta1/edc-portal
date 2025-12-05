@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { Code2, Feather, Palette, CalendarCheck, ArrowRight } from 'lucide-react';
+import { Code2, Feather, Palette, CalendarCheck, ArrowRight , Video} from 'lucide-react';
 import { DomainProps } from '../types';
+import Link from 'next/link';
 
 interface DomainCardProps extends DomainProps {
     index: number;
+    slug: string;
     setRef: (el: HTMLDivElement | null) => void;
 }
 
@@ -11,6 +13,7 @@ interface DomainCardProps extends DomainProps {
 const DOMAINS_DATA = [
     {
       title: "Web Development",
+      slug: "web-development",
       description: "Architecting the digital future with modern stacks. We build responsive, performant, and scalable applications that drive innovation.",
       icon: <Code2 className="w-8 h-8" />,
       colorClass: "text-blue-500",
@@ -21,6 +24,7 @@ const DOMAINS_DATA = [
     },
     {
       title: "Content Writing",
+      slug: "content-writing",
       description: "Weaving narratives that inspire, inform, and engage. Our words shape the brand's voice and connect deeply with the audience.",
       icon: <Feather className="w-8 h-8" />,
       colorClass: "text-purple-500",
@@ -31,6 +35,7 @@ const DOMAINS_DATA = [
     },
     {
       title: "Graphic Design",
+      slug: "graphic-design",
       description: "Visualizing concepts into stunning reality. We craft compelling aesthetics that communicate ideas visually and leave a lasting impact.",
       icon: <Palette className="w-8 h-8" />,
       colorClass: "text-pink-500",
@@ -41,6 +46,7 @@ const DOMAINS_DATA = [
     },
     {
       title: "Event Management",
+      slug: "event-management",
       description: "Executing seamless, memorable experiences. From planning to execution, we ensure every event runs perfectly and creates value.",
       icon: <CalendarCheck className="w-8 h-8" />,
       colorClass: "text-orange-500",
@@ -48,6 +54,17 @@ const DOMAINS_DATA = [
       iconTextClass: "text-orange-400",
       svgColorClass: "text-orange-500",
       image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop"
+    },
+    {
+      title: "Video Editing",
+      slug: "video-editing",
+      description: "Crafting visual stories through motion and sound. We transform raw footage into compelling narratives that capture attention and evoke emotion.",
+      icon: <Video className="w-8 h-8" />,
+      colorClass: "text-red-500",
+      iconBgClass: "bg-red-500/10",
+      iconTextClass: "text-red-400",
+      svgColorClass: "text-red-500",
+      image: "https://images.unsplash.com/photo-1574717432741-9ee7a777f611?q=80&w=2070&auto=format&fit=crop"
     }
 ];
 
@@ -64,7 +81,7 @@ const getSvgForDomain = (colorClass: string, index: number) => {
 };
 
 const DomainCard: React.FC<DomainCardProps> = ({ 
-  title, description, icon, colorClass, iconBgClass, iconTextClass, svgPath, index, image, setRef
+  title, description, icon, colorClass, iconBgClass, iconTextClass, svgPath, index, image, slug, setRef
 }) => {
   return (
     <div 
@@ -99,9 +116,12 @@ const DomainCard: React.FC<DomainCardProps> = ({
           <h3 className="text-3xl md:text-5xl font-bold font-display mb-4 md:mb-6 text-white leading-tight">{title}</h3>
           <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">{description}</p>
           
-          <button className="mt-8 md:mt-10 text-sm font-bold uppercase tracking-widest text-[#ccff00] flex items-center gap-2 group-hover:gap-4 transition-all">
+          <Link 
+            href={`/domains/${slug}`}
+            className="mt-8 md:mt-10 text-sm font-bold uppercase tracking-widest text-[#ccff00] flex items-center gap-2 group-hover:gap-4 transition-all"
+          >
             Explore Domain <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
 
         {/* Right Image */}
