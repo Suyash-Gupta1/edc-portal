@@ -11,7 +11,6 @@ export default function CustomCursor() {
     const cursor = cursorRef.current;
     const cursorDot = cursorDotRef.current;
     
-    // Variables for smooth movement
     let mouseX = 0;
     let mouseY = 0;
     let cursorX = 0;
@@ -25,6 +24,7 @@ export default function CustomCursor() {
       cursorX = cursorX + distX * speed;
       cursorY = cursorY + distY * speed;
 
+      // Use translate3d for GPU acceleration (smoother rendering)
       cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
       cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
@@ -36,8 +36,7 @@ export default function CustomCursor() {
       mouseY = e.clientY;
     };
 
-    // Only detect inputs to hide the cursor (fixes text selection), 
-    // but REMOVED the button/link hover expansion logic.
+    // Only detect inputs to hide the cursor, removed link/button logic to keep it simple and smooth.
     const handleHoverEvents = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
         
@@ -54,6 +53,9 @@ export default function CustomCursor() {
             cursor.classList.remove('is-hidden');
             cursorDot.classList.remove('is-hidden');
         }
+        
+        // Ensure the ring stays in the default (non-expanding) state
+        cursor.classList.remove('is-hovering');
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -90,7 +92,7 @@ export default function CustomCursor() {
             top: 0;
             left: 0;
             z-index: 10000;
-            pointer-events: none;
+            pointer-events: none; /* Key fix: ensures it doesn't block clicks/scrolls */
             margin-top: -4px;
             margin-left: -4px;
             mix-blend-mode: difference;
@@ -98,6 +100,7 @@ export default function CustomCursor() {
         }
 
         .custom-cursor-ring {
+            /* Scroll Fix: Removed transition from transform properties */
             width: 40px;
             height: 40px;
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -106,12 +109,11 @@ export default function CustomCursor() {
             top: 0;
             left: 0;
             z-index: 9999;
-            pointer-events: none;
+            pointer-events: none; /* Key fix: ensures it doesn't block clicks/scrolls */
             margin-top: -20px;
             margin-left: -20px;
             mix-blend-mode: difference;
-            transition: opacity 0.2s ease-in-out; 
-            /* Removed width/height transitions to stop expansion logic */
+            transition: opacity 0.2s ease-in-out, background-color 0.3s;
         }
 
         /* Hidden State (for Inputs) */

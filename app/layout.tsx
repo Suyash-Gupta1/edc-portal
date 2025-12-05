@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner'; 
-import SmoothScroll from '@/components/SmoothScroll';
+// Removed SmoothScroll import
 import NoiseOverlay from '@/components/NoiseOverlay';
 import CustomCursor from '@/components/CustomCursor';
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     google: 'yQw3nCySjNEQZhHr56v5gTwuTvh5JjQxC8sriM7VQYA',
   },
   icons: {
-    icon: '/favicon.ico?v=2', 
+    icon: '/favicon.ico', 
   },
   title: {
     default: 'EDC NIT Durgapur | Entrepreneurship Development Cell',
@@ -83,7 +83,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth"> {/* Reinstated scroll-smooth for native effect */}
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -131,9 +131,7 @@ export default function RootLayout({
         <NoiseOverlay />
         <Toaster position="top-center" theme="dark" richColors />
 
-        <SmoothScroll>
-            {children}
-        </SmoothScroll>
+        {children} {/* Removed SmoothScroll wrapper */}
       </body>
     </html>
   );

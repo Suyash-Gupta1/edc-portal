@@ -343,7 +343,6 @@ function CustomCursor() {
             if (!cursorRef.current || !cursorDotRef.current) return;
             const cursor = cursorRef.current;
             const cursorDot = cursorDotRef.current;
-            // Variables for smooth movement
             let mouseX = 0;
             let mouseY = 0;
             let cursorX = 0;
@@ -355,6 +354,7 @@ function CustomCursor() {
                     const distY = mouseY - cursorY;
                     cursorX = cursorX + distX * speed;
                     cursorY = cursorY + distY * speed;
+                    // Use translate3d for GPU acceleration (smoother rendering)
                     cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
                     cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
                     requestAnimationFrame(animate);
@@ -366,8 +366,7 @@ function CustomCursor() {
                     mouseY = e.clientY;
                 }
             }["CustomCursor.useEffect.handleMouseMove"];
-            // Only detect inputs to hide the cursor (fixes text selection), 
-            // but REMOVED the button/link hover expansion logic.
+            // Only detect inputs to hide the cursor, removed link/button logic to keep it simple and smooth.
             const handleHoverEvents = {
                 "CustomCursor.useEffect.handleHoverEvents": (e)=>{
                     const target = e.target;
@@ -379,6 +378,8 @@ function CustomCursor() {
                         cursor.classList.remove('is-hidden');
                         cursorDot.classList.remove('is-hidden');
                     }
+                    // Ensure the ring stays in the default (non-expanding) state
+                    cursor.classList.remove('is-hovering');
                 }
             }["CustomCursor.useEffect.handleHoverEvents"];
             window.addEventListener('mousemove', handleMouseMove);
@@ -396,23 +397,23 @@ function CustomCursor() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "2389887e23735f42",
-                children: "@media (hover:hover) and (pointer:fine){body,a,button,[role=button]{cursor:none}input,textarea,select{cursor:text!important}}.custom-cursor-dot{z-index:10000;pointer-events:none;mix-blend-mode:difference;background-color:#fff;border-radius:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;transition:opacity .2s ease-in-out;position:fixed;top:0;left:0}.custom-cursor-ring{z-index:9999;pointer-events:none;mix-blend-mode:difference;border:1px solid #ffffff80;border-radius:50%;width:40px;height:40px;margin-top:-20px;margin-left:-20px;transition:opacity .2s ease-in-out;position:fixed;top:0;left:0}.custom-cursor-dot.is-hidden,.custom-cursor-ring.is-hidden{opacity:0}@media (width<=768px){.custom-cursor-dot,.custom-cursor-ring{display:none}body{cursor:auto}}"
+                id: "903a9ee5ddcfefd6",
+                children: "@media (hover:hover) and (pointer:fine){body,a,button,[role=button]{cursor:none}input,textarea,select{cursor:text!important}}.custom-cursor-dot{z-index:10000;pointer-events:none;mix-blend-mode:difference;background-color:#fff;border-radius:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;transition:opacity .2s ease-in-out;position:fixed;top:0;left:0}.custom-cursor-ring{z-index:9999;pointer-events:none;mix-blend-mode:difference;border:1px solid #ffffff80;border-radius:50%;width:40px;height:40px;margin-top:-20px;margin-left:-20px;transition:opacity .2s ease-in-out,background-color .3s;position:fixed;top:0;left:0}.custom-cursor-dot.is-hidden,.custom-cursor-ring.is-hidden{opacity:0}@media (width<=768px){.custom-cursor-dot,.custom-cursor-ring{display:none}body{cursor:auto}}"
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 ref: cursorDotRef,
-                className: "jsx-2389887e23735f42" + " " + "custom-cursor-dot"
+                className: "jsx-903a9ee5ddcfefd6" + " " + "custom-cursor-dot"
             }, void 0, false, {
                 fileName: "[project]/components/CustomCursor.tsx",
-                lineNumber: 129,
+                lineNumber: 131,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 ref: cursorRef,
-                className: "jsx-2389887e23735f42" + " " + "custom-cursor-ring"
+                className: "jsx-903a9ee5ddcfefd6" + " " + "custom-cursor-ring"
             }, void 0, false, {
                 fileName: "[project]/components/CustomCursor.tsx",
-                lineNumber: 130,
+                lineNumber: 132,
                 columnNumber: 7
             }, this)
         ]
