@@ -1,10 +1,19 @@
 import { MetadataRoute } from 'next';
-import { DOMAIN_DATA } from '@/lib/domain-data';
+
+// --- 1. DATA DEFINED LOCALLY TO PREVENT IMPORT ERRORS ---
+const DOMAIN_DATA: Record<string, any> = {
+  "web-development": { title: "Web Development" },
+  "content-writing": { title: "Content Writing" },
+  "graphic-design": { title: "Graphic Design" },
+  "event-management": { title: "Event Management" },
+  "video-editing": { title: "Video Editing" }
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // 1. HARDCODED PRODUCTION DOMAIN
+  // 2. HARDCODED PRODUCTION DOMAIN
   const baseUrl = 'https://edc-portal-six.vercel.app';
 
+  // 3. STATIC ROUTES
   const routes = [
     '',
     '/about',
@@ -17,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : 0.8,
   }));
 
+  // 4. DYNAMIC ROUTES (Generated from local data)
   const domainRoutes = Object.keys(DOMAIN_DATA).map((slug) => ({
     url: `${baseUrl}/domains/${slug}`,
     lastModified: new Date(),
