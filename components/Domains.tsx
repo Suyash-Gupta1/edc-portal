@@ -63,7 +63,7 @@ const DOMAINS_DATA = [
       iconBgClass: "bg-red-500/10",
       iconTextClass: "text-red-400",
       svgColorClass: "text-red-500",
-      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      image: "https://images.unsplash.com/photo-1574717432707-c67885d96459?q=80&w=2667&auto=format&fit=crop"
     }
 ];
 
