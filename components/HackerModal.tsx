@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Terminal, X, Lock, Unlock } from 'lucide-react';
 
+// this isnt mine chatgpt is for it just looked cool thats why in projrct nothing more can be removed
+
 interface HackerModalProps {
   isOpen: boolean;
   onClose: () => void;

@@ -44,7 +44,7 @@ export default function NoiseOverlay() {
   return (
     <div ref={containerRef} className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
       
-      {/* 1. Film Grain Texture */}
+     
       <div 
         className="absolute inset-0 opacity-[0.03] z-[1]"
         style={{
@@ -53,8 +53,7 @@ export default function NoiseOverlay() {
         }}
       />
 
-      {/* 2. REFINED MOUSE SPOTLIGHT (Dimmed) */}
-      {/* Reduced opacity from 0.15 to 0.08 */}
+      
       <div 
         className="absolute inset-0 z-[2]"
         style={{
@@ -63,7 +62,7 @@ export default function NoiseOverlay() {
         }}
       />
 
-      {/* 3. Base Grid Layer */}
+      
       <div 
         className="absolute inset-[-50%] w-[200%] h-[200%] opacity-[0.04] z-0"
         style={{
@@ -78,7 +77,7 @@ export default function NoiseOverlay() {
         }}
       />
 
-      {/* 4. Parallax Shape: Large Circle Outline */}
+      
       <div 
         className="parallax-layer absolute top-[10%] left-[5%] opacity-[0.05] text-white z-0"
         data-speed="0.15"
@@ -89,7 +88,7 @@ export default function NoiseOverlay() {
         </svg>
       </div>
 
-      {/* 5. Parallax Shape: Floating Plus Signs */}
+      
       <div 
         className="parallax-layer absolute top-[30%] right-[10%] opacity-[0.08] text-[#ccff00] z-0"
         data-speed="-0.1"
@@ -100,7 +99,7 @@ export default function NoiseOverlay() {
          </svg>
       </div>
 
-      {/* 6. Parallax Shape: Geometric Square */}
+      
       <div 
         className="parallax-layer absolute bottom-[15%] left-[20%] opacity-[0.04] text-white z-0"
         data-speed="0.08"
@@ -111,7 +110,7 @@ export default function NoiseOverlay() {
         </svg>
       </div>
 
-      {/* 7. Parallax Shape: Code Brackets */}
+     
       <div 
         className="parallax-layer absolute top-[60%] right-[25%] opacity-[0.03] text-white z-0"
         data-speed="-0.05"
@@ -122,7 +121,7 @@ export default function NoiseOverlay() {
         </svg>
       </div>
 
-      {/* 8. Vignette Overlay */}
+      
       <div 
         className="absolute inset-0 z-[3]"
         style={{

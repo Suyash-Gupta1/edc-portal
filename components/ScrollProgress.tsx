@@ -14,7 +14,7 @@ const ScrollProgress: React.FC = () => {
     };
 
     window.addEventListener('scroll', updateScrollProgress);
-    // Initial update
+   // taked starting update for
     updateScrollProgress();
     
     return () => {

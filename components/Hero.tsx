@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Initial call to set state
+   
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(204,255,0,0.03),transparent_60%)]"></div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full relative z-10">
-        {/* Left Content */}
+        
         <div className="space-y-8 order-1 z-10">
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[0.9] tracking-tighter">
             ENTREPRENEURSHIP
@@ -73,20 +73,20 @@ const Hero: React.FC = () => {
             Turning ideas into reality. Where innovation meets execution.
           </p>
           
-          {/* Button with External Link Logic */}
+          
           <button 
             onClick={() => window.open('https://www.edcnitd.co.in/', '_blank')}
             className="group relative flex items-center gap-4 bg-transparent border border-white/20 pl-8 pr-2 py-2 rounded-full transition-all duration-300 hover:border-transparent w-fit overflow-hidden"
           >
-            {/* Hover Fill Effect */}
+            
             <div className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-[25] z-0 origin-center will-change-transform"></div>
             
-            {/* Button Text */}
+            
             <span className="relative z-10 text-white font-medium group-hover:text-black transition-colors duration-300">
                 <TextHover text="Visit Us" />
             </span>
             
-            {/* Arrow Icon Circle */}
+            
             <div className="relative z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full text-black">
                 <div className="relative overflow-hidden w-4 h-4">
                     <ArrowDown className="w-4 h-4 absolute inset-0 transition-transform duration-300 group-hover:translate-y-full" />
@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
           </button>
         </div>
 
-        {/* Right 3D Model */}
+        
         <div
           ref={containerRef}
           id="model-wrapper"

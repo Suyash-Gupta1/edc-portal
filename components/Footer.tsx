@@ -1,7 +1,7 @@
 import React from 'react';
 import { Instagram, Linkedin, Twitter, Youtube, Send } from 'lucide-react';
 
-// Local definition as per your code
+
 const TextHover = ({ text }: { text: string }) => {
   return (
     <span className="relative block overflow-hidden">
@@ -16,7 +16,7 @@ const TextHover = ({ text }: { text: string }) => {
 };
 
 const Footer = () => {
-  // Defined exactly like Navbar to ensure navigation works from sub-pages
+  
   const sitemapLinks = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/#about-section' },
@@ -42,7 +42,7 @@ const Footer = () => {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
             
-            {/* CTA Section */}
+           
             <div className="flex flex-col md:flex-row items-center justify-between border-b border-white/10 pb-20 mb-20 gap-10">
                 <div className="text-center md:text-left">
                     <h2 className="text-5xl md:text-7xl font-bold font-display tracking-tighter mb-4">
@@ -69,7 +69,7 @@ const Footer = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8 mb-24">
                 
-                {/* Brand Column */}
+                
                 <div className="col-span-2 md:col-span-5 flex flex-col h-full space-y-6">
                     <div>
                         <div className="flex items-center gap-2 mb-6">
@@ -82,7 +82,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Sitemap Column - FIXED LINKS */}
+                
                 <div className="col-span-1 md:col-span-2 md:col-start-7">
                     <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Sitemap</h4>
                     <ul className="space-y-4">
@@ -101,7 +101,7 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Socials Column */}
+                
                 <div className="col-span-1 md:col-span-2">
                     <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Socials</h4>
                     <ul className="space-y-4">

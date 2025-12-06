@@ -6,7 +6,7 @@ export const DOMAIN_DATA: Record<string, any> = {
     subtitle: "Architecting the Digital Future",
     description: "The Web Development domain is the engineering backbone of EDC. We don't just write code; we build scalable ecosystems. From high-performance landing pages to complex internal tools, we ensure the club's digital presence is second to none.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
-    accent: "#3b82f6", // Blue
+    accent: "#3b82f6", 
     stats: [
       { label: "Projects", value: "15+" },
       { label: "Tech Stack", value: "MERN / Next.js" },
@@ -36,7 +36,7 @@ export const DOMAIN_DATA: Record<string, any> = {
     subtitle: "The Voice of Innovation",
     description: "Content is the bridge between ideas and the audience. Our team crafts compelling narratives, press releases, technical blogs, and social media captions that define the brand voice of EDC NIT Durgapur.",
     image: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=2070&auto=format&fit=crop",
-    accent: "#a855f7", // Purple
+    accent: "#a855f7", 
     stats: [
       { label: "Blogs Published", value: "50+" },
       { label: "Reach", value: "10K+" },
@@ -96,7 +96,7 @@ export const DOMAIN_DATA: Record<string, any> = {
     subtitle: "Orchestrating Excellence",
     description: "The engine that keeps EDC running. The Event Management domain handles logistics, corporate relations, sponsorship drives, and the on-ground execution of Eastern India's largest entrepreneurship summits.",
     image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop",
-    accent: "#f97316", // Orange
+    accent: "#f97316", 
     stats: [
       { label: "Events Hosted", value: "30+" },
       { label: "Footfall", value: "5000+" },
@@ -126,7 +126,7 @@ export const DOMAIN_DATA: Record<string, any> = {
     subtitle: "Crafting Visual Stories",
     description: "Crafting visual stories through motion and sound. We transform raw footage into compelling narratives that capture attention and evoke emotion. From high-energy teasers to cinematic after-movies, we bring the club's moments to life.",
     image: "https://images.unsplash.com/photo-1574717432707-c67885d96459?q=80&w=2667&auto=format&fit=crop",
-    accent: "#ef4444", // Red
+    accent: "#ef4444", 
     stats: [
       { label: "Reels Edited", value: "50+" },
       { label: "Software", value: "Premiere Pro / AE" },

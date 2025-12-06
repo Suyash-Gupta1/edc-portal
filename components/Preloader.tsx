@@ -1,4 +1,8 @@
+// take from previous code
+
 import React, { useEffect, useState } from 'react';
+
+
 
 interface PreloaderProps {
   onComplete: () => void;

@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 import AuthModal from '@/components/AuthModal';
 import { ArrowLeft, Check, LucideIcon, Globe, Server, Database, PenTool, Share2, Search, Layout, Image, Video, Users, Mic, ClipboardList } from 'lucide-react';
 
-// Icon Map for dynamic rendering
+
 const ICON_MAP: Record<string, any> = {
   Globe, Server, Database, PenTool, Share2, Search, Layout, Image, Video, Users, Mic, ClipboardList
 };
@@ -19,15 +19,15 @@ export default function DomainPage() {
   const router = useRouter();
   const [data, setData] = useState<any>(null);
   
-  // Auth Logic (Duplicated from App.tsx to ensure Navbar works independently)
+  
   const [user, setUser] = useState<any>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
-  // Transition State
+  
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check User Persistence
+   
     const storedUserStr = localStorage.getItem('edc_user');
     if (storedUserStr) {
       try {
@@ -39,7 +39,7 @@ export default function DomainPage() {
   useEffect(() => {
     if (slug && typeof slug === 'string' && DOMAIN_DATA[slug]) {
         setData(DOMAIN_DATA[slug]);
-        // Trigger fade-in animation slightly after data sets to ensure render cycle catches it
+       
         setTimeout(() => setIsVisible(true), 50);
     }
   }, [slug]);
@@ -54,24 +54,22 @@ export default function DomainPage() {
     localStorage.setItem('edc_user', JSON.stringify(u));
   };
 
-  // Handle smooth exit to home
+  
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsVisible(false); // Trigger fade-out
-    // Wait for the duration of the transition (1000ms) before navigating
+    setIsVisible(false);
     setTimeout(() => {
         router.push('/');
     }, 1000);
   };
 
-  // --- FIX: Prevent "Not Found" flash ---
-  // 1. If slug isn't loaded yet, return null.
+ 
   if (!slug) return null;
 
-  // 2. Check if the slug actually exists in our data.
+  
   const isValidSlug = typeof slug === 'string' && DOMAIN_DATA[slug];
 
-  // 3. If the slug is INVALID, show the 404 screen.
+  
   if (!isValidSlug) return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
         <h1 className="text-4xl font-display font-bold">Domain Not Found</h1>
@@ -79,7 +77,7 @@ export default function DomainPage() {
     </div>
   );
 
-  // 4. If slug IS valid but data hasn't been set by useEffect yet, show nothing (loading).
+ 
   if (!data) return null; 
 
   return (
@@ -90,7 +88,7 @@ export default function DomainPage() {
             onLoginSuccess={handleLoginSuccess}
         />
         
-        {/* Wrap content in a transition div for smooth entry and exit */}
+        
         <div className={`transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <Navbar 
                 user={user} 
@@ -100,9 +98,9 @@ export default function DomainPage() {
             />
 
             <div className="min-h-screen bg-[#050505] text-white">
-                {/* Hero Section */}
+                
                 <div className="relative min-h-[80vh] w-full overflow-hidden flex flex-col">
-                    {/* Background Image */}
+                   
                     <div className="absolute inset-0 z-0">
                         <img 
                             src={data.image} 
@@ -112,9 +110,9 @@ export default function DomainPage() {
                         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-[#050505]/80 to-[#050505]"></div>
                     </div>
 
-                    {/* Content Container */}
+                    
                     <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex-grow flex flex-col justify-center pt-32 pb-12">
-                        {/* Back Button - Uses handleBack for smooth exit */}
+                        
                         <div className="mb-8 md:mb-12">
                             <Link 
                                 href="/"
@@ -133,7 +131,7 @@ export default function DomainPage() {
                             {data.subtitle}
                         </p>
 
-                        {/* Stats Grid */}
+                        
                         <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl border-t border-white/10 pt-8">
                             {data.stats.map((stat: any, i: number) => (
                                 <div key={i}>
@@ -145,10 +143,10 @@ export default function DomainPage() {
                     </div>
                 </div>
 
-                {/* Content Body */}
+               
                 <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-16">
                     
-                    {/* Left Column: Description & Role */}
+                    
                     <div className="lg:col-span-7 space-y-16">
                         <div>
                             <h3 className="text-3xl font-display font-bold mb-6">About the Domain</h3>
@@ -163,7 +161,7 @@ export default function DomainPage() {
                         </div>
                     </div>
 
-                    {/* Right Column: Curriculum */}
+                    
                     <div className="lg:col-span-5">
                         <div className="sticky top-32">
                             <h3 className="text-3xl font-display font-bold mb-8">What You'll Learn</h3>

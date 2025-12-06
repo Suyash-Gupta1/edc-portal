@@ -8,7 +8,7 @@ interface DomainCardProps extends DomainProps {
     setRef: (el: HTMLDivElement | null) => void;
 }
 
-// ... Keep DOMAINS_DATA and getSvgForDomain exactly as they are ...
+
 const DOMAINS_DATA = [
     {
       title: "Web Development",
@@ -70,7 +70,7 @@ const DOMAINS_DATA = [
 const getSvgForDomain = (colorClass: string, index: number) => {
     if (index === 0) { // Web Dev
         return <svg width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" className={colorClass}><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>;
-    } else if (index === 1) { // Content
+    } else if (index === 1) { // Coooooontent
         return <svg width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" className={colorClass}><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>;
     } else if (index === 2) { // Graphics
         return <svg width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" className={colorClass}><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>;
@@ -84,7 +84,7 @@ const getSvgForDomain = (colorClass: string, index: number) => {
 const DomainCard: React.FC<DomainCardProps> = ({ 
   title, description, icon, colorClass, iconBgClass, iconTextClass, svgPath, index, image, slug, setRef
 }) => {
-  // Mouse tracking state
+ 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -109,11 +109,11 @@ const DomainCard: React.FC<DomainCardProps> = ({
         className="domain-card rounded-[2rem] p-6 md:p-12 h-auto md:h-[550px] flex flex-col md:flex-row items-center gap-6 md:gap-10 relative overflow-hidden group border-t border-white/10 transition-all duration-500 hover:border-white/20 shadow-2xl"
       >
         
-        {/* Backgrounds */}
+        
         <div className="absolute inset-0 bg-[#0F0F0F] z-0"></div>
         <div className="absolute inset-0 grid-pattern opacity-20 z-0"></div>
         
-        {/* DYNAMIC MOUSE SPOTLIGHT */}
+        
         <div 
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
             style={{
@@ -121,7 +121,7 @@ const DomainCard: React.FC<DomainCardProps> = ({
             }}
         ></div>
 
-        {/* Dynamic Border Glow (Optional: Adds a subtle border light following the mouse) */}
+       
         <div 
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
             style={{
@@ -130,12 +130,12 @@ const DomainCard: React.FC<DomainCardProps> = ({
             }}
         ></div>
         
-        {/* SVG Decoration */}
+        
         <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500 z-0 scale-150 origin-bottom-right">
            {svgPath}
         </div>
         
-        {/* Left Content */}
+        
         <div className="relative z-10 w-full md:w-1/2 flex flex-col items-start text-left pt-2 md:pt-0">
           <div className={`w-14 h-14 md:w-16 md:h-16 ${iconBgClass} rounded-2xl flex items-center justify-center ${iconTextClass} mb-6 md:mb-8 border ${colorClass.replace('text-', 'border-').replace('500', '500/20')} group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
               {icon}
@@ -151,7 +151,7 @@ const DomainCard: React.FC<DomainCardProps> = ({
           </a>
         </div>
 
-        {/* Right Image */}
+        
         <div className="relative z-10 w-full md:w-1/2 h-[220px] md:h-full flex items-center justify-center">
             <div className="w-full h-full rounded-2xl overflow-hidden border border-white/10 relative group-hover:border-[#ccff00]/30 transition-colors duration-500 shadow-2xl">
                 <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -167,7 +167,7 @@ const DomainCard: React.FC<DomainCardProps> = ({
   );
 };
 
-// ... Keep the Domains component exactly as it is ...
+
 const Domains: React.FC = () => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 

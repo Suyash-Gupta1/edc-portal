@@ -9,22 +9,22 @@ interface AuthModalProps {
 }
 
 const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }) => {
-  const [isLogin, setIsLogin] = useState(false); // Default to Join (Register)
+  const [isLogin, setIsLogin] = useState(false); 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   
-  // Animation State
+  
   const [shouldRender, setShouldRender] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   
-  // Smooth Height State
+  
   const [menuHeight, setMenuHeight] = useState<number | undefined>(undefined);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen) {
       setShouldRender(true);
-      document.body.style.overflow = 'hidden'; // Lock body scroll
+      document.body.style.overflow = 'hidden'; 
       
       const timer = setTimeout(() => {
         setIsVisible(true);
@@ -32,16 +32,16 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
       return () => clearTimeout(timer);
     } else {
       setIsVisible(false);
-      document.body.style.overflow = 'unset'; // Unlock body scroll
+      document.body.style.overflow = 'unset'; 
       
       const timer = setTimeout(() => {
         setShouldRender(false);
-      }, 500); // Match transition duration
+      }, 500); 
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
 
-  // Smooth Height Observer
+  
   useEffect(() => {
     if (!contentRef.current) return;
     
@@ -97,7 +97,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
         throw new Error(data.error || 'Something went wrong');
       }
 
-      // Success
+      
       onLoginSuccess(data.user);
       onClose();
       resetForm();
@@ -143,14 +143,14 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-      {/* Backdrop */}
+      
       <div 
         className={`absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-500 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         onClick={onClose}
         style={{ willChange: 'opacity' }}
       ></div>
 
-      {/* Modal Container */}
+      
       <div 
         className={`
             relative bg-[#111] border border-white/10 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden
@@ -159,14 +159,14 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
         `}
         style={{ willChange: 'transform, opacity' }}
       >
-         {/* Height Animation Wrapper */}
+         
          <div 
             style={{ height: menuHeight, maxHeight: '85vh' }} 
             className="transition-[height] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-y-auto custom-scrollbar"
             data-lenis-prevent="true"
          >
             <div ref={contentRef}>
-                {/* Header */}
+                
                 <div className="flex items-center justify-between p-6 border-b border-white/5 bg-[#111] sticky top-0 z-10">
                     <h3 className="text-xl font-display font-bold text-white">
                         {isLogin ? 'Welcome Back' : 'Join the Cell'}
@@ -176,7 +176,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                     </button>
                 </div>
 
-                {/* Form Content */}
+                
                 <div className="p-6">
                     <form onSubmit={handleSubmit} className="space-y-4">
                         {error && (
@@ -198,7 +198,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                             />
                         </div>
 
-                        {/* Animated Fields for Register */}
+                        
                         <div className={`space-y-4 overflow-hidden transition-all duration-300 ease-in-out ${!isLogin ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400 font-medium ml-1">Email</label>
@@ -275,7 +275,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                         </button>
                     </form>
 
-                    {/* Footer Toggle */}
+                    
                     <div className="mt-6 pt-6 border-t border-white/5 text-center text-sm text-gray-400">
                     {isLogin ? "Don't have an account? " : "Already a member? "}
                     <button 

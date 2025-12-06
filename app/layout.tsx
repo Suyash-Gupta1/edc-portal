@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Toaster } from 'sonner'; 
 import NoiseOverlay from '@/components/NoiseOverlay';
 import CustomCursor from '@/components/CustomCursor';
-import SmoothScroll from '@/components/SmoothScroll'; // Import the smooth scroller
+import SmoothScroll from '@/components/SmoothScroll';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://edc-portal-six.vercel.app'),

@@ -661,7 +661,6 @@ const Hero = ()=>{
         window.addEventListener('scroll', handleScroll, {
             passive: true
         });
-        // Initial call to set state
         handleScroll();
         return ()=>window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -1118,7 +1117,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-// ... Keep DOMAINS_DATA and getSvgForDomain exactly as they are ...
 const DOMAINS_DATA = [
     {
         title: "Web Development",
@@ -1405,7 +1403,6 @@ const getSvgForDomain = (colorClass, index)=>{
     }
 };
 const DomainCard = ({ title, description, icon, colorClass, iconBgClass, iconTextClass, svgPath, index, image, slug, setRef })=>{
-    // Mouse tracking state
     const [mousePosition, setMousePosition] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
         x: 0,
         y: 0
@@ -1569,7 +1566,6 @@ const DomainCard = ({ title, description, icon, colorClass, iconBgClass, iconTex
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-// ... Keep the Domains component exactly as it is ...
 const Domains = ()=>{
     const cardRefs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])([]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -1669,7 +1665,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/send.js [app-ssr] (ecmascript) <export default as Send>");
 ;
 ;
-// Local definition as per your code
 const TextHover = ({ text })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
         className: "relative block overflow-hidden",
@@ -1698,7 +1693,6 @@ const TextHover = ({ text })=>{
     }, ("TURBOPACK compile-time value", void 0));
 };
 const Footer = ()=>{
-    // Defined exactly like Navbar to ensure navigation works from sub-pages
     const sitemapLinks = [
         {
             name: 'Home',
@@ -2162,6 +2156,7 @@ const __TURBOPACK__default__export__ = Footer;
 "[project]/components/Preloader.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// take from previous code
 __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__
@@ -2223,7 +2218,7 @@ const Preloader = ({ onComplete })=>{
        `
             }, void 0, false, {
                 fileName: "[project]/components/Preloader.tsx",
-                lineNumber: 46,
+                lineNumber: 50,
                 columnNumber: 8
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2246,17 +2241,17 @@ const Preloader = ({ onComplete })=>{
                                     children: "EDC"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Preloader.tsx",
-                                    lineNumber: 63,
+                                    lineNumber: 67,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/Preloader.tsx",
-                                lineNumber: 62,
+                                lineNumber: 66,
                                 columnNumber: 16
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/Preloader.tsx",
-                            lineNumber: 61,
+                            lineNumber: 65,
                             columnNumber: 14
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
@@ -2273,7 +2268,7 @@ const Preloader = ({ onComplete })=>{
                             children: "EDC"
                         }, void 0, false, {
                             fileName: "[project]/components/Preloader.tsx",
-                            lineNumber: 78,
+                            lineNumber: 82,
                             columnNumber: 14
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -2292,7 +2287,7 @@ const Preloader = ({ onComplete })=>{
                                         d: "M0 25 Q 90 40 180 25 T 360 25 T 540 25 T 720 25 T 900 25 V 200 H 0 Z"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Preloader.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 101,
                                         columnNumber: 20
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2301,18 +2296,18 @@ const Preloader = ({ onComplete })=>{
                                         d: "M0 25 Q 80 10 160 25 T 320 25 T 480 25 T 640 25 T 800 25 V 200 H 0 Z"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Preloader.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 110,
                                         columnNumber: 20
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Preloader.tsx",
-                                lineNumber: 95,
+                                lineNumber: 99,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/Preloader.tsx",
-                            lineNumber: 94,
+                            lineNumber: 98,
                             columnNumber: 14
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
@@ -2329,18 +2324,18 @@ const Preloader = ({ onComplete })=>{
                             children: "EDC"
                         }, void 0, false, {
                             fileName: "[project]/components/Preloader.tsx",
-                            lineNumber: 115,
+                            lineNumber: 119,
                             columnNumber: 14
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Preloader.tsx",
-                    lineNumber: 60,
+                    lineNumber: 64,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/Preloader.tsx",
-                lineNumber: 59,
+                lineNumber: 63,
                 columnNumber: 8
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2348,13 +2343,13 @@ const Preloader = ({ onComplete })=>{
                 children: Math.floor(count)
             }, void 0, false, {
                 fileName: "[project]/components/Preloader.tsx",
-                lineNumber: 133,
+                lineNumber: 137,
                 columnNumber: 8
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/Preloader.tsx",
-        lineNumber: 42,
+        lineNumber: 46,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2382,7 +2377,7 @@ const ScrollProgress = ()=>{
             }
         };
         window.addEventListener('scroll', updateScrollProgress);
-        // Initial update
+        // taked starting update for
         updateScrollProgress();
         return ()=>{
             window.removeEventListener('scroll', updateScrollProgress);
@@ -2432,35 +2427,32 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$types$2e$ts__$5b$app$2d$ssr$
 ;
 ;
 const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
-    const [isLogin, setIsLogin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false); // Default to Join (Register)
+    const [isLogin, setIsLogin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    // Animation State
     const [shouldRender, setShouldRender] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isVisible, setIsVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Smooth Height State
     const [menuHeight, setMenuHeight] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(undefined);
     const contentRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (isOpen) {
             setShouldRender(true);
-            document.body.style.overflow = 'hidden'; // Lock body scroll
+            document.body.style.overflow = 'hidden';
             const timer = setTimeout(()=>{
                 setIsVisible(true);
             }, 50);
             return ()=>clearTimeout(timer);
         } else {
             setIsVisible(false);
-            document.body.style.overflow = 'unset'; // Unlock body scroll
+            document.body.style.overflow = 'unset';
             const timer = setTimeout(()=>{
                 setShouldRender(false);
-            }, 500); // Match transition duration
+            }, 500);
             return ()=>clearTimeout(timer);
         }
     }, [
         isOpen
     ]);
-    // Smooth Height Observer
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!contentRef.current) return;
         const resizeObserver = new ResizeObserver((entries)=>{
@@ -2513,7 +2505,6 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
             if (!res.ok) {
                 throw new Error(data.error || 'Something went wrong');
             }
-            // Success
             onLoginSuccess(data.user);
             onClose();
             resetForm();
@@ -4079,7 +4070,7 @@ const HackerModal = ({ isOpen, onClose })=>{
                 className: "absolute inset-0 pointer-events-none opacity-20 bg-[url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif')] bg-cover"
             }, void 0, false, {
                 fileName: "[project]/components/HackerModal.tsx",
-                lineNumber: 37,
+                lineNumber: 39,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4095,7 +4086,7 @@ const HackerModal = ({ isOpen, onClose })=>{
                                         className: "w-6 h-6 animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/components/HackerModal.tsx",
-                                        lineNumber: 44,
+                                        lineNumber: 46,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4103,13 +4094,13 @@ const HackerModal = ({ isOpen, onClose })=>{
                                         children: "TERMINAL_ROOT_ACCESS"
                                     }, void 0, false, {
                                         fileName: "[project]/components/HackerModal.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 47,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HackerModal.tsx",
-                                lineNumber: 43,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4119,18 +4110,18 @@ const HackerModal = ({ isOpen, onClose })=>{
                                     className: "w-6 h-6"
                                 }, void 0, false, {
                                     fileName: "[project]/components/HackerModal.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 50,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/HackerModal.tsx",
-                                lineNumber: 47,
+                                lineNumber: 49,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/HackerModal.tsx",
-                        lineNumber: 42,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4144,13 +4135,13 @@ const HackerModal = ({ isOpen, onClose })=>{
                                         className: "inline-block w-3 h-5 bg-green-500 ml-1 animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/components/HackerModal.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 58,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HackerModal.tsx",
-                                lineNumber: 54,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             showSecret && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4163,14 +4154,14 @@ const HackerModal = ({ isOpen, onClose })=>{
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/HackerModal.tsx",
-                                                lineNumber: 63,
+                                                lineNumber: 65,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "Classified Intel"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/HackerModal.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 64,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4178,14 +4169,14 @@ const HackerModal = ({ isOpen, onClose })=>{
                                         children: '"You know the rules, and so do I."'
                                     }, void 0, false, {
                                         fileName: "[project]/components/HackerModal.tsx",
-                                        lineNumber: 67,
+                                        lineNumber: 69,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-px w-full bg-green-900/50 my-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/HackerModal.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 73,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4197,12 +4188,12 @@ const HackerModal = ({ isOpen, onClose })=>{
                                                 children: "MEMORIZE THIS PHRASE."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/HackerModal.tsx",
-                                                lineNumber: 74,
+                                                lineNumber: 76,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/components/HackerModal.tsx",
-                                                lineNumber: 74,
+                                                lineNumber: 76,
                                                 columnNumber: 90
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "This is your passkey for ",
@@ -4211,7 +4202,7 @@ const HackerModal = ({ isOpen, onClose })=>{
                                                 children: "Round 1"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/HackerModal.tsx",
-                                                lineNumber: 75,
+                                                lineNumber: 77,
                                                 columnNumber: 42
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " & ",
@@ -4220,44 +4211,44 @@ const HackerModal = ({ isOpen, onClose })=>{
                                                 children: "Round 4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/HackerModal.tsx",
-                                                lineNumber: 75,
+                                                lineNumber: 77,
                                                 columnNumber: 98
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " auditions. ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/components/HackerModal.tsx",
-                                                lineNumber: 75,
+                                                lineNumber: 77,
                                                 columnNumber: 163
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "Do not share it. Good luck, candidate."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/HackerModal.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HackerModal.tsx",
-                                lineNumber: 61,
+                                lineNumber: 63,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/HackerModal.tsx",
-                        lineNumber: 52,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/HackerModal.tsx",
-                lineNumber: 39,
+                lineNumber: 41,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/HackerModal.tsx",
-        lineNumber: 36,
+        lineNumber: 38,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -4297,8 +4288,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HackerModal$2e
 ;
 ;
 ;
-// Removed SmoothScroll import
-// --- KONAMI CODE LOGIC (Remains the same) ---
 const KONAMI_CODE = [
     'ArrowUp',
     'ArrowUp',
@@ -4343,7 +4332,6 @@ function App() {
     const [isAuthModalOpen, setIsAuthModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isAdminModalOpen, setIsAdminModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isHackerModalOpen, setIsHackerModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // --- Global Scroll Lock State ---
     const isScrollLocked = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         return isAuthModalOpen || isAdminModalOpen || isHackerModalOpen;
     }, [
@@ -4355,18 +4343,15 @@ function App() {
         setIsHackerModalOpen(true);
     });
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        // 1. Check User Persistence & Refresh Status (omitted body for brevity)
         const storedUserStr = localStorage.getItem('edc_user');
         if (storedUserStr) {
             try {
                 const storedUser = JSON.parse(storedUserStr);
                 setUser(storedUser);
-            // fetch('/api/auth/status' ... ) logic here
             } catch (e) {
                 console.error("Failed to parse user", e);
             }
         }
-        // 2. Check Preloader Session
         const hasPreloaded = sessionStorage.getItem('edc_preloaded');
         if (hasPreloaded === 'true') {
             setShowPreloader(false);
@@ -4378,9 +4363,7 @@ function App() {
         }
         setIsSessionChecked(true);
     }, []);
-    // Effect to hide native scrollbar when modal is open
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        // This part is still necessary to allow scrolling inside modals without moving the background
         document.body.style.overflow = isScrollLocked ? 'hidden' : '';
     }, [
         isScrollLocked
@@ -4403,7 +4386,7 @@ function App() {
             className: "min-h-screen w-full bg-[#050505]"
         }, void 0, false, {
             fileName: "[project]/app/page.tsx",
-            lineNumber: 115,
+            lineNumber: 113,
             columnNumber: 12
         }, this);
     }
@@ -4411,14 +4394,14 @@ function App() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ScrollProgress$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 120,
+                lineNumber: 118,
                 columnNumber: 7
             }, this),
             showPreloader && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Preloader$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 onComplete: handlePreloaderComplete
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 122,
+                lineNumber: 120,
                 columnNumber: 25
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$AuthModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -4427,7 +4410,7 @@ function App() {
                 onLoginSuccess: handleLoginSuccess
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 124,
+                lineNumber: 122,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$AdminDashboard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -4435,7 +4418,7 @@ function App() {
                 onClose: ()=>setIsAdminModalOpen(false)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 130,
+                lineNumber: 128,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HackerModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -4443,7 +4426,7 @@ function App() {
                 onClose: ()=>setIsHackerModalOpen(false)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 135,
+                lineNumber: 133,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4456,7 +4439,7 @@ function App() {
                         onOpenAdmin: ()=>setIsAdminModalOpen(true)
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 145,
+                        lineNumber: 143,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -4464,39 +4447,39 @@ function App() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 154,
+                                lineNumber: 152,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Marquee$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 155,
+                                lineNumber: 153,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 156,
+                                lineNumber: 154,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Domains$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 157,
+                                lineNumber: 155,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 153,
+                        lineNumber: 151,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 159,
+                        lineNumber: 157,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 140,
+                lineNumber: 138,
                 columnNumber: 7
             }, this)
         ]

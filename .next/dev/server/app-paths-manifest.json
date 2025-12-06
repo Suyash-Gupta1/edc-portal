@@ -1,7 +1,3 @@
 {
-  "/api/admin/update/route": "app/api/admin/update/route.js",
-  "/api/admin/users/route": "app/api/admin/users/route.js",
-  "/api/auth/login/route": "app/api/auth/login/route.js",
-  "/domains/[slug]/page": "app/domains/[slug]/page.js",
   "/page": "app/page.js"
 }

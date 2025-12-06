@@ -1,7 +1,7 @@
 import dbConnect from '@/lib/db';
 import User from '@/models/User';
 import { NextResponse } from 'next/server';
-import bcrypt from 'bcryptjs'; // Import bcrypt
+import bcrypt from 'bcryptjs';
 
 export async function POST(req: Request) {
   try {
@@ -17,10 +17,10 @@ export async function POST(req: Request) {
       );
     }
 
-    // 1. Find user
+    
     const user = await User.findOne({ username });
 
-    // 2. Check if user exists
+    
     if (!user) {
       return NextResponse.json(
         { error: 'Invalid credentials' },
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // 3. Compare provided password with stored HASHED password
+    
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // 4. Success
+    
     return NextResponse.json({
       success: true,
       user: {

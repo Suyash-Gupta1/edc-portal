@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { username, email, password, domain, reason } = body;
 
-    // Validation
+    
     if (!username || !email || !password || !domain || !reason) {
       return NextResponse.json(
         { error: 'Please provide all fields, including your reason for joining.' },
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // Check if user exists
+   
     const userExists = await User.findOne({ $or: [{ email }, { username }] });
     if (userExists) {
       return NextResponse.json(
@@ -27,17 +27,16 @@ export async function POST(req: Request) {
       );
     }
 
-    // --- BCRYPT HASHING LOGIC ---
-    // 1. Generate a salt
+    
     const salt = await bcrypt.genSalt(10);
-    // 2. Hash the password with the salt
+    
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // Create user with HASHED password
+    
     const user = await User.create({
       username,
       email,
-      password: hashedPassword, // Store the hash, not the plain text
+      password: hashedPassword, 
       domain,
       reason,
       hasSelection: false

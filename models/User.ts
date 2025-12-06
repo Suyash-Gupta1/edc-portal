@@ -1,11 +1,13 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
+// there has been some problem regarding storing the reason check it and then delete it 
+
 export interface IUser extends Document {
   username: string;
   email: string;
   password: string;
   domain: string;
-  reason: string; // New field
+  reason: string; 
   round: number;
   hasSelection: boolean;
   createdAt: Date;

@@ -81,7 +81,7 @@ function NoiseOverlay() {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/NoiseOverlay.tsx",
-                lineNumber: 58,
+                lineNumber: 57,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -98,7 +98,7 @@ function NoiseOverlay() {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/NoiseOverlay.tsx",
-                lineNumber: 67,
+                lineNumber: 66,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -121,17 +121,17 @@ function NoiseOverlay() {
                         strokeDasharray: "4 4"
                     }, void 0, false, {
                         fileName: "[project]/components/NoiseOverlay.tsx",
-                        lineNumber: 88,
+                        lineNumber: 87,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/NoiseOverlay.tsx",
-                    lineNumber: 87,
+                    lineNumber: 86,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/NoiseOverlay.tsx",
-                lineNumber: 82,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -151,17 +151,17 @@ function NoiseOverlay() {
                         strokeWidth: "1"
                     }, void 0, false, {
                         fileName: "[project]/components/NoiseOverlay.tsx",
-                        lineNumber: 99,
+                        lineNumber: 98,
                         columnNumber: 12
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/NoiseOverlay.tsx",
-                    lineNumber: 98,
+                    lineNumber: 97,
                     columnNumber: 10
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/NoiseOverlay.tsx",
-                lineNumber: 93,
+                lineNumber: 92,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -185,17 +185,17 @@ function NoiseOverlay() {
                         transform: "rotate(15 50 50)"
                     }, void 0, false, {
                         fileName: "[project]/components/NoiseOverlay.tsx",
-                        lineNumber: 110,
+                        lineNumber: 109,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/NoiseOverlay.tsx",
-                    lineNumber: 109,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/NoiseOverlay.tsx",
-                lineNumber: 104,
+                lineNumber: 103,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -216,17 +216,17 @@ function NoiseOverlay() {
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/NoiseOverlay.tsx",
-                        lineNumber: 121,
+                        lineNumber: 120,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/NoiseOverlay.tsx",
-                    lineNumber: 120,
+                    lineNumber: 119,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/NoiseOverlay.tsx",
-                lineNumber: 115,
+                lineNumber: 114,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -236,7 +236,7 @@ function NoiseOverlay() {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/NoiseOverlay.tsx",
-                lineNumber: 126,
+                lineNumber: 125,
                 columnNumber: 7
             }, this)
         ]

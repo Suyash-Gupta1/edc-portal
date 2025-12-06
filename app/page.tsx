@@ -11,9 +11,7 @@ import ScrollProgress from '../components/ScrollProgress';
 import AuthModal from '../components/AuthModal';
 import AdminDashboard from '../components/AdminDashboard';
 import HackerModal from '../components/HackerModal';
-// Removed SmoothScroll import
 
-// --- KONAMI CODE LOGIC (Remains the same) ---
 const KONAMI_CODE = [
   'ArrowUp', 'ArrowUp', 
   'ArrowDown', 'ArrowDown', 
@@ -42,7 +40,7 @@ const useKonamiCode = (action: () => void) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [input, action]);
 };
-// ---------------------------------------------
+
 
 export default function App() {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -54,7 +52,7 @@ export default function App() {
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
   const [isHackerModalOpen, setIsHackerModalOpen] = useState(false);
 
-  // --- Global Scroll Lock State ---
+  
   const isScrollLocked = useMemo(() => {
       return isAuthModalOpen || isAdminModalOpen || isHackerModalOpen;
   }, [isAuthModalOpen, isAdminModalOpen, isHackerModalOpen]);
@@ -64,19 +62,19 @@ export default function App() {
   });
 
   useEffect(() => {
-    // 1. Check User Persistence & Refresh Status (omitted body for brevity)
+   
     const storedUserStr = localStorage.getItem('edc_user');
     if (storedUserStr) {
       try {
         const storedUser = JSON.parse(storedUserStr);
         setUser(storedUser);
-        // fetch('/api/auth/status' ... ) logic here
+        
       } catch (e) {
         console.error("Failed to parse user", e);
       }
     }
 
-    // 2. Check Preloader Session
+   
     const hasPreloaded = sessionStorage.getItem('edc_preloaded');
     if (hasPreloaded === 'true') {
       setShowPreloader(false);
@@ -88,9 +86,9 @@ export default function App() {
     setIsSessionChecked(true);
   }, []);
 
-  // Effect to hide native scrollbar when modal is open
+  
   useEffect(() => {
-    // This part is still necessary to allow scrolling inside modals without moving the background
+    
     document.body.style.overflow = isScrollLocked ? 'hidden' : '';
   }, [isScrollLocked]);
 
@@ -149,7 +147,7 @@ export default function App() {
           onOpenAdmin={() => setIsAdminModalOpen(true)}
         />
         
-        {/* Removed SmoothScroll wrapper */}
+       
         <main className="flex-grow w-full">
             <Hero />
             <Marquee />
