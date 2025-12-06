@@ -65,7 +65,7 @@ export const DOMAIN_DATA: Record<string, any> = {
     title: "Graphic Design",
     subtitle: "Visualizing the Unimaginable",
     description: "We are the visual storytellers. The Graphic Design domain blends art with strategy to create stunning posters, merchandise, UI prototypes, and branding assets that leave a lasting visual impact.",
-    image: "https://images.unsplash.com/photo-1626785774573-4b7993143a26?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2064&auto=format&fit=crop",
     accent: "#ec4899", // Pink
     stats: [
       { label: "Designs Shipped", value: "200+" },
@@ -125,7 +125,7 @@ export const DOMAIN_DATA: Record<string, any> = {
     title: "Video Editing",
     subtitle: "Crafting Visual Stories",
     description: "Crafting visual stories through motion and sound. We transform raw footage into compelling narratives that capture attention and evoke emotion. From high-energy teasers to cinematic after-movies, we bring the club's moments to life.",
-    image: "https://images.unsplash.com/photo-1574717432741-9ee7a777f611?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     accent: "#ef4444", // Red
     stats: [
       { label: "Reels Edited", value: "50+" },

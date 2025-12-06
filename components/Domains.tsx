@@ -41,7 +41,7 @@ const DOMAINS_DATA = [
       iconBgClass: "bg-pink-500/10",
       iconTextClass: "text-pink-400",
       svgColorClass: "text-pink-500",
-      image: "https://images.unsplash.com/photo-1626785774573-4b7993143a26?q=80&w=2070&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2064&auto=format&fit=crop"
     },
     {
       title: "Event Management",
@@ -63,7 +63,7 @@ const DOMAINS_DATA = [
       iconBgClass: "bg-red-500/10",
       iconTextClass: "text-red-400",
       svgColorClass: "text-red-500",
-      image: "https://images.unsplash.com/photo-1574717432741-9ee7a777f611?q=80&w=2070&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
 ];
 

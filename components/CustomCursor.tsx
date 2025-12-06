@@ -11,6 +11,7 @@ export default function CustomCursor() {
     const cursor = cursorRef.current;
     const cursorDot = cursorDotRef.current;
     
+    // Variables for smooth movement
     let mouseX = 0;
     let mouseY = 0;
     let cursorX = 0;
@@ -18,13 +19,14 @@ export default function CustomCursor() {
     const speed = 0.15;
 
     const animate = () => {
+      // Linear interpolation for smooth lag
       const distX = mouseX - cursorX;
       const distY = mouseY - cursorY;
       
       cursorX = cursorX + distX * speed;
       cursorY = cursorY + distY * speed;
 
-      // Use translate3d for GPU acceleration (smoother rendering)
+      // Use translate3d for GPU acceleration
       cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
       cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
@@ -36,7 +38,6 @@ export default function CustomCursor() {
       mouseY = e.clientY;
     };
 
-    // Only detect inputs to hide the cursor, removed link/button logic to keep it simple and smooth.
     const handleHoverEvents = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
         
@@ -46,6 +47,14 @@ export default function CustomCursor() {
             target.tagName === 'SELECT' ||
             target.getAttribute('contenteditable') === 'true';
 
+        const isClickable = 
+            target.tagName === 'A' || 
+            target.tagName === 'BUTTON' || 
+            target.closest('a') || 
+            target.closest('button') ||
+            target.classList.contains('cursor-pointer');
+
+        // 1. Hide/Show Cursor for Inputs (Cursor disappears for text fields)
         if (isInput) {
             cursor.classList.add('is-hidden');
             cursorDot.classList.add('is-hidden');
@@ -53,9 +62,16 @@ export default function CustomCursor() {
             cursor.classList.remove('is-hidden');
             cursorDot.classList.remove('is-hidden');
         }
-        
-        // Ensure the ring stays in the default (non-expanding) state
-        cursor.classList.remove('is-hovering');
+
+        // 2. Expand DOT for Clickables (Inner circle expands, Outer ring remains normal)
+        if (isClickable && !isInput) {
+            cursorDot.classList.add('is-hovering-dot');
+            // Ensure the ring is visible but NOT expanding
+            cursor.classList.remove('is-hovering'); 
+        } else {
+            cursorDot.classList.remove('is-hovering-dot');
+            cursor.classList.remove('is-hovering');
+        }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -86,21 +102,35 @@ export default function CustomCursor() {
         .custom-cursor-dot {
             width: 8px;
             height: 8px;
-            background-color: white;
+            background-color: #ccff00; /* Use brand color */
             border-radius: 50%;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 10000;
-            pointer-events: none; /* Key fix: ensures it doesn't block clicks/scrolls */
+            pointer-events: none; 
             margin-top: -4px;
             margin-left: -4px;
             mix-blend-mode: difference;
-            transition: opacity 0.2s ease-in-out;
+            /* Key transition for smooth scale */
+            transition: opacity 0.2s ease-in-out, 
+                        transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                        width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                        height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                        margin 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Added margin transition */
         }
-
+        
+        /* NEW Hover State for the DOT (Increased Size) */
+        .custom-cursor-dot.is-hovering-dot {
+            width: 36px; /* Increased from 24px */
+            height: 36px; /* Increased from 24px */
+            margin-top: -18px; /* Adjusted margin */
+            margin-left: -18px; /* Adjusted margin */
+            background-color: #ccff00;
+            transform: scale(1.0);
+        }
+        
         .custom-cursor-ring {
-            /* Scroll Fix: Removed transition from transform properties */
             width: 40px;
             height: 40px;
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -109,11 +139,21 @@ export default function CustomCursor() {
             top: 0;
             left: 0;
             z-index: 9999;
-            pointer-events: none; /* Key fix: ensures it doesn't block clicks/scrolls */
+            pointer-events: none; 
             margin-top: -20px;
             margin-left: -20px;
             mix-blend-mode: difference;
-            transition: opacity 0.2s ease-in-out, background-color 0.3s;
+            /* Only transition opacity and color, not size */
+            transition: background-color 0.3s, 
+                        border-color 0.3s,
+                        opacity 0.2s;
+        }
+
+        /* Hover State for the RING: Subtle change only */
+        .custom-cursor-ring.is-hovering {
+            border-color: rgba(204, 255, 0, 0.5); 
+            width: 40px; 
+            height: 40px; 
         }
 
         /* Hidden State (for Inputs) */

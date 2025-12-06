@@ -42,6 +42,16 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
   // Initialize to 0 (Applied/All) by default
   const [filterRound, setFilterRound] = useState<number>(0);
 
+  // Body Scroll Lock
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isOpen]);
+
   // Effect to fetch users when authenticated
   useEffect(() => {
     if (isAuthenticated && isOpen) {
@@ -139,15 +149,15 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
 
       <div className="relative w-full max-w-6xl bg-[#09090b] border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] transition-all duration-300">
         
-        {/* Header */}
-        <div className="flex items-center justify-between px-8 py-6 border-b border-white/5 bg-[#0a0a0a]">
+        {/* Header - Always Fixed */}
+        <div className="flex items-center justify-between px-6 py-4 md:px-8 md:py-6 border-b border-white/5 bg-[#0a0a0a] shrink-0">
           <div className="flex items-center gap-3">
-             <div className="w-10 h-10 rounded-full bg-[#ccff00]/10 flex items-center justify-center border border-[#ccff00]/20">
-                <ShieldAlert className="w-5 h-5 text-[#ccff00]" />
+             <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#ccff00]/10 flex items-center justify-center border border-[#ccff00]/20">
+                <ShieldAlert className="w-4 h-4 md:w-5 md:h-5 text-[#ccff00]" />
              </div>
              <div>
-                <h2 className="text-xl font-bold font-display text-white tracking-tight">Admin Portal</h2>
-                <p className="text-xs text-gray-500">Recruitment Dashboard</p>
+                <h2 className="text-lg md:text-xl font-bold font-display text-white tracking-tight">Admin Portal</h2>
+                <p className="text-[10px] md:text-xs text-gray-500">Recruitment Dashboard</p>
              </div>
           </div>
           <button 
@@ -158,10 +168,13 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* Content */}
+        {/* Main Content Area - Scrollable */}
         <div className="flex-1 overflow-hidden relative flex flex-col">
           {!isAuthenticated ? (
-            <div className="flex-1 flex flex-col items-center justify-center p-8 space-y-6">
+            <div 
+              className="flex-1 flex flex-col items-center justify-center p-8 space-y-6 overflow-y-auto"
+              data-lenis-prevent="true"
+            >
                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 border border-white/10">
                    <ShieldAlert className="w-8 h-8 text-gray-500" />
                </div>
@@ -190,21 +203,24 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                </form>
             </div>
           ) : (
-            <>
-                {/* Dashboard Header Stats & Filters */}
-                <div className="p-8 border-b border-white/5 space-y-6 bg-[#0a0a0a]/50">
+            <div 
+              className="flex-1 overflow-y-auto bg-[#09090b]"
+              data-lenis-prevent="true"
+            >
+                {/* Stats & Filters Section - Now part of the scroll flow */}
+                <div className="p-4 md:p-8 border-b border-white/5 space-y-6 bg-[#0a0a0a]/50">
                     
                     {/* Stats Cards */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                         {[
                             { label: 'Total Applicants', value: stats.total, color: 'text-white', bg: 'bg-white/5' },
                             { label: 'Pending Review', value: stats.new, color: 'text-blue-400', bg: 'bg-blue-500/10' },
                             { label: 'In Rounds', value: stats.interviewing, color: 'text-orange-400', bg: 'bg-orange-500/10' },
                             { label: 'Selected', value: stats.selected, color: 'text-[#ccff00]', bg: 'bg-[#ccff00]/10' },
                         ].map((stat, i) => (
-                            <div key={i} className={`p-4 rounded-2xl border border-white/5 ${stat.bg}`}>
-                                <div className={`text-2xl font-bold font-display ${stat.color}`}>{stat.value}</div>
-                                <div className="text-xs text-gray-400 uppercase tracking-wider font-medium mt-1">{stat.label}</div>
+                            <div key={i} className={`p-3 md:p-4 rounded-xl md:rounded-2xl border border-white/5 ${stat.bg}`}>
+                                <div className={`text-xl md:text-2xl font-bold font-display ${stat.color}`}>{stat.value}</div>
+                                <div className="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider font-medium mt-1">{stat.label}</div>
                             </div>
                         ))}
                     </div>
@@ -223,7 +239,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                                 />
                             </div>
                             
-                            <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 no-scrollbar">
+                            <div 
+                                className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 no-scrollbar"
+                                data-lenis-prevent="true"
+                            >
                                 {['All', 'Web Development', 'Content Writing', 'Graphic Design', 'Video Editing', 'Event Management'].map(domain => (
                                     <button
                                         key={domain}
@@ -240,8 +259,11 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                             </div>
                         </div>
 
-                        {/* Round Pipeline Filter (Knockout Style) */}
-                        <div className="w-full overflow-x-auto pb-2 pt-2 border-t border-white/5">
+                        {/* Round Pipeline Filter */}
+                        <div 
+                            className="w-full overflow-x-auto pb-2 pt-2 border-t border-white/5"
+                            data-lenis-prevent="true"
+                        >
                             <div className="flex items-center gap-3 min-w-max">
                                 <span className="text-xs font-bold text-gray-500 uppercase tracking-wider mr-2">Qualified For:</span>
                                 
@@ -279,130 +301,135 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                     </div>
                 </div>
 
-                {/* Table Area */}
-                <div className="flex-1 overflow-y-auto relative bg-[#09090b]">
+                {/* Table Area - Horizontal Scroll wrapper */}
+                <div className="relative w-full">
                     {loading ? (
-                        <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
+                        <div className="flex flex-col items-center justify-center space-y-4 py-20">
                             <Loader2 className="w-8 h-8 animate-spin text-[#ccff00]" />
                             <p className="text-gray-500 text-sm">Loading candidates...</p>
                         </div>
                     ) : (
-                        <div className="min-w-[800px]">
-                            <table className="w-full text-left border-collapse">
-                                <thead className="sticky top-0 bg-[#09090b] z-10 shadow-sm">
-                                    <tr className="border-b border-white/10 text-gray-500 text-[10px] uppercase tracking-wider font-semibold">
-                                        <th className="px-8 py-4 w-[25%]">Candidate</th>
-                                        <th className="px-4 py-4 w-[20%]">Domain</th>
-                                        <th className="px-4 py-4 w-[15%] text-center">Round</th>
-                                        <th className="px-4 py-4 w-[15%] text-center">Status</th>
-                                        <th className="px-4 py-4 w-[10%] text-center">Details</th>
-                                        <th className="px-8 py-4 w-[15%] text-right">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-white/5">
-                                    {filteredUsers.length === 0 ? (
-                                        <tr>
-                                            <td colSpan={6} className="p-20 text-center">
-                                                <div className="flex flex-col items-center gap-3 text-gray-500">
-                                                    <Filter className="w-8 h-8 opacity-20" />
-                                                    <p>No candidates found matching your criteria.</p>
-                                                </div>
-                                            </td>
+                        <div 
+                            className="overflow-x-auto"
+                            data-lenis-prevent="true"
+                        >
+                            <div className="min-w-[800px] md:min-w-full">
+                                <table className="w-full text-left border-collapse">
+                                    <thead className="bg-[#09090b] shadow-sm">
+                                        <tr className="border-b border-white/10 text-gray-500 text-[10px] uppercase tracking-wider font-semibold">
+                                            <th className="px-6 md:px-8 py-4 w-[25%]">Candidate</th>
+                                            <th className="px-4 py-4 w-[20%]">Domain</th>
+                                            <th className="px-4 py-4 w-[15%] text-center">Round</th>
+                                            <th className="px-4 py-4 w-[15%] text-center">Status</th>
+                                            <th className="px-4 py-4 w-[10%] text-center">Details</th>
+                                            <th className="px-6 md:px-8 py-4 w-[15%] text-right">Actions</th>
                                         </tr>
-                                    ) : (
-                                        filteredUsers.map((user) => (
-                                            <tr key={user._id} className="group hover:bg-white/[0.02] transition-colors">
-                                                <td className="px-8 py-4">
-                                                    <div className="flex items-center gap-3">
-                                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-white/10 text-gray-400 font-bold text-xs uppercase">
-                                                            {user.username.slice(0,2)}
-                                                        </div>
-                                                        <div>
-                                                            <div className="font-medium text-white text-sm flex items-center gap-2">
-                                                                {user.username}
-                                                                {user.hasSelection && <CheckCircle className="w-3 h-3 text-[#ccff00]" />}
-                                                            </div>
-                                                            <div className="text-xs text-gray-500 font-mono mt-0.5">{user.email}</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="px-4 py-4">
-                                                    <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-medium border ${
-                                                        user.domain === 'Web Development' ? 'border-blue-500/20 text-blue-400 bg-blue-500/5' :
-                                                        user.domain === 'Content Writing' ? 'border-purple-500/20 text-purple-400 bg-purple-500/5' :
-                                                        user.domain === 'Graphic Design' ? 'border-pink-500/20 text-pink-400 bg-pink-500/5' :
-                                                        user.domain === 'Video Editing' ? 'border-rose-500/20 text-rose-400 bg-rose-500/5' :
-                                                        'border-orange-500/20 text-orange-400 bg-orange-500/5'
-                                                    }`}>
-                                                        {user.domain}
-                                                    </span>
-                                                </td>
-                                                <td className="px-4 py-4 text-center">
-                                                    <div className="inline-flex items-center gap-1">
-                                                        {[0,1,2,3,4].map((step) => (
-                                                            <div 
-                                                                key={step} 
-                                                                className={`w-1.5 h-6 rounded-full transition-all duration-300 ${
-                                                                    step <= user.round 
-                                                                    ? (user.hasSelection ? 'bg-[#ccff00]' : 'bg-white') 
-                                                                    : 'bg-white/10'
-                                                                } ${step === user.round && !user.hasSelection ? 'animate-pulse' : ''}`}
-                                                                title={`Round ${step}`}
-                                                            />
-                                                        ))}
-                                                    </div>
-                                                    <div className="text-[10px] text-gray-500 mt-1 font-mono">R{user.round}</div>
-                                                </td>
-                                                <td className="px-4 py-4 text-center">
-                                                    {user.hasSelection ? (
-                                                        <div className="inline-flex flex-col items-center gap-1">
-                                                            <span className="text-[#ccff00] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 bg-[#ccff00]/10 px-2 py-0.5 rounded-full border border-[#ccff00]/20">
-                                                                Selected
-                                                            </span>
-                                                        </div>
-                                                    ) : (
-                                                        <span className="text-gray-500 text-[10px] uppercase tracking-wider">In Progress</span>
-                                                    )}
-                                                </td>
-                                                <td className="px-4 py-4 text-center">
-                                                    <button 
-                                                        onClick={() => setSelectedReason({ username: user.username, text: user.reason || "No reason provided." })}
-                                                        className="p-2 hover:bg-white/10 rounded-lg text-gray-500 hover:text-white transition-colors"
-                                                        title="View Application"
-                                                    >
-                                                        <FileText className="w-4 h-4" />
-                                                    </button>
-                                                </td>
-                                                <td className="px-8 py-4 text-right">
-                                                    <div className="flex items-center justify-end gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
-                                                        <button 
-                                                            onClick={() => updateRound(user._id, user.round - 1)}
-                                                            disabled={user.round <= 0}
-                                                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-transparent hover:border-white/10 hover:bg-white/5 text-gray-400 hover:text-red-400 disabled:opacity-30 disabled:pointer-events-none transition-all"
-                                                            title="Demote"
-                                                        >
-                                                            <ChevronDown className="w-4 h-4" />
-                                                        </button>
-                                                        <div className="w-px h-4 bg-white/10 mx-1"></div>
-                                                        <button 
-                                                            onClick={() => updateRound(user._id, user.round + 1)}
-                                                            disabled={user.round >= 4}
-                                                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-transparent hover:border-white/10 hover:bg-white/5 text-gray-400 hover:text-[#ccff00] disabled:opacity-30 disabled:pointer-events-none transition-all"
-                                                            title="Promote"
-                                                        >
-                                                            <ChevronUp className="w-4 h-4" />
-                                                        </button>
+                                    </thead>
+                                    <tbody className="divide-y divide-white/5">
+                                        {filteredUsers.length === 0 ? (
+                                            <tr>
+                                                <td colSpan={6} className="p-20 text-center">
+                                                    <div className="flex flex-col items-center gap-3 text-gray-500">
+                                                        <Filter className="w-8 h-8 opacity-20" />
+                                                        <p>No candidates found matching your criteria.</p>
                                                     </div>
                                                 </td>
                                             </tr>
-                                        ))
-                                    )}
-                                </tbody>
-                            </table>
+                                        ) : (
+                                            filteredUsers.map((user) => (
+                                                <tr key={user._id} className="group hover:bg-white/[0.02] transition-colors">
+                                                    <td className="px-6 md:px-8 py-4">
+                                                        <div className="flex items-center gap-3">
+                                                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-white/10 text-gray-400 font-bold text-xs uppercase shrink-0">
+                                                                {user.username.slice(0,2)}
+                                                            </div>
+                                                            <div>
+                                                                <div className="font-medium text-white text-sm flex items-center gap-2">
+                                                                    {user.username}
+                                                                    {user.hasSelection && <CheckCircle className="w-3 h-3 text-[#ccff00]" />}
+                                                                </div>
+                                                                <div className="text-xs text-gray-500 font-mono mt-0.5">{user.email}</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td className="px-4 py-4">
+                                                        <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-medium border ${
+                                                            user.domain === 'Web Development' ? 'border-blue-500/20 text-blue-400 bg-blue-500/5' :
+                                                            user.domain === 'Content Writing' ? 'border-purple-500/20 text-purple-400 bg-purple-500/5' :
+                                                            user.domain === 'Graphic Design' ? 'border-pink-500/20 text-pink-400 bg-pink-500/5' :
+                                                            user.domain === 'Video Editing' ? 'border-rose-500/20 text-rose-400 bg-rose-500/5' :
+                                                            'border-orange-500/20 text-orange-400 bg-orange-500/5'
+                                                        }`}>
+                                                            {user.domain}
+                                                        </span>
+                                                    </td>
+                                                    <td className="px-4 py-4 text-center">
+                                                        <div className="inline-flex items-center gap-1">
+                                                            {[0,1,2,3,4].map((step) => (
+                                                                <div 
+                                                                    key={step} 
+                                                                    className={`w-1.5 h-6 rounded-full transition-all duration-300 ${
+                                                                        step <= user.round 
+                                                                        ? (user.hasSelection ? 'bg-[#ccff00]' : 'bg-white') 
+                                                                        : 'bg-white/10'
+                                                                    } ${step === user.round && !user.hasSelection ? 'animate-pulse' : ''}`}
+                                                                    title={`Round ${step}`}
+                                                                />
+                                                            ))}
+                                                        </div>
+                                                        <div className="text-[10px] text-gray-500 mt-1 font-mono">R{user.round}</div>
+                                                    </td>
+                                                    <td className="px-4 py-4 text-center">
+                                                        {user.hasSelection ? (
+                                                            <div className="inline-flex flex-col items-center gap-1">
+                                                                <span className="text-[#ccff00] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 bg-[#ccff00]/10 px-2 py-0.5 rounded-full border border-[#ccff00]/20">
+                                                                    Selected
+                                                                </span>
+                                                            </div>
+                                                        ) : (
+                                                            <span className="text-gray-500 text-[10px] uppercase tracking-wider">In Progress</span>
+                                                        )}
+                                                    </td>
+                                                    <td className="px-4 py-4 text-center">
+                                                        <button 
+                                                            onClick={() => setSelectedReason({ username: user.username, text: user.reason || "No reason provided." })}
+                                                            className="p-2 hover:bg-white/10 rounded-lg text-gray-500 hover:text-white transition-colors"
+                                                            title="View Application"
+                                                        >
+                                                            <FileText className="w-4 h-4" />
+                                                        </button>
+                                                    </td>
+                                                    <td className="px-6 md:px-8 py-4 text-right">
+                                                        <div className="flex items-center justify-end gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+                                                            <button 
+                                                                onClick={() => updateRound(user._id, user.round - 1)}
+                                                                disabled={user.round <= 0}
+                                                                className="w-8 h-8 flex items-center justify-center rounded-lg border border-transparent hover:border-white/10 hover:bg-white/5 text-gray-400 hover:text-red-400 disabled:opacity-30 disabled:pointer-events-none transition-all"
+                                                                title="Demote"
+                                                            >
+                                                                <ChevronDown className="w-4 h-4" />
+                                                            </button>
+                                                            <div className="w-px h-4 bg-white/10 mx-1"></div>
+                                                            <button 
+                                                                onClick={() => updateRound(user._id, user.round + 1)}
+                                                                disabled={user.round >= 4}
+                                                                className="w-8 h-8 flex items-center justify-center rounded-lg border border-transparent hover:border-white/10 hover:bg-white/5 text-gray-400 hover:text-[#ccff00] disabled:opacity-30 disabled:pointer-events-none transition-all"
+                                                                title="Promote"
+                                                            >
+                                                                <ChevronUp className="w-4 h-4" />
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     )}
                 </div>
-            </>
+            </div>
           )}
         </div>
         
@@ -433,7 +460,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                     </div>
                     
                     {/* Scrollable Content */}
-                    <div className="p-6 overflow-y-auto custom-scrollbar">
+                    <div 
+                        className="p-6 overflow-y-auto custom-scrollbar"
+                        data-lenis-prevent="true"
+                    >
                         <div className="prose prose-invert prose-sm max-w-none">
                             <p className="text-gray-300 leading-relaxed whitespace-pre-wrap font-light text-base">
                                 {selectedReason.text}
