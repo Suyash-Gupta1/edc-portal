@@ -37,7 +37,7 @@ const About: React.FC = () => {
       const currentScale = 0.6 + (easedScale * 0.4); 
       
       cardRef.current.style.transform = `scale(${currentScale})`;
-      cardRef.current.style.opacity = `${0.2 + (easedScale * 0.8)}`; // Fade in from 0.2 to 1.0
+      cardRef.current.style.opacity = `${0.6 + (easedScale * 0.8)}`; // Fade in from 0.2 to 1.0
 
       
       const animatePath = (path: SVGPathElement | null, startP: number, endP: number) => {

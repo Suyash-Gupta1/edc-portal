@@ -7,6 +7,8 @@ interface AdminDashboardProps {
   onClose: () => void;
 }
 
+// i dont know have taken it from someone elses code so sorry for any problems here.
+
 interface UserData {
   _id: string;
   username: string;
@@ -20,7 +22,7 @@ interface UserData {
 
 const ADMIN_KEY_CONST = "EDC_ADMIN_2024";
 
-// Dummy data for fallback
+
 const DUMMY_USERS: UserData[] = [
     { _id: "1", username: "demo_user", email: "demo@example.com", domain: "Web Development", reason: "I love coding and want to build cool things.", round: 0, hasSelection: false, createdAt: new Date().toISOString() },
     { _id: "2", username: "john_doe", email: "john@test.com", domain: "Graphic Design", reason: "Design is my passion.", round: 2, hasSelection: false, createdAt: new Date().toISOString() },

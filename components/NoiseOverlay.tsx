@@ -5,6 +5,8 @@ export default function NoiseOverlay() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
 
+  //gives some bg feel @codegrid
+
   useEffect(() => {
     if (!containerRef.current) return;
 

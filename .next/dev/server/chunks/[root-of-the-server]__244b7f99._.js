@@ -177,9 +177,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 ;
 ;
 ;
-// In a real app, store this in .env
 const ADMIN_KEY = "EDC_ADMIN_2024";
-const dynamic = 'force-dynamic'; // Prevent Next.js from caching this route
+const dynamic = 'force-dynamic';
 async function GET(req) {
     await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])();
     const apiKey = req.headers.get('admin-key');
@@ -191,8 +190,6 @@ async function GET(req) {
         });
     }
     try {
-        // Fetch all users, sort by round (descending) then date
-        // .lean() converts Mongoose documents to plain JS objects, which is faster and ensures full field visibility
         const users = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].find({}).sort({
             round: -1,
             createdAt: -1

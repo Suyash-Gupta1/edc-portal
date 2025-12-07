@@ -188,7 +188,6 @@ async function POST(req) {
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])();
         const body = await req.json();
         const { username, email, password, domain, reason } = body;
-        // Validation
         if (!username || !email || !password || !domain || !reason) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: 'Please provide all fields, including your reason for joining.'
@@ -196,7 +195,6 @@ async function POST(req) {
                 status: 400
             });
         }
-        // Check if user exists
         const userExists = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
             $or: [
                 {
@@ -214,12 +212,8 @@ async function POST(req) {
                 status: 400
             });
         }
-        // --- BCRYPT HASHING LOGIC ---
-        // 1. Generate a salt
         const salt = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].genSalt(10);
-        // 2. Hash the password with the salt
         const hashedPassword = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].hash(password, salt);
-        // Create user with HASHED password
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].create({
             username,
             email,

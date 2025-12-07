@@ -1,6 +1,8 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 
+// @codegrid
+
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const cursorDotRef = useRef<HTMLDivElement>(null);

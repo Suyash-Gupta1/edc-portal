@@ -4,7 +4,7 @@ import Lenis from 'lenis';
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // 1. Initialize Lenis with "Luxury" settings
+    
     const lenis = new Lenis({
       // Increased momentum duration
       duration: 1.5, 
@@ -18,7 +18,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     });
 
     // 2. Animation Frame Loop (Required for Lenis to work smoothly)
-    // This links Lenis updates directly to the screen refresh rate (60fps)
+   
     let frameId: number;
 
     function raf(time: number) {
