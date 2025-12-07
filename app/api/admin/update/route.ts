@@ -16,31 +16,40 @@ export async function POST(req: Request) {
 
   try {
     const body = await req.json();
-    const { userId, round } = body;
+    const { userId, round, applicationStatus } = body;
 
-    if (!userId || typeof round !== 'number') {
+    if (!userId) {
       return NextResponse.json({ error: 'Invalid data' }, { status: 400 });
     }
 
-    
     const currentUser = await User.findById(userId);
-    
     if (!currentUser) {
         return NextResponse.json({ error: 'User not found' }, { status: 404 });
     }
 
+    const updates: any = {};
     
-    const hasSelection = round >= 4;
+    // Handle Round Update
+    if (typeof round === 'number') {
+        updates.round = round;
+        updates.hasSelection = round >= 4;
+    }
 
-    
+    // Handle Status Update (Active/Rejected)
+    if (applicationStatus) {
+        updates.applicationStatus = applicationStatus;
+    }
+
+    // Update the user
     const updatedUser = await User.findByIdAndUpdate(
       userId,
-      { round: round, hasSelection: hasSelection },
+      updates,
       { new: true }
     );
 
-    
-    if (round > currentUser.round) {
+    // Send Email Logic (Only for promotions or selection)
+    // We don't automate rejection emails to allow for personal checks, but we do promote active rounds
+    if (typeof round === 'number' && round > currentUser.round && updatedUser.applicationStatus === 'active') {
         console.log(`[Email Trigger] Promoting ${updatedUser.username} to Round ${round}`);
         try {
             await sendStatusEmail(
@@ -49,10 +58,8 @@ export async function POST(req: Request) {
                 round, 
                 updatedUser.domain
             );
-            console.log(`[Email Success] Sent to ${updatedUser.email}`);
         } catch (emailError) {
             console.error("[Email Failure]", emailError);
-           
         }
     }
 

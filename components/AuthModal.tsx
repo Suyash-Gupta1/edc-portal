@@ -9,22 +9,22 @@ interface AuthModalProps {
 }
 
 const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }) => {
-  const [isLogin, setIsLogin] = useState(false); 
+  const [isLogin, setIsLogin] = useState(false); // Default to Join (Register)
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   
-  // Animation States
+  // Animation State
   const [shouldRender, setShouldRender] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   
-  // Height Animation Refs
+  // Smooth Height State
   const [menuHeight, setMenuHeight] = useState<number | undefined>(undefined);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen) {
       setShouldRender(true);
-      document.body.style.overflow = 'hidden'; 
+      document.body.style.overflow = 'hidden'; // Lock body scroll
       
       const timer = setTimeout(() => {
         setIsVisible(true);
@@ -32,16 +32,16 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
       return () => clearTimeout(timer);
     } else {
       setIsVisible(false);
-      document.body.style.overflow = 'unset'; 
+      document.body.style.overflow = 'unset'; // Unlock body scroll
       
       const timer = setTimeout(() => {
         setShouldRender(false);
-      }, 500); 
+      }, 500); // Match transition duration
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
 
-  // Height Observer
+  // Smooth Height Observer
   useEffect(() => {
     if (!contentRef.current) return;
     
@@ -59,6 +59,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
   const [formData, setFormData] = useState({
     username: '',
     email: '',
+    phone: '',
     password: '',
     domain: 'Web Development',
     reason: ''
@@ -96,7 +97,8 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
       if (!res.ok) {
         throw new Error(data.error || 'Something went wrong');
       }
-      
+
+      // Success
       onLoginSuccess(data.user);
       onClose();
       resetForm();
@@ -112,6 +114,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
             const demoUser = {
                 username: formData.username || "Demo User",
                 email: formData.email,
+                phone: formData.phone,
                 domain: formData.domain,
                 reason: formData.reason,
                 hasSelection: false,
@@ -134,6 +137,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
       setFormData({
         username: '',
         email: '',
+        phone: '',
         password: '',
         domain: 'Web Development',
         reason: ''
@@ -158,14 +162,13 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
         `}
         style={{ willChange: 'transform, opacity' }}
       >
-         {/* Animated Height Wrapper */}
+         {/* Height Animation Wrapper */}
          <div 
             style={{ height: menuHeight, maxHeight: '85vh' }} 
             className="transition-[height] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-y-auto custom-scrollbar"
             data-lenis-prevent="true"
          >
             <div ref={contentRef}>
-                
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/5 bg-[#111] sticky top-0 z-10">
                     <h3 className="text-xl font-display font-bold text-white">
@@ -185,7 +188,6 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                             </div>
                         )}
 
-                        {/* Username Field */}
                         <div className="space-y-2">
                             <label className="text-sm text-gray-400 font-medium ml-1">Username</label>
                             <input
@@ -199,7 +201,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                             />
                         </div>
 
-                        {/* Email Field (Hidden on Login) */}
+                        {/* Animated Fields for Register */}
                         <div className={`space-y-4 overflow-hidden transition-all duration-300 ease-in-out ${!isLogin ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400 font-medium ml-1">Email</label>
@@ -213,9 +215,21 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                                     required={!isLogin}
                                 />
                             </div>
+
+                             <div className="space-y-2">
+                                <label className="text-sm text-gray-400 font-medium ml-1">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all"
+                                    placeholder="+91 9876543210"
+                                    required={!isLogin}
+                                />
+                            </div>
                         </div>
 
-                        {/* Password Field */}
                         <div className="space-y-2">
                             <label className="text-sm text-gray-400 font-medium ml-1">Password</label>
                             <input
@@ -229,7 +243,6 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                             />
                         </div>
 
-                        {/* Domain Select (Hidden on Login) */}
                         <div className={`space-y-4 overflow-hidden transition-all duration-300 ease-in-out ${!isLogin ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400 font-medium ml-1">Interested Domain</label>
@@ -240,12 +253,11 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                                         onChange={handleChange}
                                         className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all appearance-none cursor-pointer"
                                     >
-                                        {/* FIX: Explicitly styling option tags to have dark background */}
-                                        <option value="Web Development" className="bg-[#111] text-white">Web Development</option>
-                                        <option value="Content Writing" className="bg-[#111] text-white">Content Writing</option>
-                                        <option value="Graphic Design" className="bg-[#111] text-white">Graphic Design</option>
-                                        <option value="Video Editing" className="bg-[#111] text-white">Video Editing</option>
-                                        <option value="Event Management" className="bg-[#111] text-white">Event Management</option>
+                                        <option value="Web Development" className="bg-[#121212] text-white">Web Development</option>
+                                        <option value="Content Writing" className="bg-[#121212] text-white">Content Writing</option>
+                                        <option value="Graphic Design" className="bg-[#121212] text-white">Graphic Design</option>
+                                        <option value="Video Editing" className="bg-[#121212] text-white">Video Editing</option>
+                                        <option value="Event Management" className="bg-[#121212] text-white">Event Management</option>
                                     </select>
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                                         <ArrowRight className="w-4 h-4 rotate-90" />
@@ -279,7 +291,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
                         </button>
                     </form>
 
-                    
+                    {/* Footer Toggle */}
                     <div className="mt-6 pt-6 border-t border-white/5 text-center text-sm text-gray-400">
                     {isLogin ? "Don't have an account? " : "Already a member? "}
                     <button 

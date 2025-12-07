@@ -112,6 +112,10 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         ],
         unique: true
     },
+    mobileNumber: {
+        type: String,
+        required: false
+    },
     password: {
         type: String,
         required: [
@@ -134,7 +138,6 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         ],
         default: "No reason provided."
     },
-    // Tracks the selection round: 0 (Applied), 1-3 (Interview Rounds), 4 (Selected)
     round: {
         type: Number,
         default: 0
@@ -142,6 +145,14 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
     hasSelection: {
         type: Boolean,
         default: false
+    },
+    applicationStatus: {
+        type: String,
+        enum: [
+            'active',
+            'rejected'
+        ],
+        default: 'active'
     },
     createdAt: {
         type: Date,
@@ -152,7 +163,6 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
 if (__TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User) {
     delete __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User;
 }
-// Explicitly type the model to avoid Union type errors in Next.js API routes
 const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model('User', UserSchema);
 const __TURBOPACK__default__export__ = User;
 }),
