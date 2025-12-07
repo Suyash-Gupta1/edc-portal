@@ -1,15 +1,15 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
-// there has been some problem regarding storing the reason check it and then delete it 
-
 export interface IUser extends Document {
   username: string;
   email: string;
+  mobileNumber: string;
   password: string;
   domain: string;
-  reason: string; 
+  reason: string;
   round: number;
   hasSelection: boolean;
+  applicationStatus: 'active' | 'rejected';
   createdAt: Date;
 }
 
@@ -24,6 +24,10 @@ const UserSchema = new Schema<IUser>({
     required: [true, 'Please provide an email'],
     unique: true,
   },
+  mobileNumber: {
+    type: String,
+    required: false, 
+  },
   password: {
     type: String,
     required: [true, 'Please provide a password'],
@@ -37,7 +41,6 @@ const UserSchema = new Schema<IUser>({
     required: [true, 'Please provide a reason for joining'],
     default: "No reason provided.", 
   },
-  // Tracks the selection round: 0 (Applied), 1-3 (Interview Rounds), 4 (Selected)
   round: {
     type: Number,
     default: 0, 
@@ -45,6 +48,11 @@ const UserSchema = new Schema<IUser>({
   hasSelection: {
     type: Boolean,
     default: false,
+  },
+  applicationStatus: {
+    type: String,
+    enum: ['active', 'rejected'],
+    default: 'active',
   },
   createdAt: {
     type: Date,
@@ -57,7 +65,6 @@ if (mongoose.models.User) {
   delete mongoose.models.User;
 }
 
-// Explicitly type the model to avoid Union type errors in Next.js API routes
 const User: Model<IUser> = mongoose.model<IUser>('User', UserSchema);
 
 export default User;

@@ -13,20 +13,20 @@ const Hero: React.FC = () => {
 
       if (!modelViewer || !container) return;
 
-      // Calculate scroll progress (0 to 1) based on first 600px of scroll
+      
       const maxScrollDistance = 600;
       const scrollY = window.scrollY;
       const progress = Math.min(scrollY / maxScrollDistance, 1);
 
-      // Rotate model: 0 to 120 degrees
+      
       const theta = progress * 120;
 
-      // Zoom in: Radius changes from 14m to 5m
+      
       const baseRadius = 14;
       const targetRadius = 5;
       const radius = baseRadius - progress * (baseRadius - targetRadius);
 
-      // Shift container to the left: 0vw to -20vw
+      
       const maxShiftVW = -20;
       const currentShiftVW = progress * maxShiftVW;
 
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
         container.style.transform = `translateX(0px)`;
       }
 
-      // Update Field of View: 30deg to 20deg for dramatic effect
+      
       const baseFov = 30;
       const targetFov = 20;
       const fov = baseFov - progress * (baseFov - targetFov);
@@ -49,17 +49,19 @@ const Hero: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-   
+    
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <section id="hero-section" className="relative pt-32 pb-20 flex items-center justify-center min-h-[110vh]">
+    
+    <section id="hero-section" className="relative pt-32 pb-20 flex items-center justify-center min-h-[110vh] overflow-visible">
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(204,255,0,0.03),transparent_60%)]"></div>
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full relative z-10">
+      
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full relative z-10 overflow-visible">
         
         <div className="space-y-8 order-1 z-10">
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[0.9] tracking-tighter">
@@ -73,12 +75,12 @@ const Hero: React.FC = () => {
             Turning ideas into reality. Where innovation meets execution.
           </p>
           
-          
+         
           <button 
             onClick={() => window.open('https://www.edcnitd.co.in/', '_blank')}
             className="group relative flex items-center gap-4 bg-transparent border border-white/20 pl-8 pr-2 py-2 rounded-full transition-all duration-300 hover:border-transparent w-fit overflow-hidden"
           >
-            
+           
             <div className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-[25] z-0 origin-center will-change-transform"></div>
             
             
@@ -96,11 +98,12 @@ const Hero: React.FC = () => {
           </button>
         </div>
 
-        
+       
         <div
           ref={containerRef}
           id="model-wrapper"
-          className="hero-model-container order-2 model-inner-height w-full flex items-center justify-center perspective-1000"
+          
+          className="hero-model-container order-2 model-inner-height w-full flex items-center justify-center perspective-1000 overflow-visible"
         >
           <div className="absolute bottom-10 w-3/4 h-20 bg-[#ccff00]/10 blur-[60px] rounded-[100%] transform rotate-x-60"></div>
           {/* @ts-ignore */}
@@ -113,7 +116,15 @@ const Hero: React.FC = () => {
             exposure="0.8"
             camera-orbit="0deg 90deg 14m"
             field-of-view="30deg"
-            style={{ background: 'transparent', zIndex: 200, width: '100%', height: '100%' }}
+            // FIX 4: Over-size the canvas to prevent clipping edges
+            style={{ 
+                background: 'transparent', 
+                zIndex: 200, 
+                width: '140%',   // Wider than container
+                height: '140%',  // Taller than container
+                marginLeft: '-20%', // Center back horizontally
+                marginTop: '-20%'   // Center back vertically
+            }}
           >
             {/* @ts-ignore */}
           </model-viewer>

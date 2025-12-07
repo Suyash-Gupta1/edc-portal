@@ -368,14 +368,12 @@ function SmoothScroll({ children }) {
             wheelMultiplier: 0.8,
             touchMultiplier: 2
         });
-        // 2. Animation Frame Loop (Required for Lenis to work smoothly)
         let frameId;
         function raf(time) {
             lenis.raf(time);
             frameId = requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
-        // 3. Cleanup: Stop the engine and loop when the component unmounts
         return ()=>{
             cancelAnimationFrame(frameId);
             lenis.destroy();
@@ -389,7 +387,7 @@ function SmoothScroll({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/components/SmoothScroll.tsx",
-        lineNumber: 39,
+        lineNumber: 38,
         columnNumber: 5
     }, this);
 }

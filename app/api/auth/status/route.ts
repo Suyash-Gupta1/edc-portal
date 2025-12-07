@@ -1,5 +1,6 @@
 import dbConnect from '@/lib/db';
 import User from '@/models/User';
+import RoundSchedule from '@/models/RoundSchedule';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
@@ -19,12 +20,21 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'User not found' }, { status: 404 });
     }
 
+    
+    const nextRound = user.round + 1;
+    
+   
+    const scheduleDoc = await RoundSchedule.findOne({ round: nextRound });
+    const scheduleDescription = scheduleDoc ? scheduleDoc.description : "";
+
     return NextResponse.json({
       success: true,
       status: {
         round: user.round,
         hasSelection: user.hasSelection,
-        domain: user.domain
+        domain: user.domain,
+        applicationStatus: user.applicationStatus || 'active',
+        scheduleDescription: scheduleDescription 
       }
     });
 

@@ -8,7 +8,14 @@ export async function POST(req: Request) {
     await dbConnect();
 
     const body = await req.json();
-    const { username, email, password, domain, reason } = body;
+    
+    
+    let { username, email, mobileNumber, phone, password, domain, reason } = body;
+
+    
+    if (!mobileNumber && phone) {
+        mobileNumber = phone;
+    }
 
     
     if (!username || !email || !password || !domain || !reason) {
@@ -17,26 +24,46 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+    
+    if (!mobileNumber) {
+        return NextResponse.json(
+          { error: 'Please provide a WhatsApp number.' },
+          { status: 400 }
+        );
+    }
 
-   
-    const userExists = await User.findOne({ $or: [{ email }, { username }] });
+    
+    
+    const userExists = await User.findOne({ 
+      $or: [
+        { email }, 
+        { username },
+        { mobileNumber } 
+      ] 
+    });
+
     if (userExists) {
+      let errorMessage = 'User already exists';
+      if (userExists.email === email) errorMessage = 'Email already registered';
+      if (userExists.username === username) errorMessage = 'Username already taken';
+      if (userExists.mobileNumber === mobileNumber) errorMessage = 'Mobile number already registered';
+
       return NextResponse.json(
-        { error: 'User already exists' },
+        { error: errorMessage },
         { status: 400 }
       );
     }
 
     
     const salt = await bcrypt.genSalt(10);
-    
     const hashedPassword = await bcrypt.hash(password, salt);
 
     
     const user = await User.create({
       username,
       email,
-      password: hashedPassword, 
+      mobileNumber, 
+      password: hashedPassword,
       domain,
       reason,
       hasSelection: false
@@ -47,6 +74,7 @@ export async function POST(req: Request) {
       user: {
         username: user.username,
         email: user.email,
+        mobileNumber: user.mobileNumber,
         domain: user.domain,
         reason: user.reason,
         hasSelection: user.hasSelection
@@ -54,6 +82,11 @@ export async function POST(req: Request) {
     });
 
   } catch (error: any) {
+    
+    if (error.name === 'ValidationError') {
+      const messages = Object.values(error.errors).map((val: any) => val.message);
+      return NextResponse.json({ error: messages[0] }, { status: 400 });
+    }
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

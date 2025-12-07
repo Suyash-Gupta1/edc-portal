@@ -112,6 +112,10 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         ],
         unique: true
     },
+    mobileNumber: {
+        type: String,
+        required: false
+    },
     password: {
         type: String,
         required: [
@@ -134,7 +138,6 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         ],
         default: "No reason provided."
     },
-    // Tracks the selection round: 0 (Applied), 1-3 (Interview Rounds), 4 (Selected)
     round: {
         type: Number,
         default: 0
@@ -142,6 +145,14 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
     hasSelection: {
         type: Boolean,
         default: false
+    },
+    applicationStatus: {
+        type: String,
+        enum: [
+            'active',
+            'rejected'
+        ],
+        default: 'active'
     },
     createdAt: {
         type: Date,
@@ -152,7 +163,6 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
 if (__TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User) {
     delete __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User;
 }
-// Explicitly type the model to avoid Union type errors in Next.js API routes
 const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model('User', UserSchema);
 const __TURBOPACK__default__export__ = User;
 }),
@@ -187,7 +197,13 @@ async function POST(req) {
     try {
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])();
         const body = await req.json();
-        const { username, email, password, domain, reason } = body;
+        // Extract both possible field names
+        let { username, email, mobileNumber, phone, password, domain, reason } = body;
+        // FALLBACK: If mobileNumber is missing, try using 'phone'
+        if (!mobileNumber && phone) {
+            mobileNumber = phone;
+        }
+        // 1. Basic Validation
         if (!username || !email || !password || !domain || !reason) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: 'Please provide all fields, including your reason for joining.'
@@ -195,6 +211,15 @@ async function POST(req) {
                 status: 400
             });
         }
+        if (!mobileNumber) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: 'Please provide a WhatsApp number.'
+            }, {
+                status: 400
+            });
+        }
+        // 2. Check for duplicates (Username, Email, OR Mobile Number)
+        // Since mobileNumber is unique in schema, we must check it here too
         const userExists = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
             $or: [
                 {
@@ -202,21 +227,32 @@ async function POST(req) {
                 },
                 {
                     username
+                },
+                {
+                    mobileNumber
                 }
             ]
         });
         if (userExists) {
+            let errorMessage = 'User already exists';
+            if (userExists.email === email) errorMessage = 'Email already registered';
+            if (userExists.username === username) errorMessage = 'Username already taken';
+            if (userExists.mobileNumber === mobileNumber) errorMessage = 'Mobile number already registered';
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'User already exists'
+                error: errorMessage
             }, {
                 status: 400
             });
         }
+        // 3. Secure the password
         const salt = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].genSalt(10);
         const hashedPassword = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].hash(password, salt);
+        // 4. Create user
+        // No need for 'as any' casting anymore; TypeScript knows mobileNumber exists on IUser
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].create({
             username,
             email,
+            mobileNumber,
             password: hashedPassword,
             domain,
             reason,
@@ -227,12 +263,22 @@ async function POST(req) {
             user: {
                 username: user.username,
                 email: user.email,
+                mobileNumber: user.mobileNumber,
                 domain: user.domain,
                 reason: user.reason,
                 hasSelection: user.hasSelection
             }
         });
     } catch (error) {
+        // Handle Mongoose validation errors (like regex mismatch for phone number)
+        if (error.name === 'ValidationError') {
+            const messages = Object.values(error.errors).map((val)=>val.message);
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: messages[0]
+            }, {
+                status: 400
+            });
+        }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             error: error.message
         }, {

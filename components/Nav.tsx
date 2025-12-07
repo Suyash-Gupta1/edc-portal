@@ -114,7 +114,7 @@ const App: React.FC = () => {
         onClose={() => setIsAdminModalOpen(false)}
       />
 
-      {/* 5. The Secret Hacker Modal */}
+      {/* 5. The Secret Hacker Modal_______(pta nhin kyun hi ye yhan) */}
       <HackerModal 
         isOpen={isHackerModalOpen}
         onClose={() => setIsHackerModalOpen(false)}

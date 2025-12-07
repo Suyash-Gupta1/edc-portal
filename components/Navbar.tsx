@@ -28,6 +28,8 @@ const Navbar: React.FC<NavbarProps> = ({ user, onOpenAuth, onLogout, onOpenAdmin
     { name: 'Home', target: '/' }, 
     { name: 'About', target: '/#about-section' }, 
     { name: 'Domains', target: '/#domains' },
+    { name: 'Results', target: '/results'},
+    { name: 'Your Journey', target: '/status'}
    
   ];
 

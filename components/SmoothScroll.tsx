@@ -17,10 +17,9 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       touchMultiplier: 2,
     });
 
-    // 2. Animation Frame Loop (Required for Lenis to work smoothly)
+   
    
     let frameId: number;
-
     function raf(time: number) {
       lenis.raf(time);
       frameId = requestAnimationFrame(raf);
@@ -28,7 +27,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
     requestAnimationFrame(raf);
 
-    // 3. Cleanup: Stop the engine and loop when the component unmounts
+    
     return () => {
       cancelAnimationFrame(frameId);
       lenis.destroy();
