@@ -3,7 +3,6 @@ import User from '@/models/User';
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { isPrecomputedAdmin } from '@/app/utils/rolecheck'  // ⬅ ADDED
 
 export async function POST(req: Request) {
   try {
@@ -37,18 +36,22 @@ export async function POST(req: Request) {
       );
     }
 
-    //  CHECK PRECOMPUTED ADMIN
-    const adminStatus = isPrecomputedAdmin(user.email);  // ⬅ ADDED
-    if (adminStatus && !user.isAdmin) {
-      user.isAdmin = true;   // persist in DB
+    const adminEmails = (process.env.ADMIN_EMAILS || "")
+      .split(",")
+      .map((e) => e.trim().toLowerCase());
+
+    const shouldBeAdmin = adminEmails.includes(user.email.toLowerCase());
+
+    if (user.isAdmin !== shouldBeAdmin) {
+      user.isAdmin = shouldBeAdmin;
       await user.save();
-}
-    // --- JWT SETUP ---
+    }
+
     const tokenData = {
       id: user._id,
       username: user.username,
       email: user.email,
-      isAdmin: user.isAdmin,   // ⬅ ADDED
+      isAdmin: user.isAdmin,
     };
 
     const token = jwt.sign(tokenData, process.env.JWT_SECRET!, {
@@ -61,7 +64,7 @@ export async function POST(req: Request) {
       user: {
         username: user.username,
         email: user.email,
-        isAdmin: user.isAdmin,   // ⬅ ADDED (Frontend needs this)
+        isAdmin: user.isAdmin,
         domain: user.domain,
         reason: user.reason,
         hasSelection: user.hasSelection,

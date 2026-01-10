@@ -142,6 +142,11 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         type: Number,
         default: 0
     },
+    // ✅ Added isAdmin field definition
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
     hasSelection: {
         type: Boolean,
         default: false
@@ -158,10 +163,20 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         type: Date,
         default: Date.now
     },
-    isAdmin: {
-        type: Boolean,
-        default: false
-    }
+    selfRating: {
+        type: Number,
+        default: 0
+    },
+    responses: [
+        {
+            question: {
+                type: String
+            },
+            answer: {
+                type: String
+            }
+        }
+    ]
 });
 // IMPORTANT: Delete the model if it exists to prevent caching issues with schema updates in development
 if (__TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User) {

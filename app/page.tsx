@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Marquee from '../components/Marquee';
@@ -10,93 +10,41 @@ import Preloader from '../components/Preloader';
 import ScrollProgress from '../components/ScrollProgress';
 import AuthModal from '../components/AuthModal';
 import AdminDashboard from '../components/AdminDashboard';
-import HackerModal from '../components/HackerModal';
-
-const KONAMI_CODE = [
-  'ArrowUp', 'ArrowUp', 
-  'ArrowDown', 'ArrowDown', 
-  'ArrowLeft', 'ArrowRight', 
-  'ArrowLeft', 'ArrowRight', 
-  'b', 'a'
-];
-
-const useKonamiCode = (action: () => void) => {
-  const [input, setInput] = useState<string[]>([]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const newInput = [...input, e.key];
-      if (newInput.length > KONAMI_CODE.length) {
-        newInput.shift();
-      }
-      setInput(newInput);
-      
-      if (newInput.join('') === KONAMI_CODE.join('')) {
-        action();
-        setInput([]); 
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [input, action]);
-};
-
+import CustomCursor from '../components/CustomCursor';
+import '../types'
 
 export default function App() {
-  const [showPreloader, setShowPreloader] = useState(true);
-  const [isContentVisible, setIsContentVisible] = useState(false);
-  const [isSessionChecked, setIsSessionChecked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); 
+  const [showContent, setShowContent] = useState(false); 
   
   const [user, setUser] = useState<any>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
-  const [isHackerModalOpen, setIsHackerModalOpen] = useState(false);
-
-  
-  const isScrollLocked = useMemo(() => {
-      return isAuthModalOpen || isAdminModalOpen || isHackerModalOpen;
-  }, [isAuthModalOpen, isAdminModalOpen, isHackerModalOpen]);
-
-  useKonamiCode(() => {
-    setIsHackerModalOpen(true);
-  });
 
   useEffect(() => {
-   
+    // 1. Check User
     const storedUserStr = localStorage.getItem('edc_user');
     if (storedUserStr) {
       try {
         const storedUser = JSON.parse(storedUserStr);
         setUser(storedUser);
-        
       } catch (e) {
         console.error("Failed to parse user", e);
       }
     }
 
-   
+    // 2. Check Preloader Session
     const hasPreloaded = sessionStorage.getItem('edc_preloaded');
     if (hasPreloaded === 'true') {
-      setShowPreloader(false);
-      setTimeout(() => { setIsContentVisible(true); }, 100);
-    } else {
-      setShowPreloader(true);
+      setIsLoading(false);
+      setTimeout(() => setShowContent(true), 50);
     }
-    
-    setIsSessionChecked(true);
   }, []);
 
-  
-  useEffect(() => {
-    
-    document.body.style.overflow = isScrollLocked ? 'hidden' : '';
-  }, [isScrollLocked]);
-
-
   const handlePreloaderComplete = () => {
-    setShowPreloader(false);
-    setIsContentVisible(true);
+    setIsLoading(false);
     sessionStorage.setItem('edc_preloaded', 'true');
+    setTimeout(() => setShowContent(true), 50);
   };
 
   const handleLoginSuccess = (userData: any) => {
@@ -109,15 +57,10 @@ export default function App() {
     localStorage.removeItem('edc_user');
   };
 
-  if (!isSessionChecked) {
-    return <div className="min-h-screen w-full bg-[#050505]" />;
-  }
-
   return (
     <>
       <ScrollProgress />
-      
-      {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
       
       <AuthModal 
         isOpen={isAuthModalOpen} 
@@ -130,14 +73,9 @@ export default function App() {
         onClose={() => setIsAdminModalOpen(false)}
       />
 
-      <HackerModal 
-        isOpen={isHackerModalOpen}
-        onClose={() => setIsHackerModalOpen(false)}
-      />
-
       <div 
-        className={`flex flex-col w-full min-h-screen transition-opacity duration-1000 ease-out ${
-          isContentVisible ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden'
+        className={`flex flex-col w-full min-h-screen transition-opacity duration-1000 ease-in-out ${
+          showContent ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden'
         }`}
       >
         <Navbar 
@@ -146,16 +84,18 @@ export default function App() {
           onLogout={handleLogout}
           onOpenAdmin={() => setIsAdminModalOpen(true)}
         />
-        
-       
         <main className="flex-grow w-full">
-            <Hero />
-            <Marquee />
-            <About />
-            <Domains />
+          <Hero user={user} onOpenAuth={() => setIsAuthModalOpen(true)} />
+          <Marquee />
+          <About />
+          <Domains />
         </main>
         <Footer />
       </div>
+
+      
+        <CustomCursor />
+      
     </>
   );
 }

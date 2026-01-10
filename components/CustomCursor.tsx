@@ -65,11 +65,10 @@ export default function CustomCursor() {
             cursorDot.classList.remove('is-hidden');
         }
 
-        // 2. Expand DOT for Clickables (Inner circle expands, Outer ring remains normal)
+        // 2. Expand DOT for Clickables
         if (isClickable && !isInput) {
             cursorDot.classList.add('is-hovering-dot');
-            // Ensure the ring is visible but NOT expanding
-            cursor.classList.remove('is-hovering'); 
+            cursor.classList.add('is-hovering'); // Triggers the ring expansion
         } else {
             cursorDot.classList.remove('is-hovering-dot');
             cursor.classList.remove('is-hovering');
@@ -113,23 +112,29 @@ export default function CustomCursor() {
             pointer-events: none; 
             margin-top: -4px;
             margin-left: -4px;
-            mix-blend-mode: difference;
+            
+            /* 🔥 FIX: Changed from 'difference' to 'normal' so it stays Green */
+            mix-blend-mode: normal; 
+            
             /* Key transition for smooth scale */
             transition: opacity 0.2s ease-in-out, 
                         transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
                         width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
                         height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-                        margin 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Added margin transition */
+                        margin 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
         
         /* NEW Hover State for the DOT (Increased Size) */
         .custom-cursor-dot.is-hovering-dot {
-            width: 36px; /* Increased from 24px */
-            height: 36px; /* Increased from 24px */
-            margin-top: -18px; /* Adjusted margin */
-            margin-left: -18px; /* Adjusted margin */
+            width: 36px; 
+            height: 36px; 
+            margin-top: -18px; 
+            margin-left: -18px; 
             background-color: #ccff00;
             transform: scale(1.0);
+            
+            /* 🔥 FIX: Added transparency so it doesn't block text */
+            opacity: 0.5; 
         }
         
         .custom-cursor-ring {
@@ -144,18 +149,26 @@ export default function CustomCursor() {
             pointer-events: none; 
             margin-top: -20px;
             margin-left: -20px;
+            
+            /* Keep difference on ring for the cool effect on edges */
             mix-blend-mode: difference;
+            
             /* Only transition opacity and color, not size */
             transition: background-color 0.3s, 
                         border-color 0.3s,
-                        opacity 0.2s;
+                        opacity 0.2s,
+                        width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                        height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                        margin 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* Hover State for the RING: Subtle change only */
+        /* 🔥 FIX: Ring expands to 54px so the 36px dot stays inside */
         .custom-cursor-ring.is-hovering {
             border-color: rgba(204, 255, 0, 0.5); 
-            width: 40px; 
-            height: 40px; 
+            width: 54px; 
+            height: 54px; 
+            margin-top: -27px;
+            margin-left: -27px;
         }
 
         /* Hidden State (for Inputs) */

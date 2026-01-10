@@ -317,11 +317,10 @@ function CustomCursor() {
                         cursor.classList.remove('is-hidden');
                         cursorDot.classList.remove('is-hidden');
                     }
-                    // 2. Expand DOT for Clickables (Inner circle expands, Outer ring remains normal)
+                    // 2. Expand DOT for Clickables
                     if (isClickable && !isInput) {
                         cursorDot.classList.add('is-hovering-dot');
-                        // Ensure the ring is visible but NOT expanding
-                        cursor.classList.remove('is-hovering');
+                        cursor.classList.add('is-hovering'); // Triggers the ring expansion
                     } else {
                         cursorDot.classList.remove('is-hovering-dot');
                         cursor.classList.remove('is-hovering');
@@ -343,23 +342,23 @@ function CustomCursor() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "3ec808163f95eddc",
-                children: "@media (hover:hover) and (pointer:fine){body,a,button,[role=button]{cursor:none}input,textarea,select{cursor:text!important}}.custom-cursor-dot{z-index:10000;pointer-events:none;mix-blend-mode:difference;background-color:#cf0;border-radius:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;transition:opacity .2s ease-in-out,transform .3s cubic-bezier(.25,1,.5,1),width .3s cubic-bezier(.25,1,.5,1),height .3s cubic-bezier(.25,1,.5,1),margin .3s cubic-bezier(.25,1,.5,1);position:fixed;top:0;left:0}.custom-cursor-dot.is-hovering-dot{background-color:#cf0;width:36px;height:36px;margin-top:-18px;margin-left:-18px;transform:scale(1)}.custom-cursor-ring{z-index:9999;pointer-events:none;mix-blend-mode:difference;border:1px solid #ffffff80;border-radius:50%;width:40px;height:40px;margin-top:-20px;margin-left:-20px;transition:background-color .3s,border-color .3s,opacity .2s;position:fixed;top:0;left:0}.custom-cursor-ring.is-hovering{border-color:#ccff0080;width:40px;height:40px}.custom-cursor-dot.is-hidden,.custom-cursor-ring.is-hidden{opacity:0}@media (width<=768px){.custom-cursor-dot,.custom-cursor-ring{display:none}body{cursor:auto}}"
+                id: "4390cac37202f26d",
+                children: "@media (hover:hover) and (pointer:fine){body,a,button,[role=button]{cursor:none}input,textarea,select{cursor:text!important}}.custom-cursor-dot{z-index:10000;pointer-events:none;mix-blend-mode:normal;background-color:#cf0;border-radius:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;transition:opacity .2s ease-in-out,transform .3s cubic-bezier(.25,1,.5,1),width .3s cubic-bezier(.25,1,.5,1),height .3s cubic-bezier(.25,1,.5,1),margin .3s cubic-bezier(.25,1,.5,1);position:fixed;top:0;left:0}.custom-cursor-dot.is-hovering-dot{opacity:.5;background-color:#cf0;width:36px;height:36px;margin-top:-18px;margin-left:-18px;transform:scale(1)}.custom-cursor-ring{z-index:9999;pointer-events:none;mix-blend-mode:difference;border:1px solid #ffffff80;border-radius:50%;width:40px;height:40px;margin-top:-20px;margin-left:-20px;transition:background-color .3s,border-color .3s,opacity .2s,width .3s cubic-bezier(.25,1,.5,1),height .3s cubic-bezier(.25,1,.5,1),margin .3s cubic-bezier(.25,1,.5,1);position:fixed;top:0;left:0}.custom-cursor-ring.is-hovering{border-color:#ccff0080;width:54px;height:54px;margin-top:-27px;margin-left:-27px}.custom-cursor-dot.is-hidden,.custom-cursor-ring.is-hidden{opacity:0}@media (width<=768px){.custom-cursor-dot,.custom-cursor-ring{display:none}body{cursor:auto}}"
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 ref: cursorDotRef,
-                className: "jsx-3ec808163f95eddc" + " " + "custom-cursor-dot"
+                className: "jsx-4390cac37202f26d" + " " + "custom-cursor-dot"
             }, void 0, false, {
                 fileName: "[project]/components/CustomCursor.tsx",
-                lineNumber: 173,
+                lineNumber: 186,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 ref: cursorRef,
-                className: "jsx-3ec808163f95eddc" + " " + "custom-cursor-ring"
+                className: "jsx-4390cac37202f26d" + " " + "custom-cursor-ring"
             }, void 0, false, {
                 fileName: "[project]/components/CustomCursor.tsx",
-                lineNumber: 174,
+                lineNumber: 187,
                 columnNumber: 7
             }, this)
         ]

@@ -8,16 +8,8 @@ export async function POST(req: Request) {
     await dbConnect();
 
     const body = await req.json();
-    
-    
-    let { username, email, mobileNumber, phone, password, domain, reason } = body;
+    const { username, email, mobileNumber, password, domain, reason, selfRating, responses } = body;
 
-    
-    if (!mobileNumber && phone) {
-        mobileNumber = phone;
-    }
-
-    
     if (!username || !email || !password || !domain || !reason) {
       return NextResponse.json(
         { error: 'Please provide all fields, including your reason for joining.' },
@@ -27,46 +19,39 @@ export async function POST(req: Request) {
     
     if (!mobileNumber) {
         return NextResponse.json(
-          { error: 'Please provide a WhatsApp number.' },
+          { error: 'Please provide a mobile number.' },
           { status: 400 }
         );
     }
 
-    
-    
-    const userExists = await User.findOne({ 
-      $or: [
-        { email }, 
-        { username },
-        { mobileNumber } 
-      ] 
-    });
-
+    const userExists = await User.findOne({ $or: [{ email }, { username }] });
     if (userExists) {
-      let errorMessage = 'User already exists';
-      if (userExists.email === email) errorMessage = 'Email already registered';
-      if (userExists.username === username) errorMessage = 'Username already taken';
-      if (userExists.mobileNumber === mobileNumber) errorMessage = 'Mobile number already registered';
-
       return NextResponse.json(
-        { error: errorMessage },
+        { error: 'User already exists' },
         { status: 400 }
       );
     }
 
-    
+    const adminEmails = (process.env.ADMIN_EMAILS || "")
+      .split(",")
+      .map((e) => e.trim().toLowerCase());
+
+    const isAdminUser = adminEmails.includes(email.toLowerCase());
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    
     const user = await User.create({
       username,
       email,
-      mobileNumber, 
+      mobileNumber,
       password: hashedPassword,
       domain,
       reason,
-      hasSelection: false
+      isAdmin: isAdminUser,
+      hasSelection: false,
+      selfRating: selfRating || 0,
+      responses: responses || []
     });
 
     return NextResponse.json({
@@ -77,16 +62,12 @@ export async function POST(req: Request) {
         mobileNumber: user.mobileNumber,
         domain: user.domain,
         reason: user.reason,
+        isAdmin: user.isAdmin,
         hasSelection: user.hasSelection
       }
     });
 
   } catch (error: any) {
-    
-    if (error.name === 'ValidationError') {
-      const messages = Object.values(error.errors).map((val: any) => val.message);
-      return NextResponse.json({ error: messages[0] }, { status: 400 });
-    }
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

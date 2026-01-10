@@ -142,6 +142,11 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         type: Number,
         default: 0
     },
+    // ✅ Added isAdmin field definition
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
     hasSelection: {
         type: Boolean,
         default: false
@@ -158,10 +163,20 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         type: Date,
         default: Date.now
     },
-    isAdmin: {
-        type: Boolean,
-        default: false
-    }
+    selfRating: {
+        type: Number,
+        default: 0
+    },
+    responses: [
+        {
+            question: {
+                type: String
+            },
+            answer: {
+                type: String
+            }
+        }
+    ]
 });
 // IMPORTANT: Delete the model if it exists to prevent caching issues with schema updates in development
 if (__TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User) {
@@ -201,10 +216,7 @@ async function POST(req) {
     try {
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])();
         const body = await req.json();
-        let { username, email, mobileNumber, phone, password, domain, reason } = body;
-        if (!mobileNumber && phone) {
-            mobileNumber = phone;
-        }
+        const { username, email, mobileNumber, password, domain, reason, selfRating, responses } = body;
         if (!username || !email || !password || !domain || !reason) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: 'Please provide all fields, including your reason for joining.'
@@ -214,7 +226,7 @@ async function POST(req) {
         }
         if (!mobileNumber) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'Please provide a WhatsApp number.'
+                error: 'Please provide a mobile number.'
             }, {
                 status: 400
             });
@@ -226,23 +238,18 @@ async function POST(req) {
                 },
                 {
                     username
-                },
-                {
-                    mobileNumber
                 }
             ]
         });
         if (userExists) {
-            let errorMessage = 'User already exists';
-            if (userExists.email === email) errorMessage = 'Email already registered';
-            if (userExists.username === username) errorMessage = 'Username already taken';
-            if (userExists.mobileNumber === mobileNumber) errorMessage = 'Mobile number already registered';
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: errorMessage
+                error: 'User already exists'
             }, {
                 status: 400
             });
         }
+        const adminEmails = (process.env.ADMIN_EMAILS || "").split(",").map((e)=>e.trim().toLowerCase());
+        const isAdminUser = adminEmails.includes(email.toLowerCase());
         const salt = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].genSalt(10);
         const hashedPassword = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].hash(password, salt);
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].create({
@@ -252,7 +259,10 @@ async function POST(req) {
             password: hashedPassword,
             domain,
             reason,
-            hasSelection: false
+            isAdmin: isAdminUser,
+            hasSelection: false,
+            selfRating: selfRating || 0,
+            responses: responses || []
         });
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,
@@ -262,18 +272,11 @@ async function POST(req) {
                 mobileNumber: user.mobileNumber,
                 domain: user.domain,
                 reason: user.reason,
+                isAdmin: user.isAdmin,
                 hasSelection: user.hasSelection
             }
         });
     } catch (error) {
-        if (error.name === 'ValidationError') {
-            const messages = Object.values(error.errors).map((val)=>val.message);
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: messages[0]
-            }, {
-                status: 400
-            });
-        }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             error: error.message
         }, {

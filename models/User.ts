@@ -8,10 +8,12 @@ export interface IUser extends Document {
   domain: string;
   reason: string;
   round: number;
+  isAdmin: boolean; // ✅ Added here
   hasSelection: boolean;
   applicationStatus: 'active' | 'rejected';
   createdAt: Date;
-  isAdmin:boolean;
+  selfRating: number;
+  responses: { question: string; answer: string }[];
 }
 
 const UserSchema = new Schema<IUser>({
@@ -46,6 +48,11 @@ const UserSchema = new Schema<IUser>({
     type: Number,
     default: 0, 
   },
+  // ✅ Added isAdmin field definition
+  isAdmin: {
+    type: Boolean,
+    default: false, 
+  },
   hasSelection: {
     type: Boolean,
     default: false,
@@ -59,10 +66,14 @@ const UserSchema = new Schema<IUser>({
     type: Date,
     default: Date.now,
   },
-  isAdmin: {
-    type:Boolean,
-    default:false,
+  selfRating: {
+    type: Number,
+    default: 0,
   },
+  responses: [{
+    question: { type: String },
+    answer: { type: String }
+  }]
 });
 
 // IMPORTANT: Delete the model if it exists to prevent caching issues with schema updates in development

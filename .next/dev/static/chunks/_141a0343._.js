@@ -308,21 +308,23 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                             fileName: "[project]/components/Navbar.tsx",
                             lineNumber: 153,
                             columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: onOpenAuth,
+                        }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "https://www.edcnitd.co.in/",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
                             className: `overflow-hidden transition-all duration-500 ${isOpen ? "w-0 opacity-0" : "w-auto opacity-100"}`,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bg-[#ccff00] hover:bg-[#bef264] text-black text-xs font-bold px-4 py-2 rounded-full transition-transform active:scale-95 hover:scale-105 duration-200 font-display group whitespace-nowrap",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$TextHover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    text: "Join Us"
+                                    text: "Visit Us"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Navbar.tsx",
-                                    lineNumber: 195,
+                                    lineNumber: 197,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.tsx",
-                                lineNumber: 194,
+                                lineNumber: 196,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
@@ -354,7 +356,7 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                     children: "Navigation"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Navbar.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 215,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -368,28 +370,28 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                                     text: item.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Navbar.tsx",
-                                                    lineNumber: 224,
+                                                    lineNumber: 226,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.tsx",
-                                                lineNumber: 219,
+                                                lineNumber: 221,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, item.name, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 218,
+                                            lineNumber: 220,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/components/Navbar.tsx",
-                                    lineNumber: 216,
+                                    lineNumber: 218,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Navbar.tsx",
-                            lineNumber: 206,
+                            lineNumber: 208,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -402,7 +404,7 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                             children: "Explore"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 240,
+                                            lineNumber: 242,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -417,28 +419,28 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                                             text: item.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/Navbar.tsx",
-                                                            lineNumber: 252,
+                                                            lineNumber: 254,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Navbar.tsx",
-                                                        lineNumber: 246,
+                                                        lineNumber: 248,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, item.name, false, {
                                                     fileName: "[project]/components/Navbar.tsx",
-                                                    lineNumber: 245,
+                                                    lineNumber: 247,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 243,
+                                            lineNumber: 245,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Navbar.tsx",
-                                    lineNumber: 239,
+                                    lineNumber: 241,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -451,12 +453,12 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.tsx",
-                                                lineNumber: 265,
+                                                lineNumber: 267,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 261,
+                                            lineNumber: 263,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -466,12 +468,12 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.tsx",
-                                                lineNumber: 271,
+                                                lineNumber: 273,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 267,
+                                            lineNumber: 269,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -481,12 +483,12 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.tsx",
-                                                lineNumber: 277,
+                                                lineNumber: 279,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 273,
+                                            lineNumber: 275,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -500,7 +502,7 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                                         className: "w-8 h-8 text-red-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/Navbar.tsx",
-                                                        lineNumber: 287,
+                                                        lineNumber: 289,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -511,42 +513,42 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                                                 className: "absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/Navbar.tsx",
-                                                                lineNumber: 290,
+                                                                lineNumber: 292,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/Navbar.tsx",
-                                                        lineNumber: 288,
+                                                        lineNumber: 290,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/Navbar.tsx",
-                                                lineNumber: 286,
+                                                lineNumber: 288,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$egg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Egg$3e$__["Egg"], {
                                                 className: "w-5 h-5 text-gray-600 hover:text-[#eab308] transition-colors duration-500 cursor-pointer hover:rotate-12"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.tsx",
-                                                lineNumber: 294,
+                                                lineNumber: 296,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 280,
+                                            lineNumber: 282,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Navbar.tsx",
-                                    lineNumber: 260,
+                                    lineNumber: 262,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Navbar.tsx",
-                            lineNumber: 232,
+                            lineNumber: 234,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -559,7 +561,7 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                             className: "w-20 h-20 text-white mx-auto mb-4"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 309,
+                                            lineNumber: 311,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -567,13 +569,13 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                             children: "Innovation Starts Here"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 310,
+                                            lineNumber: 312,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Navbar.tsx",
-                                    lineNumber: 308,
+                                    lineNumber: 310,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 user?.isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -589,36 +591,36 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
                                                 className: "w-3 h-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.tsx",
-                                                lineNumber: 325,
+                                                lineNumber: 327,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "Admin Portal"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Navbar.tsx",
-                                        lineNumber: 318,
+                                        lineNumber: 320,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/Navbar.tsx",
-                                    lineNumber: 317,
+                                    lineNumber: 319,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Navbar.tsx",
-                            lineNumber: 301,
+                            lineNumber: 303,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Navbar.tsx",
-                    lineNumber: 204,
+                    lineNumber: 206,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/Navbar.tsx",
-                lineNumber: 203,
+                lineNumber: 205,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -664,7 +666,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const Hero = ()=>{
+const Hero = ({ onOpenAuth })=>{
     _s();
     const modelViewerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -675,7 +677,6 @@ const Hero = ()=>{
                     const modelViewer = modelViewerRef.current;
                     const container = containerRef.current;
                     if (!modelViewer || !container) return;
-                    // Logic derived from original HTML script
                     const maxScrollDistance = 600;
                     const scrollY = window.scrollY;
                     const progress = Math.min(scrollY / maxScrollDistance, 1);
@@ -686,20 +687,16 @@ const Hero = ()=>{
                     const targetRadius = 5;
                     const radius = baseRadius - progress * (baseRadius - targetRadius);
                     // Horizontal Movement Logic
-                    // Shifted starting position to the right by 8vw
                     const startShiftVW = 8;
-                    const maxTravelVW = -25; // Increased travel slightly to compensate for right shift
+                    const maxTravelVW = -25;
                     const currentShiftVW = startShiftVW + progress * maxTravelVW;
                     // Apply Camera Updates
                     modelViewer.setAttribute('camera-orbit', `${theta}deg 90deg ${radius}m`);
-                    // Apply CSS translation - Only on Large Desktop (>= 1024px)
-                    // Updated from 768px to 1024px to prevent translation on tablets/mobile
                     if (window.innerWidth >= 1024) {
                         container.style.transform = `translateX(${currentShiftVW}vw)`;
                     } else {
                         container.style.transform = `translateX(0px)`;
                     }
-                    // FOV reduction
                     const baseFov = 30;
                     const targetFov = 20;
                     const fov = baseFov - progress * (baseFov - targetFov);
@@ -709,7 +706,6 @@ const Hero = ()=>{
             window.addEventListener('scroll', handleScroll, {
                 passive: true
             });
-            // Initial call to set positions
             handleScroll();
             return ({
                 "Hero.useEffect": ()=>window.removeEventListener('scroll', handleScroll)
@@ -724,7 +720,7 @@ const Hero = ()=>{
                 className: "absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(204,255,0,0.03),transparent_60%)]"
             }, void 0, false, {
                 fileName: "[project]/components/Hero.tsx",
-                lineNumber: 63,
+                lineNumber: 67,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -739,13 +735,13 @@ const Hero = ()=>{
                                     "ENTREPRENEURSHIP",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/components/Hero.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 74,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "DEVELOPMENT",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/components/Hero.tsx",
-                                        lineNumber: 72,
+                                        lineNumber: 76,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -753,13 +749,13 @@ const Hero = ()=>{
                                         children: "CELL"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Hero.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 77,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Hero.tsx",
-                                lineNumber: 68,
+                                lineNumber: 72,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -767,31 +763,32 @@ const Hero = ()=>{
                                 children: "Turning ideas into reality. Where innovation meets execution."
                             }, void 0, false, {
                                 fileName: "[project]/components/Hero.tsx",
-                                lineNumber: 75,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: onOpenAuth,
                                 className: "group relative flex items-center gap-4 bg-transparent border border-white/20 pl-8 pr-2 py-2 rounded-full transition-all duration-300 hover:border-transparent w-fit overflow-hidden",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-[25] z-0 origin-center will-change-transform"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Hero.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 89,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "relative z-10 text-white font-medium group-hover:text-black transition-colors duration-300",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$TextHover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            text: "Visit Us"
+                                            text: "Join Us"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Hero.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/Hero.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 92,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -803,37 +800,37 @@ const Hero = ()=>{
                                                     className: "w-4 h-4 absolute inset-0 transition-transform duration-300 group-hover:translate-y-full"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Hero.tsx",
-                                                    lineNumber: 91,
+                                                    lineNumber: 99,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDown$3e$__["ArrowDown"], {
                                                     className: "w-4 h-4 absolute inset-0 -translate-y-full transition-transform duration-300 group-hover:translate-y-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Hero.tsx",
-                                                    lineNumber: 92,
+                                                    lineNumber: 100,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/Hero.tsx",
-                                            lineNumber: 90,
+                                            lineNumber: 98,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/Hero.tsx",
-                                        lineNumber: 89,
+                                        lineNumber: 97,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Hero.tsx",
-                                lineNumber: 79,
+                                lineNumber: 84,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Hero.tsx",
-                        lineNumber: 67,
+                        lineNumber: 71,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -845,7 +842,7 @@ const Hero = ()=>{
                                 className: "absolute bottom-10 w-3/4 h-20 bg-[#ccff00]/10 blur-[60px] rounded-[100%] transform rotate-x-60"
                             }, void 0, false, {
                                 fileName: "[project]/components/Hero.tsx",
-                                lineNumber: 104,
+                                lineNumber: 112,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("model-viewer", {
@@ -865,25 +862,25 @@ const Hero = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/components/Hero.tsx",
-                                lineNumber: 106,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Hero.tsx",
-                        lineNumber: 99,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Hero.tsx",
-                lineNumber: 65,
+                lineNumber: 69,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/Hero.tsx",
-        lineNumber: 62,
+        lineNumber: 66,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2566,6 +2563,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-client] (ecmascript) <export default as ArrowLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$types$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/types.ts [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
@@ -2575,14 +2573,16 @@ var _s = __turbopack_context__.k.signature();
 const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
     _s();
     const [isLogin, setIsLogin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false); // Default to Join (Register)
+    const [registrationStep, setRegistrationStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1); // 1: Basic Info, 2: Questionnaire
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     // Animation State
     const [shouldRender, setShouldRender] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isVisible, setIsVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Smooth Height State
-    const [menuHeight, setMenuHeight] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(undefined);
+    // Refs
+    const scrollRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const contentRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [menuHeight, setMenuHeight] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(undefined);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AuthModal.useEffect": ()=>{
             if (isOpen) {
@@ -2602,8 +2602,11 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                 const timer = setTimeout({
                     "AuthModal.useEffect.timer": ()=>{
                         setShouldRender(false);
+                        setRegistrationStep(1);
+                        setError('');
+                        setIsLogin(false); // Reset to register on close if preferred
                     }
-                }["AuthModal.useEffect.timer"], 500); // Match transition duration
+                }["AuthModal.useEffect.timer"], 500);
                 return ({
                     "AuthModal.useEffect": ()=>clearTimeout(timer)
                 })["AuthModal.useEffect"];
@@ -2631,7 +2634,8 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
     }["AuthModal.useEffect"], [
         shouldRender,
         isLogin,
-        error
+        error,
+        registrationStep
     ]);
     // Form States
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
@@ -2642,6 +2646,11 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
         domain: 'Web Development',
         reason: ''
     });
+    const [questionnaire, setQuestionnaire] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
+        rating: 5,
+        q1: '',
+        q2: ''
+    });
     if (!shouldRender) return null;
     const handleChange = (e)=>{
         setFormData({
@@ -2649,25 +2658,80 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
             [e.target.name]: e.target.value
         });
     };
-    const handleSubmit = async (e)=>{
+    const handleQuestionnaireChange = (e)=>{
+        setQuestionnaire({
+            ...questionnaire,
+            [e.target.name]: e.target.value
+        });
+    };
+    // Explicit handler for moving to Step 2
+    const handleNextStep = (e)=>{
         e.preventDefault();
         setError('');
+        const missingFields = [];
+        if (!formData.username) missingFields.push("Username");
+        if (!formData.email) missingFields.push("Email");
+        if (!formData.mobileNumber) missingFields.push("Mobile Number");
+        if (!formData.password) missingFields.push("Password");
+        if (!formData.domain) missingFields.push("Domain");
+        if (!formData.reason) missingFields.push("Reason");
+        if (missingFields.length > 0) {
+            setError(`Please fill in: ${missingFields.join(', ')}`);
+            scrollRef.current?.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
+        setRegistrationStep(2);
+        setTimeout(()=>{
+            scrollRef.current?.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 10);
+    };
+    const handleFormSubmit = async (e)=>{
+        e.preventDefault();
+        setError('');
+        // Double check: if user hit Enter on Step 1, treat as Next Step
+        if (!isLogin && registrationStep === 1) {
+            handleNextStep(e);
+            return;
+        }
+        // --- PHASE 2: API SUBMISSION (Login OR Register Step 2) ---
         setIsLoading(true);
         const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+        let payload = {
+            ...formData
+        };
+        if (!isLogin) {
+            payload.selfRating = questionnaire.rating;
+            payload.responses = [
+                {
+                    question: "Describe a past project or initiative you are proud of.",
+                    answer: questionnaire.q1
+                },
+                {
+                    question: "How do you handle disagreements within a team?",
+                    answer: questionnaire.q2
+                }
+            ];
+        }
         try {
             const res = await fetch(endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(payload)
             });
-            const contentType = res.headers.get("content-type");
             let data;
+            const contentType = res.headers.get("content-type");
             if (contentType && contentType.indexOf("application/json") !== -1) {
                 data = await res.json();
             } else {
-                throw new Error("Server not available");
+                throw new Error("Server error. Please try again.");
             }
             if (!res.ok) {
                 throw new Error(data.error || 'Something went wrong');
@@ -2676,11 +2740,15 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
             onLoginSuccess(data.user);
             onClose();
             resetForm();
-            setIsLoading(false);
         } catch (err) {
-            console.warn("Auth Error (Fallback Mode):", err);
-            const isFallbackError = err.message.includes("Server") || err.message.includes("Failed to fetch") || err.message.includes("404");
-            if (isFallbackError) {
+            console.warn("Auth Error:", err);
+            setError(err.message || "Failed to connect to server");
+            scrollRef.current?.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            // Fallback for demo if backend fails
+            if (err.message.includes("Server") || err.message.includes("Failed to fetch")) {
                 setTimeout(()=>{
                     const demoUser = {
                         username: formData.username || "Demo User",
@@ -2694,13 +2762,11 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                     onLoginSuccess(demoUser);
                     onClose();
                     resetForm();
-                    setIsLoading(false);
                     alert("Backend unavailable. Logged in as Demo User.");
                 }, 1500);
-            } else {
-                setError(err.message || "Failed to connect to server");
-                setIsLoading(false);
             }
+        } finally{
+            setIsLoading(false);
         }
     };
     const resetForm = ()=>{
@@ -2712,19 +2778,22 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
             domain: 'Web Development',
             reason: ''
         });
+        setQuestionnaire({
+            rating: 5,
+            q1: '',
+            q2: ''
+        });
+        setRegistrationStep(1);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-500 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`,
-                onClick: onClose,
-                style: {
-                    willChange: 'opacity'
-                }
+                onClick: onClose
             }, void 0, false, {
                 fileName: "[project]/components/AuthModal.tsx",
-                lineNumber: 150,
+                lineNumber: 211,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2733,15 +2802,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
             transform transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
             ${isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-8'}
         `,
-                style: {
-                    willChange: 'transform, opacity'
-                },
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    ref: scrollRef,
                     style: {
                         height: menuHeight,
                         maxHeight: '85vh'
                     },
-                    className: "transition-[height] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-y-auto custom-scrollbar",
+                    className: "transition-[height] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-y-auto custom-scrollbar scroll-smooth",
                     "data-lenis-prevent": "true",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         ref: contentRef,
@@ -2749,12 +2816,37 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-between p-6 border-b border-white/5 bg-[#111] sticky top-0 z-10",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xl font-display font-bold text-white",
-                                        children: isLogin ? 'Welcome Back' : 'Join the Cell'
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center gap-3",
+                                        children: [
+                                            !isLogin && registrationStep === 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "button",
+                                                onClick: ()=>setRegistrationStep(1),
+                                                className: "text-gray-400 hover:text-white transition-colors",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
+                                                    className: "w-5 h-5"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/AuthModal.tsx",
+                                                    lineNumber: 241,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/AuthModal.tsx",
+                                                lineNumber: 236,
+                                                columnNumber: 29
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-xl font-display font-bold text-white",
+                                                children: isLogin ? 'Welcome Back' : registrationStep === 1 ? 'Join the Cell' : 'Final Details'
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/AuthModal.tsx",
+                                                lineNumber: 244,
+                                                columnNumber: 26
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 234,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2764,328 +2856,464 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/components/AuthModal.tsx",
-                                            lineNumber: 178,
+                                            lineNumber: 249,
                                             columnNumber: 25
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 177,
+                                        lineNumber: 248,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/AuthModal.tsx",
-                                lineNumber: 173,
+                                lineNumber: 233,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "p-6",
                                 children: [
+                                    error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-red-500/10 border border-red-500/20 text-red-400 text-sm p-3 rounded-lg mb-4 animate-in fade-in slide-in-from-top-2 duration-300",
+                                        children: error
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/AuthModal.tsx",
+                                        lineNumber: 256,
+                                        columnNumber: 25
+                                    }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                                        onSubmit: handleSubmit,
+                                        onSubmit: handleFormSubmit,
                                         className: "space-y-4",
                                         children: [
-                                            error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "bg-red-500/10 border border-red-500/20 text-red-400 text-sm p-3 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300",
-                                                children: error
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 186,
-                                                columnNumber: 29
-                                            }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "text-sm text-gray-400 font-medium ml-1",
-                                                        children: "Username"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 192,
-                                                        columnNumber: 29
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        type: "text",
-                                                        name: "username",
-                                                        value: formData.username,
-                                                        onChange: handleChange,
-                                                        className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all",
-                                                        placeholder: "johndoe",
-                                                        required: true
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 193,
-                                                        columnNumber: 29
-                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 191,
-                                                columnNumber: 25
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: `space-y-4 overflow-hidden transition-all duration-300 ease-in-out ${!isLogin ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`,
+                                                className: `${!isLogin && registrationStep === 2 ? 'hidden' : 'block space-y-4'}`,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "space-y-2",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                                 className: "text-sm text-gray-400 font-medium ml-1",
-                                                                children: "Email"
+                                                                children: "Username"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 207,
+                                                                lineNumber: 266,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                                type: "email",
-                                                                name: "email",
-                                                                value: formData.email,
+                                                                type: "text",
+                                                                name: "username",
+                                                                value: formData.username,
                                                                 onChange: handleChange,
                                                                 className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all",
-                                                                placeholder: "john@example.com",
-                                                                required: !isLogin
+                                                                placeholder: "johndoe",
+                                                                required: isLogin || registrationStep === 1
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 208,
+                                                                lineNumber: 267,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 206,
+                                                        lineNumber: 265,
                                                         columnNumber: 29
                                                     }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "space-y-2",
+                                                    !isLogin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                                className: "text-sm text-gray-400 font-medium ml-1",
-                                                                children: "Mobile Number"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 220,
-                                                                columnNumber: 33
-                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                                type: "tel",
-                                                                name: "mobileNumber",
-                                                                value: formData.mobileNumber,
-                                                                onChange: handleChange,
-                                                                className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all",
-                                                                placeholder: "+91 9876543210",
-                                                                required: !isLogin
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 221,
-                                                                columnNumber: 33
-                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 219,
-                                                        columnNumber: 30
-                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 205,
-                                                columnNumber: 25
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "text-sm text-gray-400 font-medium ml-1",
-                                                        children: "Password"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 234,
-                                                        columnNumber: 29
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        type: "password",
-                                                        name: "password",
-                                                        value: formData.password,
-                                                        onChange: handleChange,
-                                                        className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all",
-                                                        placeholder: "••••••••",
-                                                        required: true
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 235,
-                                                        columnNumber: 29
-                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 233,
-                                                columnNumber: 25
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: `space-y-4 overflow-hidden transition-all duration-300 ease-in-out ${!isLogin ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`,
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "space-y-2",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                                className: "text-sm text-gray-400 font-medium ml-1",
-                                                                children: "Interested Domain"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 248,
-                                                                columnNumber: 33
-                                                            }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "relative",
+                                                                className: "space-y-2 animate-in fade-in slide-in-from-top-2 duration-300",
                                                                 children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                                        name: "domain",
-                                                                        value: formData.domain,
-                                                                        onChange: handleChange,
-                                                                        className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all appearance-none cursor-pointer",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                value: "Web Development",
-                                                                                className: "bg-[#121212] text-white",
-                                                                                children: "Web Development"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                                lineNumber: 256,
-                                                                                columnNumber: 41
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                value: "Content Writing",
-                                                                                className: "bg-[#121212] text-white",
-                                                                                children: "Content Writing"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                                lineNumber: 257,
-                                                                                columnNumber: 41
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                value: "Graphic Design",
-                                                                                className: "bg-[#121212] text-white",
-                                                                                children: "Graphic Design"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                                lineNumber: 258,
-                                                                                columnNumber: 41
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                value: "Video Editing",
-                                                                                className: "bg-[#121212] text-white",
-                                                                                children: "Video Editing"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                                lineNumber: 259,
-                                                                                columnNumber: 41
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                value: "Event Management",
-                                                                                className: "bg-[#121212] text-white",
-                                                                                children: "Event Management"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                                lineNumber: 260,
-                                                                                columnNumber: 41
-                                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                                value: "Consultancy Wing",
-                                                                                className: "bg-[#121212] text-white",
-                                                                                children: "Consultancy Wing"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/AuthModal.tsx",
-                                                                                lineNumber: 261,
-                                                                                columnNumber: 41
-                                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 250,
-                                                                        columnNumber: 37
-                                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500",
-                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                                            className: "w-4 h-4 rotate-90"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/components/AuthModal.tsx",
-                                                                            lineNumber: 264,
-                                                                            columnNumber: 41
-                                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                        className: "text-sm text-gray-400 font-medium ml-1",
+                                                                        children: "Email"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 263,
-                                                                        columnNumber: 37
+                                                                        lineNumber: 282,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                        type: "email",
+                                                                        name: "email",
+                                                                        value: formData.email,
+                                                                        onChange: handleChange,
+                                                                        className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all",
+                                                                        placeholder: "john@example.com",
+                                                                        required: !isLogin
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 283,
+                                                                        columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 249,
+                                                                lineNumber: 281,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "space-y-2 animate-in fade-in slide-in-from-top-2 duration-300 delay-75",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                        className: "text-sm text-gray-400 font-medium ml-1",
+                                                                        children: "Mobile Number"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 295,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                        type: "tel",
+                                                                        name: "mobileNumber",
+                                                                        value: formData.mobileNumber,
+                                                                        onChange: handleChange,
+                                                                        className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all",
+                                                                        placeholder: "+91 9876543210",
+                                                                        required: !isLogin
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 296,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 294,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "space-y-2",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                className: "text-sm text-gray-400 font-medium ml-1",
+                                                                children: "Password"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 310,
+                                                                columnNumber: 33
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                type: "password",
+                                                                name: "password",
+                                                                value: formData.password,
+                                                                onChange: handleChange,
+                                                                className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all",
+                                                                placeholder: "••••••••",
+                                                                required: isLogin || registrationStep === 1
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 311,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 247,
+                                                        lineNumber: 309,
                                                         columnNumber: 29
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    !isLogin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "space-y-2 animate-in fade-in slide-in-from-top-2 duration-300 delay-100",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                        className: "text-sm text-gray-400 font-medium ml-1",
+                                                                        children: "Interested Domain"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 325,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "relative",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                                                name: "domain",
+                                                                                value: formData.domain,
+                                                                                onChange: handleChange,
+                                                                                className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all appearance-none cursor-pointer",
+                                                                                children: [
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                        value: "Web Development",
+                                                                                        className: "bg-[#121212] text-white",
+                                                                                        children: "Web Development"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                                        lineNumber: 333,
+                                                                                        columnNumber: 49
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                        value: "Content Writing",
+                                                                                        className: "bg-[#121212] text-white",
+                                                                                        children: "Content Writing"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                                        lineNumber: 334,
+                                                                                        columnNumber: 49
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                        value: "Graphic Design",
+                                                                                        className: "bg-[#121212] text-white",
+                                                                                        children: "Graphic Design"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                                        lineNumber: 335,
+                                                                                        columnNumber: 49
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                        value: "Video Editing",
+                                                                                        className: "bg-[#121212] text-white",
+                                                                                        children: "Video Editing"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                                        lineNumber: 336,
+                                                                                        columnNumber: 49
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                        value: "Event Management",
+                                                                                        className: "bg-[#121212] text-white",
+                                                                                        children: "Event Management"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                                        lineNumber: 337,
+                                                                                        columnNumber: 49
+                                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                        value: "Consultancy Wing",
+                                                                                        className: "bg-[#121212] text-white",
+                                                                                        children: "Consultancy Wing"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                                        lineNumber: 338,
+                                                                                        columnNumber: 49
+                                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                                lineNumber: 327,
+                                                                                columnNumber: 45
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500",
+                                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                                                    className: "w-4 h-4 rotate-90"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/components/AuthModal.tsx",
+                                                                                    lineNumber: 341,
+                                                                                    columnNumber: 49
+                                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                                lineNumber: 340,
+                                                                                columnNumber: 45
+                                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 326,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 324,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "space-y-2 animate-in fade-in slide-in-from-top-2 duration-300 delay-150",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                        className: "text-sm text-gray-400 font-medium ml-1",
+                                                                        children: "Why do you want to join EDC?"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 347,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                                        name: "reason",
+                                                                        value: formData.reason,
+                                                                        onChange: handleChange,
+                                                                        className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all min-h-[80px] resize-none",
+                                                                        placeholder: "I want to innovate and learn...",
+                                                                        required: !isLogin
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 348,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 346,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/AuthModal.tsx",
+                                                lineNumber: 264,
+                                                columnNumber: 25
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            !isLogin && registrationStep === 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-6 animate-in fade-in slide-in-from-right-8 duration-300",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "space-y-4",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                className: "text-sm text-gray-400 font-medium ml-1",
+                                                                children: "Rate your enthusiasm (0 - 10)"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 365,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "flex items-center gap-4 bg-black/30 p-4 rounded-xl border border-white/5",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                        type: "range",
+                                                                        min: "0",
+                                                                        max: "10",
+                                                                        name: "rating",
+                                                                        value: questionnaire.rating,
+                                                                        onChange: handleQuestionnaireChange,
+                                                                        className: "w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#ccff00]"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 369,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "text-[#ccff00] font-bold font-display text-xl w-8 text-center",
+                                                                        children: questionnaire.rating
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                                        lineNumber: 378,
+                                                                        columnNumber: 41
+                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 368,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                        lineNumber: 364,
+                                                        columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "space-y-2",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                                 className: "text-sm text-gray-400 font-medium ml-1",
-                                                                children: "Why do you want to join EDC?"
+                                                                children: "Describe a past project or initiative you are proud of."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 270,
-                                                                columnNumber: 33
+                                                                lineNumber: 383,
+                                                                columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                                                                name: "reason",
-                                                                value: formData.reason,
-                                                                onChange: handleChange,
+                                                                name: "q1",
+                                                                value: questionnaire.q1,
+                                                                onChange: handleQuestionnaireChange,
                                                                 className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all min-h-[100px] resize-none",
-                                                                placeholder: "I want to innovate and learn...",
-                                                                required: !isLogin
+                                                                placeholder: "e.g. I organized a tech fest..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 271,
-                                                                columnNumber: 33
+                                                                lineNumber: 384,
+                                                                columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 269,
-                                                        columnNumber: 29
+                                                        lineNumber: 382,
+                                                        columnNumber: 33
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "space-y-2",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                className: "text-sm text-gray-400 font-medium ml-1",
+                                                                children: "How do you handle disagreements within a team?"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 394,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                                name: "q2",
+                                                                value: questionnaire.q2,
+                                                                onChange: handleQuestionnaireChange,
+                                                                className: "w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ccff00]/50 focus:bg-white/5 transition-all min-h-[100px] resize-none",
+                                                                placeholder: "I try to understand the other perspective..."
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/AuthModal.tsx",
+                                                                lineNumber: 395,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                        lineNumber: 393,
+                                                        columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 246,
-                                                columnNumber: 25
+                                                lineNumber: 363,
+                                                columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                type: "submit",
-                                                disabled: isLoading,
-                                                className: "w-full bg-[#ccff00] hover:bg-[#bceb00] text-black font-bold py-3.5 rounded-xl mt-2 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 shadow-[0_0_20px_-5px_rgba(204,255,0,0.3)] hover:shadow-[0_0_25px_-5px_rgba(204,255,0,0.5)]",
-                                                children: isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                                    className: "w-5 h-5 animate-spin"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "mt-4",
+                                                children: !isLogin && registrationStep === 1 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: handleNextStep,
+                                                    className: "w-full bg-[#ccff00] hover:bg-[#bceb00] text-black font-bold py-3.5 rounded-xl transition-all active:scale-95 flex items-center justify-center gap-2 shadow-[0_0_20px_-5px_rgba(204,255,0,0.3)] hover:shadow-[0_0_25px_-5px_rgba(204,255,0,0.5)]",
+                                                    children: [
+                                                        "Next Step ",
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                            className: "w-4 h-4"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/AuthModal.tsx",
+                                                            lineNumber: 413,
+                                                            columnNumber: 47
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/AuthModal.tsx",
+                                                    lineNumber: 408,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "submit",
+                                                    disabled: isLoading,
+                                                    className: "w-full bg-[#ccff00] hover:bg-[#bceb00] text-black font-bold py-3.5 rounded-xl transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 shadow-[0_0_20px_-5px_rgba(204,255,0,0.3)] hover:shadow-[0_0_25px_-5px_rgba(204,255,0,0.5)]",
+                                                    children: isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                                        className: "w-5 h-5 animate-spin"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/AuthModal.tsx",
+                                                        lineNumber: 422,
+                                                        columnNumber: 41
+                                                    }, ("TURBOPACK compile-time value", void 0)) : isLogin ? 'Login' : 'Submit Application'
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/AuthModal.tsx",
-                                                    lineNumber: 288,
-                                                    columnNumber: 29
-                                                }, ("TURBOPACK compile-time value", void 0)) : isLogin ? 'Login' : 'Submit Application'
+                                                    lineNumber: 416,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 282,
+                                                lineNumber: 406,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 261,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3093,53 +3321,55 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                         children: [
                                             isLogin ? "Don't have an account? " : "Already a member? ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "button",
                                                 onClick: ()=>{
                                                     setIsLogin(!isLogin);
                                                     setError('');
+                                                    setRegistrationStep(1);
                                                 },
                                                 className: "text-[#ccff00] hover:underline font-medium hover:text-[#eeff80] transition-colors",
                                                 children: isLogin ? 'Join Now' : 'Login'
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 298,
+                                                lineNumber: 434,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 296,
+                                        lineNumber: 432,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/AuthModal.tsx",
-                                lineNumber: 183,
+                                lineNumber: 254,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/AuthModal.tsx",
-                        lineNumber: 171,
+                        lineNumber: 231,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/components/AuthModal.tsx",
-                    lineNumber: 166,
+                    lineNumber: 225,
                     columnNumber: 10
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/AuthModal.tsx",
-                lineNumber: 157,
+                lineNumber: 217,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/AuthModal.tsx",
-        lineNumber: 148,
+        lineNumber: 209,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(AuthModal, "N0nQAgeIp5Pl03Aoozui20QrbcU=");
+_s(AuthModal, "vmF1Drs1lKBcfqka+pmxfIbA/VE=");
 _c = AuthModal;
 const __TURBOPACK__default__export__ = AuthModal;
 var _c;
@@ -3169,6 +3399,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/refresh-cw.js [app-client] (ecmascript) <export default as RefreshCw>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/calendar.js [app-client] (ecmascript) <export default as Calendar>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/save.js [app-client] (ecmascript) <export default as Save>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/star.js [app-client] (ecmascript) <export default as Star>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$types$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/types.ts [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
@@ -3188,7 +3419,14 @@ const DUMMY_USERS = [
         round: 0,
         hasSelection: false,
         applicationStatus: 'active',
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
+        selfRating: 8,
+        responses: [
+            {
+                question: "Past project",
+                answer: "Built a todo app"
+            }
+        ]
     },
     {
         _id: "2",
@@ -3200,7 +3438,9 @@ const DUMMY_USERS = [
         round: 2,
         hasSelection: false,
         applicationStatus: 'active',
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
+        selfRating: 9,
+        responses: []
     },
     {
         _id: "3",
@@ -3212,7 +3452,9 @@ const DUMMY_USERS = [
         round: 4,
         hasSelection: true,
         applicationStatus: 'active',
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
+        selfRating: 10,
+        responses: []
     }
 ];
 const AdminDashboard = ({ isOpen, onClose })=>{
@@ -3224,7 +3466,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [isOfflineMode, setIsOfflineMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     // Modals
-    const [selectedReason, setSelectedReason] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [selectedApplication, setSelectedApplication] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     // Global Schedule State
     const [isScheduleModalOpen, setIsScheduleModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [schedules, setSchedules] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
@@ -3440,7 +3682,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                 onClick: onClose
             }, void 0, false, {
                 fileName: "[project]/components/AdminDashboard.tsx",
-                lineNumber: 229,
+                lineNumber: 232,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3458,12 +3700,12 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                             className: "w-4 h-4 md:w-5 md:h-5 text-[#ccff00]"
                                         }, void 0, false, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 236,
+                                            lineNumber: 239,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 235,
+                                        lineNumber: 238,
                                         columnNumber: 14
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3473,7 +3715,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                 children: "Admin Portal"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 239,
+                                                lineNumber: 242,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3481,19 +3723,19 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                 children: "Recruitment Dashboard"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 240,
+                                                lineNumber: 243,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 238,
+                                        lineNumber: 241,
                                         columnNumber: 14
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                lineNumber: 234,
+                                lineNumber: 237,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3503,18 +3745,18 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                    lineNumber: 247,
+                                    lineNumber: 250,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                lineNumber: 243,
+                                lineNumber: 246,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/AdminDashboard.tsx",
-                        lineNumber: 233,
+                        lineNumber: 236,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3529,12 +3771,12 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                         className: "w-8 h-8 text-gray-500"
                                     }, void 0, false, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 255,
+                                        lineNumber: 258,
                                         columnNumber: 20
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                    lineNumber: 254,
+                                    lineNumber: 257,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3545,7 +3787,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                             children: "Access Restricted"
                                         }, void 0, false, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 258,
+                                            lineNumber: 261,
                                             columnNumber: 20
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3553,13 +3795,13 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                             children: "Please enter the secure administrative key."
                                         }, void 0, false, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 259,
+                                            lineNumber: 262,
                                             columnNumber: 20
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                    lineNumber: 257,
+                                    lineNumber: 260,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -3574,7 +3816,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                             placeholder: "••••••••"
                                         }, void 0, false, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 262,
+                                            lineNumber: 265,
                                             columnNumber: 20
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3583,7 +3825,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                             children: "Verify Access"
                                         }, void 0, false, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 269,
+                                            lineNumber: 272,
                                             columnNumber: 20
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3591,19 +3833,19 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                             children: error
                                         }, void 0, false, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 275,
+                                            lineNumber: 278,
                                             columnNumber: 30
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                    lineNumber: 261,
+                                    lineNumber: 264,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/AdminDashboard.tsx",
-                            lineNumber: 253,
+                            lineNumber: 256,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex-1 overflow-y-auto bg-[#09090b] overscroll-contain",
@@ -3647,7 +3889,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                             children: stat.value
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                                            lineNumber: 289,
+                                                            lineNumber: 292,
                                                             columnNumber: 33
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3655,18 +3897,18 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                             children: stat.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                                            lineNumber: 290,
+                                                            lineNumber: 293,
                                                             columnNumber: 33
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, i, true, {
                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                    lineNumber: 288,
+                                                    lineNumber: 291,
                                                     columnNumber: 29
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 281,
+                                            lineNumber: 284,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3682,7 +3924,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                     className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-focus-within:text-white transition-colors"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                    lineNumber: 298,
+                                                                    lineNumber: 301,
                                                                     columnNumber: 33
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3693,13 +3935,13 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                     className: "w-full bg-black/30 border border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#ccff00]/30 transition-all placeholder:text-gray-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                    lineNumber: 299,
+                                                                    lineNumber: 302,
                                                                     columnNumber: 33
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                                            lineNumber: 297,
+                                                            lineNumber: 300,
                                                             columnNumber: 29
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3712,25 +3954,25 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 314,
+                                                                        lineNumber: 317,
                                                                         columnNumber: 37
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Manage Schedules"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 310,
+                                                                lineNumber: 313,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                                            lineNumber: 308,
+                                                            lineNumber: 311,
                                                             columnNumber: 29
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                    lineNumber: 296,
+                                                    lineNumber: 299,
                                                     columnNumber: 25
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3754,19 +3996,19 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                         children: domain
                                                                     }, domain, false, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 325,
+                                                                        lineNumber: 328,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0)))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 323,
+                                                                lineNumber: 326,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "w-px h-6 bg-white/10"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 336,
+                                                                lineNumber: 339,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3777,7 +4019,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                         children: "Qualified For:"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 338,
+                                                                        lineNumber: 341,
                                                                         columnNumber: 37
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     [
@@ -3797,7 +4039,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                     children: r === 0 ? 'Applied' : r === 4 ? 'Selected' : `Round ${r}+`
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                    lineNumber: 348,
+                                                                                    lineNumber: 351,
                                                                                     columnNumber: 45
                                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3805,42 +4047,42 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                     children: getRoundCount(r)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                    lineNumber: 349,
+                                                                                    lineNumber: 352,
                                                                                     columnNumber: 45
                                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                                             ]
                                                                         }, r, true, {
                                                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                                                            lineNumber: 340,
+                                                                            lineNumber: 343,
                                                                             columnNumber: 41
                                                                         }, ("TURBOPACK compile-time value", void 0)))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 337,
+                                                                lineNumber: 340,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                        lineNumber: 322,
+                                                        lineNumber: 325,
                                                         columnNumber: 29
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                    lineNumber: 321,
+                                                    lineNumber: 324,
                                                     columnNumber: 26
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 295,
+                                            lineNumber: 298,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                    lineNumber: 280,
+                                    lineNumber: 283,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3852,7 +4094,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                 className: "w-8 h-8 animate-spin text-[#ccff00]"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 363,
+                                                lineNumber: 366,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3860,13 +4102,13 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                 children: "Loading candidates..."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 364,
+                                                lineNumber: 367,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 362,
+                                        lineNumber: 365,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "overflow-x-auto",
@@ -3883,7 +4125,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                 children: "Candidate"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 371,
+                                                                lineNumber: 374,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3891,7 +4133,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                 children: "Domain"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 372,
+                                                                lineNumber: 375,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3899,7 +4141,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                 children: "Round"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 373,
+                                                                lineNumber: 376,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3907,7 +4149,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                 children: "Status"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 374,
+                                                                lineNumber: 377,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3915,7 +4157,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                 children: "App"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 375,
+                                                                lineNumber: 378,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3923,18 +4165,18 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                 children: "Actions"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                lineNumber: 376,
+                                                                lineNumber: 379,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                        lineNumber: 370,
+                                                        lineNumber: 373,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                    lineNumber: 369,
+                                                    lineNumber: 372,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -3952,7 +4194,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                 children: user.username.slice(0, 2)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                lineNumber: 384,
+                                                                                lineNumber: 387,
                                                                                 columnNumber: 53
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3965,13 +4207,13 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                                 className: "w-3 h-3 text-[#ccff00]"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                                lineNumber: 390,
+                                                                                                lineNumber: 393,
                                                                                                 columnNumber: 83
                                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                        lineNumber: 388,
+                                                                                        lineNumber: 391,
                                                                                         columnNumber: 57
                                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3979,7 +4221,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                         children: user.email
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                        lineNumber: 392,
+                                                                                        lineNumber: 395,
                                                                                         columnNumber: 57
                                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3987,24 +4229,24 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                         children: user.mobileNumber || '-'
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                        lineNumber: 393,
+                                                                                        lineNumber: 396,
                                                                                         columnNumber: 57
                                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                lineNumber: 387,
+                                                                                lineNumber: 390,
                                                                                 columnNumber: 53
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 383,
+                                                                        lineNumber: 386,
                                                                         columnNumber: 49
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                    lineNumber: 382,
+                                                                    lineNumber: 385,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -4014,12 +4256,12 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                         children: user.domain
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 398,
+                                                                        lineNumber: 401,
                                                                         columnNumber: 49
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                    lineNumber: 397,
+                                                                    lineNumber: 400,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -4032,12 +4274,12 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 401,
+                                                                        lineNumber: 404,
                                                                         columnNumber: 49
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                    lineNumber: 400,
+                                                                    lineNumber: 403,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -4047,52 +4289,49 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                         children: "Rejected"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 405,
+                                                                        lineNumber: 408,
                                                                         columnNumber: 53
                                                                     }, ("TURBOPACK compile-time value", void 0)) : user.hasSelection ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         className: "text-[#ccff00] text-[10px] font-bold uppercase border border-[#ccff00]/20 bg-[#ccff00]/10 px-2 py-0.5 rounded",
                                                                         children: "Selected"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 407,
+                                                                        lineNumber: 410,
                                                                         columnNumber: 53
                                                                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         className: "text-blue-400 text-[10px] font-bold uppercase border border-blue-400/20 bg-blue-400/10 px-2 py-0.5 rounded",
                                                                         children: "Active"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 409,
+                                                                        lineNumber: 412,
                                                                         columnNumber: 53
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                    lineNumber: 403,
+                                                                    lineNumber: 406,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                     className: "px-4 py-4 text-center",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        onClick: ()=>setSelectedReason({
-                                                                                username: user.username,
-                                                                                text: user.reason || "No reason provided."
-                                                                            }),
+                                                                        onClick: ()=>setSelectedApplication(user),
                                                                         className: "p-2 hover:bg-white/10 rounded-lg text-gray-400 hover:text-white",
-                                                                        title: "View Reason",
+                                                                        title: "View Full Application",
                                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"], {
                                                                             className: "w-4 h-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                                                            lineNumber: 418,
+                                                                            lineNumber: 421,
                                                                             columnNumber: 53
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 413,
+                                                                        lineNumber: 416,
                                                                         columnNumber: 49
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                    lineNumber: 412,
+                                                                    lineNumber: 415,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -4108,25 +4347,25 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                     className: "w-4 h-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                    lineNumber: 428,
+                                                                                    lineNumber: 431,
                                                                                     columnNumber: 98
                                                                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$ban$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Ban$3e$__["Ban"], {
                                                                                     className: "w-4 h-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                    lineNumber: 428,
+                                                                                    lineNumber: 431,
                                                                                     columnNumber: 134
                                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                lineNumber: 423,
+                                                                                lineNumber: 426,
                                                                                 columnNumber: 53
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                 className: "w-px h-4 bg-white/10"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                lineNumber: 430,
+                                                                                lineNumber: 433,
                                                                                 columnNumber: 53
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4137,12 +4376,12 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                     className: "w-4 h-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                    lineNumber: 436,
+                                                                                    lineNumber: 439,
                                                                                     columnNumber: 57
                                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                lineNumber: 431,
+                                                                                lineNumber: 434,
                                                                                 columnNumber: 53
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4153,126 +4392,270 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                                                     className: "w-4 h-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                    lineNumber: 443,
+                                                                                    lineNumber: 446,
                                                                                     columnNumber: 57
                                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                                                lineNumber: 438,
+                                                                                lineNumber: 441,
                                                                                 columnNumber: 53
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                                        lineNumber: 422,
+                                                                        lineNumber: 425,
                                                                         columnNumber: 49
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                                    lineNumber: 421,
+                                                                    lineNumber: 424,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, user._id, true, {
                                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                                            lineNumber: 381,
+                                                            lineNumber: 384,
                                                             columnNumber: 41
                                                         }, ("TURBOPACK compile-time value", void 0)))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                    lineNumber: 379,
+                                                    lineNumber: 382,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 368,
+                                            lineNumber: 371,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 367,
+                                        lineNumber: 370,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                    lineNumber: 360,
+                                    lineNumber: 363,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/AdminDashboard.tsx",
-                            lineNumber: 279,
+                            lineNumber: 282,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/AdminDashboard.tsx",
-                        lineNumber: 251,
+                        lineNumber: 254,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
-                    selectedReason && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    selectedApplication && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 z-[-1]",
-                                onClick: ()=>setSelectedReason(null)
+                                onClick: ()=>setSelectedApplication(null)
                             }, void 0, false, {
                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                lineNumber: 461,
+                                lineNumber: 464,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-[#121212] border border-white/10 rounded-2xl w-full max-w-lg p-6 relative animate-in fade-in zoom-in-95 duration-200",
+                                className: "bg-[#121212] border border-white/10 rounded-2xl w-full max-w-lg p-0 relative animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[85vh]",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-lg font-bold font-display text-white mb-4",
-                                        children: "Application Statement"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "p-6 border-b border-white/5 flex items-center justify-between sticky top-0 bg-[#121212] z-10 rounded-t-2xl",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                        className: "text-lg font-bold font-display text-white",
+                                                        children: "Application Details"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/AdminDashboard.tsx",
+                                                        lineNumber: 469,
+                                                        columnNumber: 29
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-xs text-gray-400",
+                                                        children: [
+                                                            selectedApplication.username,
+                                                            " • ",
+                                                            selectedApplication.domain
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/AdminDashboard.tsx",
+                                                        lineNumber: 470,
+                                                        columnNumber: 29
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/AdminDashboard.tsx",
+                                                lineNumber: 468,
+                                                columnNumber: 25
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>setSelectedApplication(null),
+                                                className: "text-gray-500 hover:text-white",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                                    className: "w-5 h-5"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/AdminDashboard.tsx",
+                                                    lineNumber: 472,
+                                                    columnNumber: 121
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/AdminDashboard.tsx",
+                                                lineNumber: 472,
+                                                columnNumber: 25
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 463,
+                                        lineNumber: 467,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "max-h-60 overflow-y-auto mb-6 custom-scrollbar overscroll-contain",
+                                        className: "p-6 overflow-y-auto custom-scrollbar overscroll-contain",
                                         "data-lenis-prevent": "true",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-gray-300 text-sm whitespace-pre-wrap",
-                                            children: selectedReason.text
-                                        }, void 0, false, {
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-6",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-sm font-medium text-gray-300",
+                                                            children: "Self-Rating"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/AdminDashboard.tsx",
+                                                            lineNumber: 479,
+                                                            columnNumber: 33
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-2",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                                    className: "w-4 h-4 text-[#ccff00] fill-[#ccff00]"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/AdminDashboard.tsx",
+                                                                    lineNumber: 481,
+                                                                    columnNumber: 37
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-xl font-bold font-display text-white",
+                                                                    children: [
+                                                                        selectedApplication.selfRating || 0,
+                                                                        "/10"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/AdminDashboard.tsx",
+                                                                    lineNumber: 482,
+                                                                    columnNumber: 37
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/AdminDashboard.tsx",
+                                                            lineNumber: 480,
+                                                            columnNumber: 33
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/AdminDashboard.tsx",
+                                                    lineNumber: 478,
+                                                    columnNumber: 29
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                            className: "text-xs font-bold uppercase tracking-widest text-[#ccff00] mb-2",
+                                                            children: "Why Join EDC?"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/AdminDashboard.tsx",
+                                                            lineNumber: 488,
+                                                            columnNumber: 33
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "bg-black/40 border border-white/5 rounded-xl p-4",
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-gray-300 text-sm whitespace-pre-wrap leading-relaxed",
+                                                                children: selectedApplication.reason
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/AdminDashboard.tsx",
+                                                                lineNumber: 490,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/AdminDashboard.tsx",
+                                                            lineNumber: 489,
+                                                            columnNumber: 33
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/AdminDashboard.tsx",
+                                                    lineNumber: 487,
+                                                    columnNumber: 29
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                selectedApplication.responses && selectedApplication.responses.map((resp, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                className: "text-xs font-bold uppercase tracking-widest text-gray-500 mb-2",
+                                                                children: resp.question
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/AdminDashboard.tsx",
+                                                                lineNumber: 497,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "bg-black/40 border border-white/5 rounded-xl p-4",
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-gray-300 text-sm whitespace-pre-wrap leading-relaxed",
+                                                                    children: resp.answer
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/AdminDashboard.tsx",
+                                                                    lineNumber: 499,
+                                                                    columnNumber: 41
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/AdminDashboard.tsx",
+                                                                lineNumber: 498,
+                                                                columnNumber: 37
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        ]
+                                                    }, idx, true, {
+                                                        fileName: "[project]/components/AdminDashboard.tsx",
+                                                        lineNumber: 496,
+                                                        columnNumber: 33
+                                                    }, ("TURBOPACK compile-time value", void 0))),
+                                                (!selectedApplication.responses || selectedApplication.responses.length === 0) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-center text-gray-600 text-xs italic py-2",
+                                                    children: "No additional questionnaire data available."
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/AdminDashboard.tsx",
+                                                    lineNumber: 505,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 465,
+                                            lineNumber: 476,
                                             columnNumber: 25
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 464,
-                                        columnNumber: 21
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setSelectedReason(null),
-                                        className: "absolute top-4 right-4 text-gray-500 hover:text-white",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                                            className: "w-5 h-5"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/AdminDashboard.tsx",
-                                            lineNumber: 467,
-                                            columnNumber: 135
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 467,
+                                        lineNumber: 475,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                lineNumber: 462,
+                                lineNumber: 465,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/AdminDashboard.tsx",
-                        lineNumber: 460,
+                        lineNumber: 463,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     isScheduleModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4283,7 +4666,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                 onClick: ()=>setIsScheduleModalOpen(false)
                             }, void 0, false, {
                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                lineNumber: 475,
+                                lineNumber: 516,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4299,7 +4682,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                         children: "Round Schedules"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                        lineNumber: 479,
+                                                        lineNumber: 520,
                                                         columnNumber: 29
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4307,13 +4690,13 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                         children: "Updates here will be visible to ALL candidates in the respective rounds."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                        lineNumber: 480,
+                                                        lineNumber: 521,
                                                         columnNumber: 29
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 478,
+                                                lineNumber: 519,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4323,18 +4706,18 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                     className: "w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/AdminDashboard.tsx",
-                                                    lineNumber: 483,
+                                                    lineNumber: 524,
                                                     columnNumber: 29
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 482,
+                                                lineNumber: 523,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 477,
+                                        lineNumber: 518,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4353,12 +4736,12 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/AdminDashboard.tsx",
-                                                            lineNumber: 491,
+                                                            lineNumber: 532,
                                                             columnNumber: 37
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                        lineNumber: 490,
+                                                        lineNumber: 531,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -4368,18 +4751,18 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                         placeholder: `Instructions for Round ${schedule.round}...`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                        lineNumber: 493,
+                                                        lineNumber: 534,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, schedule.round, true, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 489,
+                                                lineNumber: 530,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 487,
+                                        lineNumber: 528,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4391,7 +4774,7 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                 children: "Cancel"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 504,
+                                                lineNumber: 545,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4403,54 +4786,54 @@ const AdminDashboard = ({ isOpen, onClose })=>{
                                                         className: "w-4 h-4 animate-spin"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                        lineNumber: 515,
+                                                        lineNumber: 556,
                                                         columnNumber: 50
                                                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__["Save"], {
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                                        lineNumber: 515,
+                                                        lineNumber: 556,
                                                         columnNumber: 97
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     "Publish Updates"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                                lineNumber: 510,
+                                                lineNumber: 551,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AdminDashboard.tsx",
-                                        lineNumber: 503,
+                                        lineNumber: 544,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/AdminDashboard.tsx",
-                                lineNumber: 476,
+                                lineNumber: 517,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/AdminDashboard.tsx",
-                        lineNumber: 474,
+                        lineNumber: 515,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/AdminDashboard.tsx",
-                lineNumber: 231,
+                lineNumber: 234,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/AdminDashboard.tsx",
-        lineNumber: 228,
+        lineNumber: 231,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(AdminDashboard, "em6iBJY8RLq7lyi/LWJ6cC4HMvw=");
+_s(AdminDashboard, "CmqzG/oMskuHsMRGAL9yke0dPm0=");
 _c = AdminDashboard;
 const __TURBOPACK__default__export__ = AdminDashboard;
 var _c;
@@ -4512,7 +4895,7 @@ const HackerModal = ({ isOpen, onClose })=>{
         className: "fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 font-mono",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 pointer-events-none opacity-20 bg-[url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif')] bg-cover"
+                className: "absolute inset-0 pointer-events-none opacity-20  bg-cover"
             }, void 0, false, {
                 fileName: "[project]/components/HackerModal.tsx",
                 lineNumber: 39,
@@ -4917,24 +5300,26 @@ function App() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                         className: "flex-grow w-full",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                                fileName: "[project]/app/page.tsx",
-                                lineNumber: 152,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Marquee$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                onOpenAuth: ()=>setIsAuthModalOpen(true)
+                            }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
                                 lineNumber: 153,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Marquee$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
                                 lineNumber: 154,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Domains$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
                                 lineNumber: 155,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Domains$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                                fileName: "[project]/app/page.tsx",
+                                lineNumber: 156,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -4945,7 +5330,7 @@ function App() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 157,
+                        lineNumber: 158,
                         columnNumber: 9
                     }, this)
                 ]

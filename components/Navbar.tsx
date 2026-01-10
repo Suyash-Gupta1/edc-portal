@@ -17,7 +17,7 @@ interface User {
   username: string;
   hasSelection: boolean;
   round: number;
-  isAdmin: boolean; // 🔥 IMPORTANT
+  isAdmin: boolean; 
 }
 
 interface NavbarProps {
@@ -29,7 +29,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({
   user,
-  onOpenAuth,
+  onOpenAuth, 
   onLogout,
   onOpenAdmin,
 }) => {
@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({
     }
   };
 
-  // Handle navbar visibility on scroll
+  
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -103,9 +103,9 @@ const Navbar: React.FC<NavbarProps> = ({
         }
       `}
     >
-      {/* Top nav row */}
+      
       <div className="w-full h-[56px] flex items-center justify-between px-5 relative z-20 shrink-0">
-        {/* Menu toggle button */}
+        
         <button
           onClick={toggleMenu}
           className="flex items-center gap-3 text-sm font-medium text-gray-300 hover:text-white transition-colors group z-50 focus:outline-none"
@@ -131,7 +131,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </span>
         </button>
 
-        {/* EDC Logo */}
+       
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
           <Sparkles
             className={`w-5 h-5 text-[#a855f7] fill-[#a855f7] animate-pulse transition-all duration-500 ${
@@ -147,7 +147,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </span>
         </div>
 
-        {/* User / Auth Buttons */}
+        
         <div className="flex items-center gap-2">
           {user ? (
             <div className="flex items-center gap-3">
@@ -185,24 +185,26 @@ const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
           ) : (
-            <button
-              onClick={onOpenAuth}
+            <a
+              href="https://www.edcnitd.co.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`overflow-hidden transition-all duration-500 ${
                 isOpen ? "w-0 opacity-0" : "w-auto opacity-100"
               }`}
             >
               <div className="bg-[#ccff00] hover:bg-[#bef264] text-black text-xs font-bold px-4 py-2 rounded-full transition-transform active:scale-95 hover:scale-105 duration-200 font-display group whitespace-nowrap">
-                <TextHover text="Join Us" />
+                <TextHover text="Visit Us" />
               </div>
-            </button>
+            </a>
           )}
         </div>
       </div>
 
-      {/* Expanded Menu Content */}
+      
       <div className="w-full h-[calc(100%-56px)] flex flex-col pt-4 md:pt-4 px-6 md:px-12 overflow-y-auto no-scrollbar pb-6 md:pb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 h-auto md:h-full pb-10 md:pb-0">
-          {/* Navigation Sidebar */}
+          
           <div
             className={`md:col-span-4 flex flex-col gap-6 md:border-r border-gray-800/50 md:pr-6 transition-all duration-500 ease-out ${
               isOpen
@@ -228,7 +230,7 @@ const Navbar: React.FC<NavbarProps> = ({
             </ul>
           </div>
 
-          {/* Explore Section */}
+          
           <div
             className={`md:col-span-3 flex flex-col justify-between md:pl-2 transition-all duration-500 ease-out ${
               isOpen
@@ -256,7 +258,7 @@ const Navbar: React.FC<NavbarProps> = ({
               </ul>
             </div>
 
-            {/* Social Icons + Egg */}
+           
             <div className="flex gap-6 md:gap-4 mt-8 md:mt-0 items-center">
               <a
                 href="https://www.instagram.com/edc.nitd"
@@ -297,7 +299,7 @@ const Navbar: React.FC<NavbarProps> = ({
             </div>
           </div>
 
-          {/* Right Section (Admin + Branding) */}
+          
           <div
             className={`md:col-span-5 md:pl-2 mt-6 md:mt-0 flex flex-col items-center justify-between pb-6 transition-all duration-500 ease-out ${
               isOpen
@@ -312,7 +314,7 @@ const Navbar: React.FC<NavbarProps> = ({
               </h3>
             </div>
 
-            {/* ADMIN PORTAL (ONLY IF ADMIN) */}
+            
             {user?.isAdmin && (
               <div className="w-full flex justify-end">
                 <button

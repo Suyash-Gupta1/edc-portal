@@ -36,7 +36,7 @@ const HackerModal: React.FC<HackerModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 font-mono">
-      <div className="absolute inset-0 pointer-events-none opacity-20 bg-[url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif')] bg-cover"></div>
+      <div className="absolute inset-0 pointer-events-none opacity-20  bg-cover"></div>
 
       <div className="relative w-full max-w-2xl bg-black border border-[#CCFF00] shadow-[0_0_50px_rgba(34,197,94,0.2)] p-8 rounded-lg overflow-hidden">
         

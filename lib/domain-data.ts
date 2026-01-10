@@ -9,7 +9,7 @@ export const DOMAIN_DATA: Record<string, any> = {
     accent: "#3b82f6", 
     stats: [
       { label: "Projects", value: "15+" },
-      { label: "Tech Stack", value: "MERN / Next.js" },
+      { label: "Tech Stack", value: "Django / Next.js" },
       { label: "Members", value: "20+" }
     ],
     curriculum: [
@@ -44,9 +44,9 @@ export const DOMAIN_DATA: Record<string, any> = {
     ],
     curriculum: [
       {
-        title: "Creative Copywriting",
+        title: "Official Mailing",
         icon: "PenTool",
-        desc: "Learn the art of persuasion. Write catchphrases, slogans, and ad copies that grab attention instantly."
+        desc: "Learn the art of persuasion. Write catchphrases and slogans that grab attention instantly."
       },
       {
         title: "Social Media Strategy",
@@ -125,7 +125,7 @@ export const DOMAIN_DATA: Record<string, any> = {
     title: "Video Editing",
     subtitle: "Crafting Visual Stories",
     description: "Crafting visual stories through motion and sound. We transform raw footage into compelling narratives that capture attention and evoke emotion. From high-energy teasers to cinematic after-movies, we bring the club's moments to life.",
-    image: "https://images.unsplash.com/photo-1574717432707-c67885d96459?q=80&w=2667&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1574717432707-c572c36394af?q=80&w=2070&auto=format&fit=crop",
     accent: "#ef4444", 
     stats: [
       { label: "Reels Edited", value: "50+" },

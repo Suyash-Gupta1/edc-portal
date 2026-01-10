@@ -9,7 +9,7 @@ interface DomainCardProps extends DomainProps {
     setRef: (el: HTMLDivElement | null) => void;
 }
 
-// Static Data Configuration
+
 const DOMAINS_DATA = [
     {
       title: "Web Development",
@@ -106,11 +106,11 @@ const DomainCard: React.FC<DomainCardProps> = ({
     >
       <div className="domain-card rounded-[2rem] p-6 md:p-12 h-auto md:h-[550px] flex flex-col md:flex-row items-center gap-6 md:gap-10 relative overflow-hidden group border-t border-white/10 transition-colors duration-500 hover:border-[#ccff00]/50 hover:shadow-[0_0_50px_-12px_rgba(204,255,0,0.3)]">
         
-        {/* Backgrounds */}
+        
         <div className="absolute inset-0 bg-[#0F0F0F] z-0"></div>
         <div className="absolute inset-0 grid-pattern opacity-20 z-0"></div>
         
-        {/* Lime Glow Effect - Radial Gradient */}
+       
         <div 
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0"
             style={{
@@ -118,12 +118,12 @@ const DomainCard: React.FC<DomainCardProps> = ({
             }}
         ></div>
         
-        {/* SVG Decoration */}
+       
         <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500 z-0 scale-150 origin-bottom-right">
            {svgPath}
         </div>
         
-        {/* Left Content */}
+        
         <div className="relative z-10 w-full md:w-1/2 flex flex-col items-start text-left pt-2 md:pt-0">
           <div className={`w-14 h-14 md:w-16 md:h-16 ${iconBgClass} rounded-2xl flex items-center justify-center ${iconTextClass} mb-6 md:mb-8 border ${colorClass.replace('text-', 'border-').replace('500', '500/20')} group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
              {icon}
@@ -139,7 +139,7 @@ const DomainCard: React.FC<DomainCardProps> = ({
           </Link>
         </div>
 
-        {/* Right Image */}
+        
         <div className="relative z-10 w-full md:w-1/2 h-[220px] md:h-full flex items-center justify-center">
             <div className="w-full h-full rounded-2xl overflow-hidden border border-white/10 relative group-hover:border-[#ccff00]/30 transition-colors duration-500 shadow-2xl">
                 <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -158,7 +158,7 @@ const DomainCard: React.FC<DomainCardProps> = ({
 const Domains: React.FC = () => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Scroll Animation Logic
+  
   useEffect(() => {
     const handleScroll = () => {
       cardRefs.current.forEach((card, index) => {
@@ -195,7 +195,6 @@ const Domains: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Trigger once to set initial state
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);

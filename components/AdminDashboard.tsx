@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ShieldAlert, Loader2, ChevronUp, ChevronDown, CheckCircle, Trophy, FileText, Search, Filter, Ban, RefreshCw, Calendar, Save } from 'lucide-react';
+import { X, ShieldAlert, Loader2, ChevronUp, ChevronDown, CheckCircle, Trophy, FileText, Search, Filter, Ban, RefreshCw, Calendar, Save, Star } from 'lucide-react';
 import '../types';
 
 interface AdminDashboardProps {
@@ -18,6 +18,9 @@ interface UserData {
   hasSelection: boolean;
   applicationStatus: 'active' | 'rejected';
   createdAt: string;
+  
+  selfRating?: number;
+  responses?: { question: string; answer: string }[];
 }
 
 interface ScheduleData {
@@ -27,11 +30,11 @@ interface ScheduleData {
 
 const ADMIN_KEY_CONST = "EDC_ADMIN_2024";
 
-// Dummy data for fallback
+
 const DUMMY_USERS: UserData[] = [
-    { _id: "1", username: "demo_user", email: "demo@example.com", mobileNumber: "+91 9876543210", domain: "Web Development", reason: "I love coding.", round: 0, hasSelection: false, applicationStatus: 'active', createdAt: new Date().toISOString() },
-    { _id: "2", username: "john_doe", email: "john@test.com", mobileNumber: "+91 8888888888", domain: "Graphic Design", reason: "Design is my passion.", round: 2, hasSelection: false, applicationStatus: 'active', createdAt: new Date().toISOString() },
-    { _id: "3", username: "jane_smith", email: "jane@test.com", mobileNumber: "+91 7777777777", domain: "Content Writing", reason: "Words can change the world.", round: 4, hasSelection: true, applicationStatus: 'active', createdAt: new Date().toISOString() },
+    { _id: "1", username: "demo_user", email: "demo@example.com", mobileNumber: "+91 9876543210", domain: "Web Development", reason: "I love coding.", round: 0, hasSelection: false, applicationStatus: 'active', createdAt: new Date().toISOString(), selfRating: 8, responses: [{ question: "Past project", answer: "Built a todo app" }] },
+    { _id: "2", username: "john_doe", email: "john@test.com", mobileNumber: "+91 8888888888", domain: "Graphic Design", reason: "Design is my passion.", round: 2, hasSelection: false, applicationStatus: 'active', createdAt: new Date().toISOString(), selfRating: 9, responses: [] },
+    { _id: "3", username: "jane_smith", email: "jane@test.com", mobileNumber: "+91 7777777777", domain: "Content Writing", reason: "Words can change the world.", round: 4, hasSelection: true, applicationStatus: 'active', createdAt: new Date().toISOString(), selfRating: 10, responses: [] },
 ];
 
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
@@ -42,10 +45,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
   const [error, setError] = useState('');
   const [isOfflineMode, setIsOfflineMode] = useState(false);
   
-  // Modals
-  const [selectedReason, setSelectedReason] = useState<{username: string, text: string} | null>(null);
   
-  // Global Schedule State
+  const [selectedApplication, setSelectedApplication] = useState<UserData | null>(null);
+  
+  
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [schedules, setSchedules] = useState<ScheduleData[]>([
       { round: 1, description: "" },
@@ -55,7 +58,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
   ]);
   const [isSavingSchedules, setIsSavingSchedules] = useState(false);
 
-  // Filters
+  
   const [searchTerm, setSearchTerm] = useState('');
   const [filterDomain, setFilterDomain] = useState('All');
   const [filterRound, setFilterRound] = useState<number>(0);
@@ -114,7 +117,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
           if (res.ok) {
               const data = await res.json();
               if (data.schedules && data.schedules.length > 0) {
-                  // Merge fetched schedules with default structure
+                  
                   const merged = [1, 2, 3, 4].map(r => {
                       const found = data.schedules.find((s: any) => s.round === r);
                       return found ? { round: r, description: found.description } : { round: r, description: "" };
@@ -159,7 +162,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
   const updateRound = async (userId: string, newRound: number) => {
     if (newRound < 0 || newRound > 4) return;
 
-    // Optimistic update
+    
     setUsers(prev => prev.map(u => 
         u._id === userId ? { ...u, round: newRound, hasSelection: newRound >= 4 } : u
     ));
@@ -306,7 +309,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                             </div>
                             
                             <div className="flex items-center gap-3">
-                                {/* Global Schedule Button */}
+                                
                                 <button 
                                     onClick={openScheduleManager}
                                     className="flex items-center gap-2 bg-[#ccff00] text-black hover:bg-[#bceb00] px-5 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap shadow-[0_0_15px_-5px_rgba(204,255,0,0.4)]"
@@ -317,7 +320,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                             </div>
                         </div>
 
-                        {/* Filter Domains and Rounds */}
+                       
                          <div className="w-full overflow-x-auto pb-2 pt-2 border-t border-white/5">
                             <div className="flex items-center gap-4 min-w-max">
                                 <div className="flex gap-2">
@@ -411,9 +414,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                                             </td>
                                             <td className="px-4 py-4 text-center">
                                                 <button 
-                                                    onClick={() => setSelectedReason({ username: user.username, text: user.reason || "No reason provided." })}
+                                                    onClick={() => setSelectedApplication(user)}
                                                     className="p-2 hover:bg-white/10 rounded-lg text-gray-400 hover:text-white"
-                                                    title="View Reason"
+                                                    title="View Full Application"
                                                 >
                                                     <FileText className="w-4 h-4" />
                                                 </button>
@@ -455,21 +458,59 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
           )}
         </div>
         
-        {/* Reason Modal */}
-        {selectedReason && (
+        
+        {selectedApplication && (
             <div className="absolute inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-                <div className="absolute inset-0 z-[-1]" onClick={() => setSelectedReason(null)} />
-                <div className="bg-[#121212] border border-white/10 rounded-2xl w-full max-w-lg p-6 relative animate-in fade-in zoom-in-95 duration-200">
-                    <h3 className="text-lg font-bold font-display text-white mb-4">Application Statement</h3>
-                    <div className="max-h-60 overflow-y-auto mb-6 custom-scrollbar overscroll-contain" data-lenis-prevent="true">
-                        <p className="text-gray-300 text-sm whitespace-pre-wrap">{selectedReason.text}</p>
+                <div className="absolute inset-0 z-[-1]" onClick={() => setSelectedApplication(null)} />
+                <div className="bg-[#121212] border border-white/10 rounded-2xl w-full max-w-lg p-0 relative animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[85vh]">
+                    
+                    <div className="p-6 border-b border-white/5 flex items-center justify-between sticky top-0 bg-[#121212] z-10 rounded-t-2xl">
+                        <div>
+                            <h3 className="text-lg font-bold font-display text-white">Application Details</h3>
+                            <p className="text-xs text-gray-400">{selectedApplication.username} • {selectedApplication.domain}</p>
+                        </div>
+                        <button onClick={() => setSelectedApplication(null)} className="text-gray-500 hover:text-white"><X className="w-5 h-5" /></button>
                     </div>
-                    <button onClick={() => setSelectedReason(null)} className="absolute top-4 right-4 text-gray-500 hover:text-white"><X className="w-5 h-5" /></button>
+
+                    <div className="p-6 overflow-y-auto custom-scrollbar overscroll-contain" data-lenis-prevent="true">
+                        <div className="space-y-6">
+                            
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+                                <span className="text-sm font-medium text-gray-300">Self-Rating</span>
+                                <div className="flex items-center gap-2">
+                                    <Star className="w-4 h-4 text-[#ccff00] fill-[#ccff00]" />
+                                    <span className="text-xl font-bold font-display text-white">{selectedApplication.selfRating || 0}/10</span>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <h4 className="text-xs font-bold uppercase tracking-widest text-[#ccff00] mb-2">Why Join EDC?</h4>
+                                <div className="bg-black/40 border border-white/5 rounded-xl p-4">
+                                    <p className="text-gray-300 text-sm whitespace-pre-wrap leading-relaxed">{selectedApplication.reason}</p>
+                                </div>
+                            </div>
+
+                            
+                            {selectedApplication.responses && selectedApplication.responses.map((resp, idx) => (
+                                <div key={idx}>
+                                    <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">{resp.question}</h4>
+                                    <div className="bg-black/40 border border-white/5 rounded-xl p-4">
+                                        <p className="text-gray-300 text-sm whitespace-pre-wrap leading-relaxed">{resp.answer}</p>
+                                    </div>
+                                </div>
+                            ))}
+                            
+                            {(!selectedApplication.responses || selectedApplication.responses.length === 0) && (
+                                <p className="text-center text-gray-600 text-xs italic py-2">No additional questionnaire data available.</p>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         )}
 
-        {/* Global Schedule Modal */}
+        
         {isScheduleModalOpen && (
             <div className="absolute inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
                 <div className="absolute inset-0 z-[-1]" onClick={() => setIsScheduleModalOpen(false)} />
