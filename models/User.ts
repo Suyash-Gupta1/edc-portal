@@ -11,6 +11,7 @@ export interface IUser extends Document {
   hasSelection: boolean;
   applicationStatus: 'active' | 'rejected';
   createdAt: Date;
+  isAdmin:boolean;
 }
 
 const UserSchema = new Schema<IUser>({
@@ -57,6 +58,10 @@ const UserSchema = new Schema<IUser>({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  isAdmin: {
+    type:Boolean,
+    default:false,
   },
 });
 
