@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { X, ShieldAlert, Loader2, ChevronUp, ChevronDown, CheckCircle, Trophy, FileText, Search, Filter, Ban, RefreshCw, Calendar, Save } from 'lucide-react';
 import '../types';
 
-
-
 interface AdminDashboardProps {
   isOpen: boolean;
   onClose: () => void;
@@ -323,7 +321,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose }) => {
                          <div className="w-full overflow-x-auto pb-2 pt-2 border-t border-white/5">
                             <div className="flex items-center gap-4 min-w-max">
                                 <div className="flex gap-2">
-                                     {['All', 'Web Development', 'Content Writing', 'Graphic Design', 'Video Editing', 'Event Management'].map(domain => (
+                                     {['All', 'Web Development', 'Content Writing', 'Graphic Design', 'Video Editing', 'Event Management', 'Consultancy Wing'].map(domain => (
                                         <button
                                             key={domain}
                                             onClick={() => setFilterDomain(domain)}

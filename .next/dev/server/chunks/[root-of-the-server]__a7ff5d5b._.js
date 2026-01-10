@@ -157,6 +157,10 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
     }
 });
 // IMPORTANT: Delete the model if it exists to prevent caching issues with schema updates in development
@@ -413,21 +417,16 @@ async function POST(req) {
             });
         }
         const updates = {};
-        // Handle Round Update
         if (typeof round === 'number') {
             updates.round = round;
             updates.hasSelection = round >= 4;
         }
-        // Handle Status Update (Active/Rejected)
         if (applicationStatus) {
             updates.applicationStatus = applicationStatus;
         }
-        // Update the user
         const updatedUser = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findByIdAndUpdate(userId, updates, {
             new: true
         });
-        // Send Email Logic (Only for promotions or selection)
-        // We don't automate rejection emails to allow for personal checks, but we do promote active rounds
         if (typeof round === 'number' && round > currentUser.round && updatedUser.applicationStatus === 'active') {
             console.log(`[Email Trigger] Promoting ${updatedUser.username} to Round ${round}`);
             try {

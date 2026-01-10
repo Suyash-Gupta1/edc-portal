@@ -150,5 +150,35 @@ export const DOMAIN_DATA: Record<string, any> = {
       }
     ],
     role: "As a Video Editor, you will be responsible for creating event teasers, recap reels, and promotional content that drives engagement across our social platforms."
+  },
+  "consultancy-wing": {
+    title: "Consultancy Wing",
+    subtitle: "Bridging Academia & Industry",
+    description: "The Consultancy Wing is the strategic arm of EDC. We solve real-world business problems, conduct market research, and provide data-driven insights to startups and corporates. We bridge the gap between technical expertise and business acumen.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+    accent: "#10b981", // Emerald
+    stats: [
+      { label: "Clients", value: "10+" },
+      { label: "Case Studies", value: "25+" },
+      { label: "Revenue", value: "₹5L+" }
+    ],
+    curriculum: [
+      {
+        title: "Business Strategy",
+        icon: "Briefcase",
+        desc: "Learn frameworks like SWOT, PESTLE, and Porter's 5 Forces to analyze businesses and formulate growth strategies."
+      },
+      {
+        title: "Market Research",
+        icon: "Search",
+        desc: "Master primary and secondary research methodologies to uncover market trends, customer insights, and competitive landscapes."
+      },
+      {
+        title: "Financial Modeling",
+        icon: "TrendingUp",
+        desc: "Understand balance sheets, P&L statements, and create financial projections to assess business viability."
+      }
+    ],
+    role: "As a Consultant, you will work on live projects, analyze data, and present strategic recommendations to real clients."
   }
 };
