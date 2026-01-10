@@ -3,7 +3,7 @@ import User from '@/models/User';
 import { NextResponse } from 'next/server';
 
 
-const ADMIN_KEY = "EDC_ADMIN_2024";
+const ADMIN_KEY =  process.env.ADMIN_KEY || "";
 
 export const dynamic = 'force-dynamic'; 
 

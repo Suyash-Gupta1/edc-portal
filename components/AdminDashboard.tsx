@@ -28,7 +28,7 @@ interface ScheduleData {
     description: string;
 }
 
-const ADMIN_KEY_CONST = "EDC_ADMIN_2024";
+const ADMIN_KEY_CONST = process.env.ADMIN_KEY || "";
 
 
 const DUMMY_USERS: UserData[] = [

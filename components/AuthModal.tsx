@@ -77,26 +77,42 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (error) setError('');
   };
 
   const handleQuestionnaireChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setQuestionnaire({ ...questionnaire, [e.target.name]: e.target.value });
+    if (error) setError('');
+  };
+
+  const validateInputs = () => {
+    if (!formData.username.trim()) return "Username is required";
+    if (!formData.password) return "Password is required";
+
+    if (!isLogin) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) return "Invalid email address";
+
+        const mobileClean = formData.mobileNumber.replace(/\D/g, '');
+        if (mobileClean.length !== 10) return "Mobile number must be 10 digits";
+
+        if (formData.password.length < 6) return "Password must be at least 6 characters";
+        
+        if (!formData.domain) return "Please select a domain";
+        
+        if (formData.reason.length < 10) return "Reason must be at least 10 characters";
+    }
+
+    return null;
   };
 
   const handleNextStep = (e: React.MouseEvent | React.FormEvent) => {
     e.preventDefault();
     setError('');
 
-    const missingFields = [];
-    if (!formData.username) missingFields.push("Username");
-    if (!formData.email) missingFields.push("Email");
-    if (!formData.mobileNumber) missingFields.push("Mobile Number");
-    if (!formData.password) missingFields.push("Password");
-    if (!formData.domain) missingFields.push("Domain");
-    if (!formData.reason) missingFields.push("Reason");
-
-    if (missingFields.length > 0) {
-        setError(`Please fill in: ${missingFields.join(', ')}`);
+    const validationError = validateInputs();
+    if (validationError) {
+        setError(validationError);
         scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
         return;
     }
@@ -116,12 +132,30 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess }
         return;
     }
 
+    const basicValidationError = validateInputs();
+    if (basicValidationError) {
+        setError(basicValidationError);
+        return;
+    }
+
+    if (!isLogin && registrationStep === 2) {
+        if (!questionnaire.q1.trim()) {
+            setError("Please answer the first question");
+            return;
+        }
+        if (!questionnaire.q2.trim()) {
+            setError("Please answer the second question");
+            return;
+        }
+    }
+
     setIsLoading(true);
     const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
 
     let payload: any = { ...formData };
     
     if (!isLogin) {
+        payload.mobileNumber = formData.mobileNumber.replace(/\D/g, '');
         payload.selfRating = questionnaire.rating;
         payload.responses = [
             { question: "Describe a past project or initiative you are proud of.", answer: questionnaire.q1 },

@@ -4,7 +4,7 @@ import { jwtVerify } from 'jose';
 
 
 const JWT_SECRET = process.env.JWT_SECRET || "default_secret";
-const ADMIN_KEY = "EDC_ADMIN_2024"; 
+const ADMIN_KEY = process.env.ADMIN_KEY || "";
 
 
 const WINDOW_MS = 60 * 1000; 

@@ -3,7 +3,7 @@ import User from '@/models/User';
 import { NextResponse } from 'next/server';
 import { sendStatusEmail } from '@/lib/mail';
 
-const ADMIN_KEY = "EDC_ADMIN_2024";
+const ADMIN_KEY =  process.env.ADMIN_KEY || "";
 
 export async function POST(req: Request) {
   await dbConnect();

@@ -55,7 +55,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jose$2f$dist
 ;
 ;
 const JWT_SECRET = process.env.JWT_SECRET || "default_secret";
-const ADMIN_KEY = "EDC_ADMIN_2024";
+const ADMIN_KEY = process.env.ADMIN_KEY || "";
 const WINDOW_MS = 60 * 1000;
 const AUTH_LIMIT = 5;
 const GENERIC_LIMIT = 100;
