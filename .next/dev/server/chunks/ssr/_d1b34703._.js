@@ -1262,7 +1262,7 @@ const DOMAINS_DATA = [
         iconBgClass: "bg-rose-500/10",
         iconTextClass: "text-rose-400",
         svgColorClass: "text-rose-500",
-        image: "https://images.unsplash.com/photo-1574717432707-c67885d96459?q=80&w=2667&auto=format&fit=crop"
+        image: "https://plus.unsplash.com/premium_photo-1663040316559-8684ca45d7e9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         title: "Event Management",

@@ -118,7 +118,6 @@ const Navbar = ({ user, onOpenAuth, onLogout, onOpenAdmin })=>{
             setTimeout(()=>setIsEggBroken(false), 3000);
         }
     };
-    // Handle navbar visibility on scroll
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const handleScroll = ()=>{
             const currentScrollY = window.scrollY;
@@ -1115,40 +1114,37 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$types$2e$ts__$5b$app$2d$ssr$
 ;
 ;
 const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
-    const [isLogin, setIsLogin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false); // Default to Join (Register)
-    const [registrationStep, setRegistrationStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(1); // 1: Basic Info, 2: Questionnaire
+    const [isLogin, setIsLogin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [registrationStep, setRegistrationStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(1);
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    // Animation State
     const [shouldRender, setShouldRender] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isVisible, setIsVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Refs
     const scrollRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const contentRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const [menuHeight, setMenuHeight] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(undefined);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (isOpen) {
             setShouldRender(true);
-            document.body.style.overflow = 'hidden'; // Lock body scroll
+            document.body.style.overflow = 'hidden';
             const timer = setTimeout(()=>{
                 setIsVisible(true);
             }, 50);
             return ()=>clearTimeout(timer);
         } else {
             setIsVisible(false);
-            document.body.style.overflow = 'unset'; // Unlock body scroll
+            document.body.style.overflow = 'unset';
             const timer = setTimeout(()=>{
                 setShouldRender(false);
                 setRegistrationStep(1);
                 setError('');
-                setIsLogin(false); // Reset to register on close if preferred
+                setIsLogin(false);
             }, 500);
             return ()=>clearTimeout(timer);
         }
     }, [
         isOpen
     ]);
-    // Smooth Height Observer
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!contentRef.current) return;
         const resizeObserver = new ResizeObserver((entries)=>{
@@ -1164,7 +1160,6 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
         error,
         registrationStep
     ]);
-    // Form States
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
         username: '',
         email: '',
@@ -1191,7 +1186,6 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
             [e.target.name]: e.target.value
         });
     };
-    // Explicit handler for moving to Step 2
     const handleNextStep = (e)=>{
         e.preventDefault();
         setError('');
@@ -1221,12 +1215,10 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
     const handleFormSubmit = async (e)=>{
         e.preventDefault();
         setError('');
-        // Double check: if user hit Enter on Step 1, treat as Next Step
         if (!isLogin && registrationStep === 1) {
             handleNextStep(e);
             return;
         }
-        // --- PHASE 2: API SUBMISSION (Login OR Register Step 2) ---
         setIsLoading(true);
         const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
         let payload = {
@@ -1263,7 +1255,6 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
             if (!res.ok) {
                 throw new Error(data.error || 'Something went wrong');
             }
-            // Success
             onLoginSuccess(data.user);
             onClose();
             resetForm();
@@ -1274,7 +1265,6 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                 top: 0,
                 behavior: 'smooth'
             });
-            // Fallback for demo if backend fails
             if (err.message.includes("Server") || err.message.includes("Failed to fetch")) {
                 setTimeout(()=>{
                     const demoUser = {
@@ -1320,7 +1310,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                 onClick: onClose
             }, void 0, false, {
                 fileName: "[project]/components/AuthModal.tsx",
-                lineNumber: 211,
+                lineNumber: 201,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1354,12 +1344,12 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                     className: "w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/AuthModal.tsx",
-                                                    lineNumber: 241,
+                                                    lineNumber: 228,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 236,
+                                                lineNumber: 223,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1367,13 +1357,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                 children: isLogin ? 'Welcome Back' : registrationStep === 1 ? 'Join the Cell' : 'Final Details'
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 244,
+                                                lineNumber: 231,
                                                 columnNumber: 26
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 234,
+                                        lineNumber: 221,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1383,18 +1373,18 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/components/AuthModal.tsx",
-                                            lineNumber: 249,
+                                            lineNumber: 236,
                                             columnNumber: 25
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 248,
+                                        lineNumber: 235,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/AuthModal.tsx",
-                                lineNumber: 233,
+                                lineNumber: 220,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1405,7 +1395,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                         children: error
                                     }, void 0, false, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 256,
+                                        lineNumber: 242,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1423,7 +1413,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 children: "Username"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 266,
+                                                                lineNumber: 251,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1436,13 +1426,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 required: isLogin || registrationStep === 1
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 267,
+                                                                lineNumber: 252,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 265,
+                                                        lineNumber: 250,
                                                         columnNumber: 29
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     !isLogin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1455,7 +1445,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         children: "Email"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 282,
+                                                                        lineNumber: 266,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1468,13 +1458,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         required: !isLogin
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 283,
+                                                                        lineNumber: 267,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 281,
+                                                                lineNumber: 265,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1485,7 +1475,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         children: "Mobile Number"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 295,
+                                                                        lineNumber: 279,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1498,13 +1488,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         required: !isLogin
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 296,
+                                                                        lineNumber: 280,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 294,
+                                                                lineNumber: 278,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
@@ -1517,7 +1507,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 children: "Password"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 310,
+                                                                lineNumber: 294,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1530,13 +1520,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 required: isLogin || registrationStep === 1
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 311,
+                                                                lineNumber: 295,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 309,
+                                                        lineNumber: 293,
                                                         columnNumber: 29
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     !isLogin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1549,7 +1539,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         children: "Interested Domain"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 325,
+                                                                        lineNumber: 309,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1567,7 +1557,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                                         children: "Web Development"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                                        lineNumber: 333,
+                                                                                        lineNumber: 317,
                                                                                         columnNumber: 49
                                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1576,7 +1566,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                                         children: "Content Writing"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                                        lineNumber: 334,
+                                                                                        lineNumber: 318,
                                                                                         columnNumber: 49
                                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1585,7 +1575,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                                         children: "Graphic Design"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                                        lineNumber: 335,
+                                                                                        lineNumber: 319,
                                                                                         columnNumber: 49
                                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1594,7 +1584,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                                         children: "Video Editing"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                                        lineNumber: 336,
+                                                                                        lineNumber: 320,
                                                                                         columnNumber: 49
                                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1603,7 +1593,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                                         children: "Event Management"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                                        lineNumber: 337,
+                                                                                        lineNumber: 321,
                                                                                         columnNumber: 49
                                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1612,13 +1602,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                                         children: "Consultancy Wing"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                                        lineNumber: 338,
+                                                                                        lineNumber: 322,
                                                                                         columnNumber: 49
                                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                                lineNumber: 327,
+                                                                                lineNumber: 311,
                                                                                 columnNumber: 45
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1627,24 +1617,24 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                                     className: "w-4 h-4 rotate-90"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/AuthModal.tsx",
-                                                                                    lineNumber: 341,
+                                                                                    lineNumber: 325,
                                                                                     columnNumber: 49
                                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                                lineNumber: 340,
+                                                                                lineNumber: 324,
                                                                                 columnNumber: 45
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 326,
+                                                                        lineNumber: 310,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 324,
+                                                                lineNumber: 308,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1655,7 +1645,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         children: "Why do you want to join EDC?"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 347,
+                                                                        lineNumber: 331,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1667,13 +1657,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         required: !isLogin
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 348,
+                                                                        lineNumber: 332,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 346,
+                                                                lineNumber: 330,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
@@ -1681,7 +1671,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 264,
+                                                lineNumber: 249,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             !isLogin && registrationStep === 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1695,7 +1685,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 children: "Rate your enthusiasm (0 - 10)"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 365,
+                                                                lineNumber: 348,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1711,7 +1701,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         className: "w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#ccff00]"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 369,
+                                                                        lineNumber: 352,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1719,19 +1709,19 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                         children: questionnaire.rating
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                                        lineNumber: 378,
+                                                                        lineNumber: 361,
                                                                         columnNumber: 41
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 368,
+                                                                lineNumber: 351,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 364,
+                                                        lineNumber: 347,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1742,7 +1732,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 children: "Describe a past project or initiative you are proud of."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 383,
+                                                                lineNumber: 366,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1753,13 +1743,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 placeholder: "e.g. I organized a tech fest..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 384,
+                                                                lineNumber: 367,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 382,
+                                                        lineNumber: 365,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1770,7 +1760,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 children: "How do you handle disagreements within a team?"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 394,
+                                                                lineNumber: 377,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1781,19 +1771,19 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                                 placeholder: "I try to understand the other perspective..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                                lineNumber: 395,
+                                                                lineNumber: 378,
                                                                 columnNumber: 37
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 393,
+                                                        lineNumber: 376,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 363,
+                                                lineNumber: 346,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1808,13 +1798,13 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                             className: "w-4 h-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/AuthModal.tsx",
-                                                            lineNumber: 413,
+                                                            lineNumber: 396,
                                                             columnNumber: 47
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/AuthModal.tsx",
-                                                    lineNumber: 408,
+                                                    lineNumber: 391,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     type: "submit",
@@ -1824,23 +1814,23 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                         className: "w-5 h-5 animate-spin"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/AuthModal.tsx",
-                                                        lineNumber: 422,
+                                                        lineNumber: 405,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)) : isLogin ? 'Login' : 'Submit Application'
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/AuthModal.tsx",
-                                                    lineNumber: 416,
+                                                    lineNumber: 399,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 406,
+                                                lineNumber: 389,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 261,
+                                        lineNumber: 247,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1858,41 +1848,41 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess })=>{
                                                 children: isLogin ? 'Join Now' : 'Login'
                                             }, void 0, false, {
                                                 fileName: "[project]/components/AuthModal.tsx",
-                                                lineNumber: 434,
+                                                lineNumber: 416,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/AuthModal.tsx",
-                                        lineNumber: 432,
+                                        lineNumber: 414,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/AuthModal.tsx",
-                                lineNumber: 254,
+                                lineNumber: 240,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/AuthModal.tsx",
-                        lineNumber: 231,
+                        lineNumber: 219,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/components/AuthModal.tsx",
-                    lineNumber: 225,
+                    lineNumber: 213,
                     columnNumber: 10
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/AuthModal.tsx",
-                lineNumber: 217,
+                lineNumber: 206,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/AuthModal.tsx",
-        lineNumber: 209,
+        lineNumber: 200,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
