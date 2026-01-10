@@ -157,6 +157,10 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
     }
 });
 // IMPORTANT: Delete the model if it exists to prevent caching issues with schema updates in development
@@ -197,13 +201,10 @@ async function POST(req) {
     try {
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])();
         const body = await req.json();
-        // Extract both possible field names
         let { username, email, mobileNumber, phone, password, domain, reason } = body;
-        // FALLBACK: If mobileNumber is missing, try using 'phone'
         if (!mobileNumber && phone) {
             mobileNumber = phone;
         }
-        // 1. Basic Validation
         if (!username || !email || !password || !domain || !reason) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: 'Please provide all fields, including your reason for joining.'
@@ -218,8 +219,6 @@ async function POST(req) {
                 status: 400
             });
         }
-        // 2. Check for duplicates (Username, Email, OR Mobile Number)
-        // Since mobileNumber is unique in schema, we must check it here too
         const userExists = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
             $or: [
                 {
@@ -244,11 +243,8 @@ async function POST(req) {
                 status: 400
             });
         }
-        // 3. Secure the password
         const salt = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].genSalt(10);
         const hashedPassword = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].hash(password, salt);
-        // 4. Create user
-        // No need for 'as any' casting anymore; TypeScript knows mobileNumber exists on IUser
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$models$2f$User$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].create({
             username,
             email,
@@ -270,7 +266,6 @@ async function POST(req) {
             }
         });
     } catch (error) {
-        // Handle Mongoose validation errors (like regex mismatch for phone number)
         if (error.name === 'ValidationError') {
             const messages = Object.values(error.errors).map((val)=>val.message);
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({

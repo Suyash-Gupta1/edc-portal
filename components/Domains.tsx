@@ -64,6 +64,17 @@ const DOMAINS_DATA = [
       iconTextClass: "text-red-400",
       svgColorClass: "text-red-500",
       image: "https://images.unsplash.com/photo-1574717432707-c67885d96459?q=80&w=2667&auto=format&fit=crop"
+    },
+    {
+      title: "Consultancy Wing",
+      slug: "Consultancy Wing",
+      description: "Crafting visual stories through motion and sound. We transform raw footage into compelling narratives that capture attention and evoke emotion.",
+      icon: <Feather className="w-8 h-8" />,
+      colorClass: "text-red-500",
+      iconBgClass: "bg-red-500/10",
+      iconTextClass: "text-red-400",
+      svgColorClass: "text-red-500",
+      image: "https://images.unsplash.com/photo-1574717432707-c67885d96459?q=80&w=2667&auto=format&fit=crop"
     }
 ];
 

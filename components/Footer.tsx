@@ -137,10 +137,7 @@ const Footer = () => {
                 </h1>
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8 text-gray-600 text-sm gap-4">
                     <p>© {new Date().getFullYear()} Entrepreneurship Development Cell. All rights reserved.</p>
-                    <div className="flex gap-6">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>

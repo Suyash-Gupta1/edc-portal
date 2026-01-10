@@ -157,6 +157,10 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
     }
 });
 // IMPORTANT: Delete the model if it exists to prevent caching issues with schema updates in development
